@@ -4,13 +4,13 @@
 
 At the time of this writing, there are no known issues with the latest Web2project release (v3.1.0) but there are three primary steps which have been taken to prevent most issues.
 
-# First, we filter all input with the assumption that it is not safe by default.
-# Next, we implemented a simple .htaccess script modeled after Drupal’s .htaccess. This prevents anyone from accessing files other than an enumerated list.
-# Finally, since the first solution was only effective in an Apache environment, we have inserted a simple sentinel function to prevent unauthorized access.
+* First, we filter all input with the assumption that it is not safe by default.
+* Next, we implemented a simple .htaccess script modeled after Drupal’s .htaccess. This prevents anyone from accessing files other than an enumerated list.
+* Finally, since the first solution was only effective in an Apache environment, we have inserted a simple sentinel function to prevent unauthorized access.
 
 Regardless of the above steps, care should be taken to limit ftp and database access to authorized and trusted individuals and to ensure that your directory and file permissions are configured properly.
 
-W> Turn off register_globals. This feature has been deprecated as of 5.3 and removed as of 5.4. It should not exist as an option any more.
+W> Turn off register_globals. This feature has been deprecated as of 5.3 and removed as of 5.4. It should not exist as an option anymore for the vast majority of users.
 
 W> Damage caused to your Web2project system by granting inappropriate access to individuals are usually due to your organization’s practices and absolutely nothing to do with Web2project.
 
