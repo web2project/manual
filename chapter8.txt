@@ -1,1 +1,13 @@
-# Module Building Guide
+# Add On Modules
+
+## Installing New Modules
+
+## Holidays
+
+## Project Importer
+
+## Risk Management Module
+
+## Timecard
+
+## Todolist Module
