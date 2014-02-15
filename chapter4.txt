@@ -1,0 +1,27 @@
+# Best Practices
+
+## Security Considerations
+
+At the time of this writing, there are no known issues with the latest Web2project release (v3.1.0).  There have been issues in the past due to configuration issues related predominantly to PHP’s built in register_globals functionality.  By default, this setting should be turned off, but in many shared hosting environments, this may not be an option.  Therefore, there are two additional steps which have been taken to completely resolve this issue:
+
+First, we implemented a simple .htaccess script modeled after Drupal’s .htaccess.  This prevents anyone from accessing files other than an enumerated list.
+
+Second, since the first solution was only effective in an Apache environment, we have inserted a simple sentinel function to prevent unauthorized access.
+
+Regardless of the above steps, care should be taken to limit ftp and database access to authorized and trusted individuals and to ensure that your directory and file permissions are configured properly.
+
+[Warning]	Turn off register_globals.  If you are unable to do it globally, it is still possible to do via .htaccess and even via php directly.  Whatever it takes, you should do it as soon as possible.
+
+[Warning]	Damage caused to your dotProject system by granting inappropriate access to individuals have everything to do with your organization’s practices and absolutely nothing to do with dotProject.  Please do not post complaints about your own practices to the dotProject forums.
+
+## Maintenance
+
+The only maintenance for Web2project is the Queue Scanner.  If you enable the queuing of email notifications, a cron task must be configured to hit this file on a regular basis.  This script will parse the queue every 10 minutes and can be adjusted as necessary:
+
+*/10	* * * *	wget –O - -w http://{web2project-install}/queuescanner.php
+
+There are no other maintenance tasks required by Web2project.  It is strongly suggested that you apply your MySQL tuning and maintenance tasks to the Web2project database in accordance with your current policies.
+
+## Backup
+
+The most direct and simplest way to backup Web2project is to use MySQL’s built in mysqldump command.  For further information on this utility and its usage, please reference the MySQL Users’ Manual.  While every organization’s practices will vary depending on their requirements and capabilities, it is suggested to back up your Web2project database on a regular basis.

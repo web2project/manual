@@ -1,0 +1,23 @@
+# Core Modules
+
+## Companies
+
+## Departments
+
+## Projects
+
+## Tasks
+
+## User Admin & Permissions
+
+## Contacts
+
+## Calendar & Events
+
+## Files
+
+## Forums
+
+## SmartSearch
+
+## System Admin
