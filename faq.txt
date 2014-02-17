@@ -1,1 +1,69 @@
 # Frequently Asked Questions
+
+Q> I’m trying to use PHP 5.2 and Web2project isn’t working. Why not?
+
+Web2project has ended support for all versions of PHP prior to 5.3 as of January 2014. This is due to PHP versions prior to 5.4 being formally ended.
+
+Q> Help! I’ve lost my Company/Project/Task and now I can’t find it on any of the lists!
+
+The most common cause of this problem is Owner-based Filtering on the list screen. Go to the relevant listing and look in the upper right-hand corner at the box named “Owner Filter” on the Company List or “Company/Division” on the Project List or “User” and “Company” and “Task Filter” on the Task List. By setting all of these values to “All” and you should see the full list.
+
+Q> I just created a Task and assigned myself. Why didn’t I get an email notification?
+
+By default Web2project assumes that the creator of the Task knows that the Task was created. In the System Configuration, you can change this to automatically notify the Task’s creator.
+
+Q> I just created a new User and they can’t log in, why not?
+
+The Web2project permissions system assigns no privileges by default. Before a new User can log in, they must be assigned a Role in the User Administration Module. If you are looking for an advanced explanation of Permissions, please read “Permissions 201”.
+
+Q> My date is in a screwy format! How do I fix it?
+
+This is not an error, you just need to change your system preferences. Select “My Info” in the upper right-hand corner and then “edit preferences” just above your profile. This will allow you to choose a date format, an icon set, and even your look and feel. In addition, if you want to change the defaults for future users, within the System Admin, select “Default User Preferences”. This will allow you to edit the same details for all users created after this time. By design, it does not edit existing users’ preferences, this is not an error.
+
+Q> What does the Public Module do?
+
+Nothing, it exists purely for public messages like “Access Denied”. It should never appear on your navigation menu.
+
+Q> I’ve just installed a Module and I don’t see it. Where is it?
+
+Before a Module will appear in the navigation, it must be installed and unhidden. Occasionally, special steps require that will require additional configuration and/or settings to be adjusted. Most module developers will include a readme file which describes this process in detail.
+
+Q> How can I customize Web2project to match my organization’s Look and Feel guidelines and/or website?
+
+Although many of the aspects are properly defined in the CSS, the current Web2project release is still rather difficult to theme. Regardless, the most commonly changed aspects (header, footer, and login page) are available within the /style/default within your installation.
+
+Q> Where can I find add-on modules, customizations, language packs, etc?
+
+Many add-on modules are available from our [Github project](https://github.com/web2project) and many were written by the Web2project community. If you don’t see the translation you need, please consider writing your own and sharing it with the community.
+
+Q> How do I get the code from Github?
+
+You can either clone the repository from our [Github repository](https://github.com/web2project/web2project) or download the code in [zip format](https://github.com/web2project/web2project/archive/master.zip) if you prefer.
+
+Q> Can the latest Github development be used for production?
+
+Technically, yes, but it is not recommended. When there are architecture or UI changes, there are often times when the codebase is unstable and not suitable for production use.
+
+Q> I found a bug, what do I do with it?
+
+The best thing to do is visit Web2project’s [bug tracker](http://bugs.web2project.net/) and check to see if the issue has been reported or even resolved. If it has not been reported, please report it. If it has been reported, you can choose to monitor it. Either way, please be as descriptive as possible. If another user or developer can’t reproduce it, we can’t fix it. If it has been resolved and you need the fix, read the next question.
+
+Q> When I look in the Web2project bug list, it says my issue is fixed in development, but Github master is still broken!
+
+In Github, the master branch is always considered stable and usually identical to the latest release. All development is done on the `develop` branch. The two branches are merged just before the next release.
+
+Q> Where else can I get support and help with Web2project?
+
+There are a variety of locations available. First and foremost, there are the [Web2project Support Forums](http://support.web2project.net). Questions and comments can be posted there freely and anyone in the community can answer you. Alternatively, there are many recommendations and explanations available on the Web2project Wiki. 
+
+Q> Web2project is a great tool! How can I support the project?
+
+There are a variety of ways to show your support. First of all, if you or your organization have the financial means you can always donate to the project using the information from our [Support Web2project page](http://support.web2project.net/page/support-web2project.html). Alternatively and more importantly, you can be an active part of the community. You can submit bug reports, submit patches, test release candidates, answer questions in the forums, convince your boss to evaluate the tool, and generally let us know how you are using Web2project and what we can do to make things even better for you. Like any Open Source project, the success and usefulness of the tool is based directly upon feedback and support from the community.
+
+Q> Web2project is great, but it doesn’t do X. How can I get it to do X?
+
+Before you do anything else, search in both the [Support Forums](http://support.web2project.net) and in the [issue tracking system](http://bugs.web2project.net) - and see if someone else has figured it out, already submitted, discussed it, or already exists and you just missed it. Alternatively, one of the benefits of Open Source software is that you can always do it yourself. At any time, you can get the latest code and write any extensions or customizations you choose. If you create modifications and patches that are relevant to core, you can submit patches via Github Pull Requests and may see your contributions in the next release.
+
+Q> Why are you writing this manual and what are you getting out of this?
+
+Keith Casey and CaseySoftware, LLC have been deeply involved with Web2project since its inception and led the community effort throughout its lifetime. This manual is one aspect of this effort and will hopefully encourage additional organizations to use Web2project and improve the overall system and the whole community. If you are interested in additional training, support, or custom development, please feel free to contact us at CaseySoftware.com.
