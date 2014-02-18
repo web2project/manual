@@ -1,2 +1,6 @@
 # Themes & Styling
 
+The current release of Web2project is not the easiest thing to customize. There are many aspects – such as the table layouts – which are hard-coded in the page generation. In many areas, the color of various screens, the font type and size, along with a few other aspects can be easily changed. In order to learn the flexibility of the Themes, click on System Admin, Default User Preferences, and then change the User Interface Style. These are the base styles available within the distribution and more styles are always under development.
+
+There is an effort underway to convert the entire system to XHTML 1.0 and CSS 2.0 compliant. Once this effort is complete and made available to the community, the vast majority of the system will be easily theme-able with a handful of CSS tweaks and modifications.
+

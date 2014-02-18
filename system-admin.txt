@@ -1,21 +1,152 @@
 # System Administration
 
+The default installation will allow you to immediately begin using the system in a production capacity. There will be generic values set on the login page, the notification emails, and a few other places but you can quickly and easily change any of them via the System Administration. Therefore, it is suggested that you go into the System Administration immediately after install to customize it to your organization.
+
+W> Regardless of any other customizations you do or do not make to your system, upon successful installation, you should immediately change the password of your admin user. If you fail to change your password, you are creating a significant to your Web2project installation.
+
 ## General Configuration
+
+The first values that should be changed in your System Admin are the values listed here. This will ensure that your login page, emails, and page titles represent your organization. One of the most useful aspects is changing the “Email Prefix” to something meaningful and filter-able. The default for CaseySoftware is “[cs-dP]” and allows for messages to be filtered quickly and efficiently with automated tools common to most email clients.
+
+The next aspect to change are the Calendar values. These values determine the display of every calendar throughout your system and even assist in the auto-calculation of task start and end dates in addition to durations. The Start and End Hour values are based on a 24-hour clock and the Working Days assume Monday = 1, Tuesday = 2, etc. The Calendar Minute Increment is not generally used in the Task scheduling and is more often used in the Events Management on the Calendar. Therefore, if your working schedule was 9am to 5pm Monday through Friday, your Start and End Hours would be 9 and 17 respectively while your Calendar Working Days would be 1,2,3,4,5.
+
+The final configuration options commonly modified are the Default Module and Submodule. These two parameters determine the first page a user sees when they log in. 
 
 ## Roles & Permissions
 
+The permissions system within Web2project is based on phpgACL. While it provides a robust and powerful method of permissions handling, it can be complex and difficult to understand at times. The most important aspect to remember is that Roles apply to Modules and Permissions apply to individual items.
+
+The four base roles at installation are Administrator, Project Worker, Guest, and Anonymous and grant progressively more and more restrictive permissions.
+
+Administrator – Administrators have complete access within the system and are able to do anything they choose. This includes creating, editing or deleting all information along with assigning Tasks, changing Users’ passwords, or even creating other Administrators.
+
+Project Worker – Project Workers can create, edit, or delete any non-administrative information throughout the system. They can create Companies or Projects, assign Tasks, and log time against any task in the system. Most users will be a variation of this role.
+
+Guest – Guests can view any non-administrative information. They cannot create, edit, or delete anything and therefore this works well as a basis for a Customer Role.
+
+Anonymous – Anonymous can see the navigation and nothing else. While this role may seem useless at first glance, it can serve as a reasonable basis for highly limited Users who should only view specific Tasks such as third party organizations. By assigning this role as a start, no existing information in the system is made available although login is permitted.
+
+The common aspect to all four of these Roles is that their privileges and limitations are associated to the Module level exclusively. They do not grant or deny privileges to specific companies, projects, or tasks. This is where permissions come into play.
+
+Permissions are important to secure and protect information within Web2project. Depending on an individual Users’ permissions, they may be able to manage anything within the system, anything within a specific company, or potentially only log time against their assigned tasks. Permissions allow very specific circumstances where the System Administrator can grant or deny individuals access to individual companies, projects, or even contacts and files.
+
+Q> By default, a Users’ permissions are cached by phpgACL for performance reasons. This allows the system to simply compare permissions instead of requiring a lookup with every single request. Unfortunately, this caching – default 60 minutes – can cause some oddities when you expect to see changes reflected immediately.
+
+
 ## Permissions 201
+
+The most commonly asked questions in the forums revolve around permissions. The initial assumption when the permissions do not react as expected is that the permissions system is broken and therefore should be rebuilt from the ground up. While this may be true, the vast majority of permissions problems are eventually tracked back to improper settings, a misunderstanding of how it works, or conflicting permissions.
+
+The default permissions within Web2project are sufficient for a few organizations, but the vast majority will want to modify and customize permissions for their own business practices, workflows, and requirements. The most useful way to explain and demonstrate an advanced set of permissions requires an example. This example is taken from the permissions currently in use by CaseySoftware, LLC for the management of projects for various customer organizations worked on by various employees and contractors.
+
+Goal:
+CaseySoftware, LLC has a number of customers with information which should be protected both from one another and unauthorized users. It also has a number of contractors and employees which should only see projects specific to the companies they are working with or for.
+
+Solution:
+The base “Project Worker” role begins with a single permission:
+Non-Admin Modules - Allow - Access, Add, Delete, Edit, View
+This by itself would give all Project Workers the ability to create, edit, view, or delete Companies, Projects, etc at their will. While this is a sufficient starting point, it does not serve the purposes we need as the User should not be able to access certain Companies or Projects without authorization.
+
+The next step is to add the following permission to the “Project Worker” Role:
+This will now prevent all Project Workers from viewing any company information or anything associated with a company such as projects, contacts, files, events, etc even though they can see these individual navigation items. This also cascades which means that a File attached to a Task attached to a Project attached to a Company would not show either. At this point, a Project Worker can only see information not attached to a specific company such as a general Contact.
+
+The next step is to add fine-grained permissions to specific User/Company combinations. This gives the User the ability to see everything – Projects, Tasks, Files, Events, and Contacts – associated with this Company. This covers all the internal projects and efforts but not necessarily things for other organizations. To supplement this, we simply add another permission along the same lines:
+
+Now the User can see all of the relevant information for both organizations. This level of granularity and control will be sufficient for many organizations, but adding one more wrinkle may be important. If there are individual Projects from one of the Companies which require additional limitations, we simply add this:
+
+For all intents and purposes, this project does not exist to this User. Its Tasks, Files, and Events will not appear to this User anywhere in the system.
+
+I> In the latest development, there was a subtle issue where a User only had View Project Access to Company A and Create Project Access for Company B was allowed to create Projects for either Company. Once a Project was created for Company A, the permissions were applied correctly, so the User could not edit it. Although this later application of permissions was correct, the original was not and could create oddities. This issue has been resolved.
+
+Goal:
+CaseySoftware, LLC has a number of customers who wish to review their Projects on a regular basis at their own convenience. Although they should be allowed to see information concerning the status of individual tasks, detailed task log information should not be available for review. In addition, all information for other customers should be protected as normal.
+
+Solution:
+Since this is a completely new Role, first, we create it: “Customer”. The core of this Role is identical to the “Project Worker” so we can begin the same way. First, we add the Non-Admin Permission:
+Non-Admin Modules - Allow - Access, Add, Delete, Edit, View
+
+This by itself would give all Customers the ability to create, edit, view, or delete Companies, Projects, etc at their will. While this is a sufficient starting point, it does not serve the purposes we need as the User should not be able to access any Company which we do not explicitly enumerate.
+
+The next step is to add the following permission to the “Customer” Role:
+This will now prevent all Customers from viewing any company information or anything associated with a company such as projects, contacts, files, events, etc even though they can see these individual navigation items. This also cascades which means that a File attached to a Task attached to a Project attached to a Company would not show either. At this point, a Project Worker can only see information not attached to a specific company such as a general Contact.
+
+The next step is to add fine-grained permissions to specific User/Company combinations. This gives the User the ability to see everything – Projects, Tasks, Files, Events, and Contacts – associated with this Company. Unfortunately, this means they could see anything – including Tasklogs – which we wanted to prevent.
+
+Finally, we must add one more limitation to the Role. By having this in place, we can ensure that our Customer Role cannot see any of the information in any of the Tasklogs but should still be able to see the total time spent on the task. 
+
 
 ## Session Management
 
+One of the most common complaints with Web2project 1.x involved the classic issue of “I was in the middle of doing X and my session timed out!”. In v2, this issue was resolved by the development of “Web2project extended sessions”. This allows the System Administrator to let Web2project manage sessions and configure a custom “Session Idle Time” and a “Session Maximum Lifetime”.
+
+Session Management for Web2project can be handled in two different ways. The first is the standard PHP session model. When a system administrator is given the permissions to access and adjust the PHP configuration, this works well for most organizations. If Web2project is being used in a shared hosting environment and the configuration cannot be changed, this often leads to session timeouts during periods of non-usage and can cause users to lose all information. Although this is not considered a bug in Web2project, another option was created in response to concerns about this situation.
+
+Within the Web2project System Configuration, there are three values of interest titled “Session Handler”, “Session Idle Time”, and “Session Maximum Lifetime”. All of these values are tied specifically to the Users’ browser cookies and therefore do not transfer between computers or between different browsers such as Internet Explorer and Firefox.
+
+To enable Web2project’s management of sessions, change the “Session Handler” to “Web2project Extended Sessions”. This will enable the second two values for configuration.
+The Idle Time defines how frequently a user must be active in the system before they are automatically logged out. This is used to prevent Web2project sessions from timing out at inappropriate times such as when a User begins to type data, then goes to lunch before returning to the session. Therefore, it is recommended to keep this set to a minimum of 1 – 2 hours. For organizations who allow a more relaxed security policy, this value can be set as high as the Maximum Lifetime.
+
+The Maximum Lifetime defines the longest amount of time a user can go between logging in and subsequently being required to re-enter a password to access to the system. For many organizations, one to two weeks – represented as 7d or 14d respectively – is sufficient and will provide a reasonable amount of security. For organizations who need tighter security, this value can be reduced to hours using the suffix of “h”. 
+
+For both the Session Idle Time and Session Maximum Lifetime the default prefixes are as follows: h – hours, d – days, m – months, and y – years.
+
 ## LDAP Authentication
+
+Part of the ongoing mission of the Web2project Team is to provide seamless integration with existing infrastructures. Towards this goal, a System Administrator can choose to have users authenticate against and LDAP server such as Active Directory, a Lotus Notes Server, or OpenLDAP. Within the System Configuration, find the section labeled “LDAP Settings”. Set each of these values to point at your LDAP server, set “User Authentication Method” to LDAP, and save.
+
+Using LDAP does not remove the requirements of configuring your Roles or Permissions but it does allow the User to avoid requiring yet another password. By default, all users authenticating via LDAP receive the “Guest” Role until given a distinct Role.
 
 ## Using SSL
 
+If you wish to use a more secure connection method to Web2project (https), SSL is a viable option. After you have the SSL certificate installed, the following must be added to your .htaccess file in the root of your Web2project installation:
+
+RewriteEngine on
+RewriteCond %{SERVER_PORT} !443$
+RewriteRule ^(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+Once this command is in place, all requests to http://domainname.com/dotproject/ would become https://domainname.com/dotproject/ and offer an additional layer of security to your users.
+
 ## Email Notifications
+
+DotProject sends emails for a variety of reasons including task notifications, tasklog updates, event notifications, etc. Regardless of your host operating system, you have the options of sending via the default email transport defined in your php.ini – called “PHP Default” – or sending through a separate SMTP host. If the PHP default is available to you, it is unlikely that additional configuration will be necessary. If you use the SMTP host, you can specify additional login credentials for Web2project to use and authenticate against.
+
 
 ## Translation Management
 
+The translations available to Web2project users are extensive. At the time of this writing there are over thirty languages available. To install your own language package, you must follow these steps:
+
+Download your desired translation from www.Web2project.net;
+
+Create the corresponding language specific directory in your /locales directory within Web2project. This folder should be named according to your two character ISO language code – eg. en = English, fr = French, es = Spanish;
+
+Unzip your translation package and upload it into the directory you created;
+
+Once the installation is complete, you can change the “Default User Preferences” for new Users and edit any existing Users individually. At any time a User can change their preferences to select any installed language. If there is no translated term for the term requested, it simply returns the original term. This is to ensure that every label is displayed regardless of the completeness of the translation.
+
+Q> While the Translation Management does allow the System Administrator to change the language of the system, it can also allow much more. If you create a custom translation built on your organization’s terms and information, it can be treated as Jargon Management instead.
+
+One of the options in the System Configuration is “Translation Warning”. This changes the default behavior of the Translation System slightly. When there is no translated term, instead of returning the original term, it postpends the term with a carat. This is a simple way to test the completeness of a translation. Whenever you are using a non-English Translation, it is encouraged to turn this on.
+
 ## User Preferences
 
+This screen is identical to the individual Users’ preference screens. As you create new Users in Web2project, you can use this screen to ensure their defaults such as their Time Format (12 or 24 hour clock), their date format, and their language are set correctly. This only applies to Users created after the changes are made to the Default Preferences. In order to change individual Users, you must edit and update them separately. The most important aspect of this interface is the “User Task Assignment Maximum”. By setting this value below 100%, you can create a workflow that does not allow the User to completely close his own tasks without review by a person with the proper authority such as a manager or project manager.
+
+Q> If you change the Default User Preferences, remember that it only changes the preferences of new users. To edit the Preferences of existing users, each one must be edited individually.
+
 ## Custom Field Editor
+
+Quite often a User will want to attach additional information which does not already fit within Web2project such as “Year Established” for a Company or “Codename” for a Project. The Custom Field Editor is a quick and simple way of adding new fields to certain modules without having to change the database, create custom code, or change any templates. To add these fields, simply follow this process:
+
+Select “Custom Field Editor” within the System Administration.
+Choose the relevant module by selecting “Add a new Custom Field to this Module”.
+Input a “Field Name/Identifier”. This is the name of the html form element and should consist exclusively of alphanumeric characters. For example, year_established would be a valid value while “year established” is not.
+Input a “Field Description”. This is the label used next to this field whenever it is displayed.
+Finally, select a “Field Display Type” to determine the type of input field. “Text input” or “textarea” are sufficient for many uses, but these are the bare beginning of the possibilities available.
+
+All fields added through the Custom Field Editor are global across the entire system regardless of the overall organization of the system. Therefore, in our above example, every Company would have this field available.
+
+Q> In releases prior to 2.1.0, the Custom Fields were displayed in the order they were created. The Custom Fields have since been modified to display in alphabetical order based on the Field Name/Identifier. While still not perfect, it allows quite a bit more flexibility than previously available.
+
+## Billing-code Management
+
+For organizations who perform contracting for other organizations often have reporting requirements involving multiple billing codes, numerous billing rates, and a variety of invoicing systems which may vary from customer to customer. This screen gives the administrator the option to set billing codes with distinct billing rates to individual Companies. These codes immediately become available in the Tasklogs for logging time, in the Reporting Module and even in the Addon Invoice Module.
