@@ -2,22 +2,233 @@
 
 ## Companies
 
+Creating companies is one of the most important but often misinterpreted aspects within the system. Many Web2project Users create a single Company and manage all of their projects from there. This is by far the simplest set up and a reasonable way to get started. This works for many organizations where information security requirements are relatively simple and straightforward.
+
+For organizations who have stricter information security requirements or perform services for other Companies, a more complex model quickly becomes necessary. In this scenario, it is usually better to create a distinct Company for each customer. These Companies then serve as the foundation for permissions and information protection throughout the system.
+
+### Create a Company
+
+To create a Company, you can either select the Company module from the navigation and click the “new company” button on the far right or you can select “Company” from the “New Item” dropdown in the upper right-hand corner.
+
+Most of the fields on this screen are self-explanatory and allow you to fill in basic contact information on the Company. The more important fields are “Company Owner” and “Type” which both drive the “Company List” screen. The “Company Owner” does grant any permissions, it is used only for filtering. The “Type” is used to categorize each company into a selected tab and is also used for filtering.
+
+Q> Whenever you believe a company has disappeared from the company list, check the “Owner filter” in the upper right-hand corner. Change this dropdown to “All” and your company should reappear. If the company does not appear, the only alternatives are that you don’t have permission to view it or it is not in the system.
+
 ## Departments
+
+Departments are simply groupings within a Company. There can be an unlimited number of departments for any company and departments can have sub-departments. Since a department is so similar to a Company, it has many of the same fields and is treated in an almost identical manner. Since a Department has no meaning without a parent Company, the Department module should only be accessed through the listing on a Company’s View page.
+
+### Create a Department
+
+Creating a Department requires an existing Company. First select a Company, the Departments tab, and finally the “new department” button. Since departments are often in different physical locations than their parent company, a department entry allows for completely different contact information and even a different URL.
 
 ## Projects
 
+The entire point of Web2project is to provide a single place where a team can come together to collaborate and share information on a project. Therefore, the bulk of a project manager’s time will be spent working in the Project and Task modules. All other modules, tools and functionality are based on these two concepts and therefore they are considered the most powerful and sometimes complex modules within the entire system. The best part in all of this is a simple fact: Although this advanced functionality is available, it does not need to be used. The functionality you enable and use within Web2project will determine its behavior and usefulness.
+
+### Creating a Project
+
+Creating your first Project is a deceptively simple task. By clicking “Project” on the navigation bar and then clicking “New Project” on the right or by selecting “New Project” from the upper-right dropdown (pictured), you will immediately be taken to the New Project Screen.
+
+First, you should always give your Project a distinctive name and color. This will help distinguish it throughout the system for both you and your users. Next, you must assign it to a Company. For many organizations, all projects will be assigned to the customer’s company for easier permissions management, but your organization may have different requirements. Next, every project will have an Owner. By default this will be the person who created the project, but it can be changed to any active user in the system. Being the Owner of a Project does not confer any specific functionality, authority, or even permissions at this time.
+
+Next, all Projects have a Status. Status is a way of identifying and grouping Projects regardless of their currently assigned Company. Whenever you look at the Project List screen, the Status will determine on which tab the project is displayed. The Status will be used to track a project throughout its lifetime. 
+
+Next, you can choose to Import Tasks. This allows you to create project template which allows for any project to begin with an existing set of tasks which just have to be assigned to the specific dates and participants. Alternatively, templates can be imported repeatedly to create distinct task groups. Within CaseySoftware, the most common template is called a “Phase Template” which encapsulates an entire development phase from Requirements Discovery to Development to Delivery. By importing this repeatedly, multiple development phases can be established and scheduled as necessary. 
+
+The rest of the fields available are purely for display purposes and not related to the current functionality of the system. For example, the Target and Actual Budgets are available for editing but are not updated or tracked anywhere in the system. The two URLs (URL, Staging URL) are references to external websites which might be relevant to a project. They will not normally point to websites or pages internal to your Web2project.
+
+Finally, your new Project must be saved by clicking “submit”. If for some reason, you have made a mistake in creating your project, you can edit or even delete it from the View Project page if you have the proper permissions.
+
+I> There are five major features currently implemented in Head concerning Project Templates.
+First, there are two primary date options:
+Selecting an Offset Date allows you to specify an arbitrary date in the future for the project to begin and Web2project will sequentially schedule all start and end dates into the future from this point.
+Selecting an End Date does the exact opposite. After choosing an End Date for your project, Web2project will schedule all tasks from the end of the project backwards into the past resulting in an estimated start date.
+Next, there are three different import options:
+“Keep Assignees” will preserve the assignments of all the users within the imported project. No notifications are generated, but if you have laid out the assignments in advance, there is nothing further to do.
+“Import related files” does exactly what it describes. This comes in useful when you have forms, checklists, etc attached to specific Tasks. These files are automatically copied to the new project without further action. Your files are copied and the originals are not affected in any way.
+“Import related forums” does exactly what it describes. These forums – but not postings – are copied to the new project without further action. Your forums are copied and the originals are not affected in any way.
+
+I> At the time of this writing, all budgetary fields are merely for documentation purposes and are not used for tracking, evaluation, or reporting in any way.
+
+### Project Ownership / Company Filtering
+
+One of the most common problems users face after they save their first project is that it seems to disappear. Normally the project still exists and no data was lost, but the user is unable to find it. When looking at the Project List screen, there is a dropdown in the upper left corner called “Company/ Division” (pictured below). This provides filtering to see projects for any individual company at a time. By changing this dropdown to “All”, all projects for any company the user has permissions for will be displayed.
+
 ## Tasks
+
+After you have your first Project, the next thing to do is begin creating the Tasks. This is where the features of Web2project begin to come into play if you choose. The simplest and most direct route is to simply create all the tasks with start and end dates and be done with it. Alternatively, dependency can be meticulously planned, late task notifications activated, dynamic tasks used extensively for rollup reporting, and task logs used for time tracking to turn Web2project into a centralized project management and collaboration hub. Depending on the needs of your organization, you can choose either of these alternatives or anywhere in between to fit your needs.
+
+### Creating Tasks
+
+On any Project or Task screen, clicking the “new task” button will bring a user to the New Task screen. There are five main aspects of every task:
+
+Overview – This consists of the priority, percent complete, status, and milestone. The implications of these options are covered below. This overview is available regardless of which task is displayed.
+
+Details – The Details tab allows a user to describe the task, assign the owner, 
+choose its parent task, and even categorize it into a relevant work classification via a Task Type. For simple task tracking, the only important information here is the Description as it will give the assigned individuals an overview of the required work. For more advanced task tracking, choosing a parent task becomes important for task display and for Dynamic (roll-up) Task calculations. The Target Budget is another field used predominantly for information purposes only, it is not used in any calculations or projections.
+
+Dates – The Dates tab allows a user can specify the start, end, and duration of a specific task. Once this information is set, the task will appear on the Calendar where 
+appropriate. For either simple or advanced project management, this screen is used effectively the same. The only difference is that for Dynamic (Roll-up) Tasks, these dates and duration will be adjusted as child tasks are created. 
+
+Dependencies – The Dependencies tab is where many of the advanced project management features begin to become available. For simple task tracking/Todo management, the Dependency tab can be ignored but the options available here 
+are central for all advanced project management. The first option available activates Dependency Tracking. This will ensure that the start date for this task shifts accordingly as early predecessor tasks shift or projects are delayed. To choose these predecessor tasks, a user simply selects the relevant tasks from the left box, pushes the “>” button. This will copy the task to the right box. This list can have tasks added or removed at any time.
+
+The “Set task start date based on dependency” does exactly what it describes. It takes all of the dependencies selected and finds the latest of all End Dates to determine the earliest Start Date for this new task. Finally, there is an option to create Dynamic (Roll-up) Tasks which are used to represent groups of tasks. By choosing this option, any start date, end date, or duration information attached to this task will be calculated from all the tasks beneath it.
+
+I> One of the new system settings available allows for Dependency Tracking to be turned on once globally for all Tasks. It can be deactivated on individual Tasks as needed.
+
+Human Resources – The final aspect of creating a task is assigning it to the individuals who will be performing the work.
+
+D> One of the open questions within project management circles and within Web2project itself is “What does it mean when a user is 50% assigned to a task?” This could mean either that the person should perform 50% of the work or that the person should spend 50% of their time on the task. This question can have a major impact on scheduling, timelines, etc. Therefore, Web2project makes no distinction either way and leaves it up to the user to decide which practice to follow. This question will be answered in order to implement the Resource Management aspects of Web2project v3.
+
+The options available on the Dependencies tab create four types of tasks which are denoted distinctly throughout the system. Some of these automatically handle quite a few things for you while some do not. All of these tasks appear on the Calendar and on individual assignees Todo lists.
+
+First, there are basic tasks. These have fixed start and end dates, have fixed durations, and are updated by the assignees as time goes on. No information – other than percent complete – will change about these tasks without a user making the specific change by hand. 
+
+Next, there are dependency-driven tasks. Although the duration of these are fixed, their start and end dates are driven entirely by the predecessors. Therefore, if you have Task D which is dependent on Tasks A, B, and C being complete, the dates for Task D will shift as the dates for A, B, and C shift without a user editing D themselves. Since many screens are sorted by date – such as users’ Todo lists, Calendars, and the various Task lists – dependency-driven tasks will to shift around as necessary.
+
+Next, there are dynamic or rollup tasks. Each of these tasks represent all of their child tasks in a single line with a simple “summary” of the lower-level data. This summary consists of the sum of all durations, the earliest start date, and the latest end date. Therefore, as various child tasks are edited or shift based on dependencies, these dynamic tasks will shift accordingly. The benefit of these tasks are that instead of having to monitor or report on each of the individual tasks, this higher level task can be used. The more detailed tasks are still available for review if necessary.
+
+Finally, there are milestones. Most organizations tend to associate milestones with special events such as delivery dates, launch dates, or specific meetings. Therefore, a milestone is normally associated a task that is simply complete or not complete and not tracked to the same detail as other tasks. Web2project by default will set the duration of milestones to zero hours.
+
+When you are done filling in any of this information, all of the assigned people – other than the task creator – will immediately receive an email sharing this information along with a direct link to this task. This is to ensure that proper information is immediately available to the relevant individuals.
+
+### Email Notifications
+
+There are three types of email notifications based on Web2project Tasks. The first type is the notification sent when a task is created or edited. This notification contains the task description, the due date, and a link back to the task screen. By default, this notification is sent to all task assignees other than the task creator. System administrators can choose to automatically notify the creator.
+
+The second type of notification comes when the assignees log time against a task. These notifications go immediately to the task creator and include the entire task log the user entered. Alternatively, when there are multiple assignees to a single task, the assignee can choose to send this update to the other assignees. When collaboration and cooperation is necessary on a task, this is a simple way for multiple people to coordinate and share information quickly without requiring the other team members to log in.
+
+Finally, the third type of notification is for late tasks. This causes Web2project to create a simple reminder email for each late task every day for 100 days. This can only be turned on via the system admin and is activated globally for all users on all tasks. Since this notification is not triggered by a user’s action, the queuescanner script must be enabled. For further information, please see the section entitled Maintenance Tasks.
+
+### Gantt Charts
+
+The Gantt Chart is the center of nearly every project management system and no system could be considered complete without it. As you create tasks and dependencies, the system itself will handle the display and reordering to create the traditional waterfall pattern. To view the Gantt Chart, on any active project, click the Gantt Chart tab.
+There are four key aspects to all Gantt Charts within Web2project:
+Tasks – A task on the chart will always appear as a bar shaded according to the task status. If the task is in progress – but not complete – it will appear in blue. As work is performed on this task and the percent complete is updated, a black bar will overlay the bar covering more and more of it. Finally, once the task is complete, the bar turns completely grey.
+
+Dynamic Tasks – A dynamic task represents a series of other tasks as a rollup and does not have a duration itself. In order to represent this clearly, these tasks become a bar with a carat at each end and tasks below.
+
+Dependencies – Dependencies are represented by arrows connecting tasks from one to another. Due to the day-based display of the chart, a task which ends on the same day that a future task begins may display an arrow going backwards. This is not necessarily an error.
+
+Milestones – A milestone – regardless of its duration is designated with a black diamond on a single date.
+
+### Task Logs / Reporting
+
+Whenever a User wishes to log time against the task, they can view the Task and click “New Log” or they can click “Log” from the Todo List screen. Either route gives a simple interface for the user to update the progress, the hours worked, to select a costcode, and attach a comment. Web2project requires a comment of some type to be logged, but there are no requirements in terms of the number of characters or form of the comment. The primary options available here are the email notifications. These three options determine who gets the status update. By default, only the Task Owner is notified but by selecting “Task Assignees”, “Task Contacts”, or “Project Contacts”, the respective group can be notified immediately upon update.
+
+Once the log is saved, these comments become a part of the ongoing project log, appear in many of the reports throughout the system, and are immediately sent to the Task Owner and group(s) selected. In addition, the percent complete of any parent tasks and of the overall project will change to reflect the new information. Therefore, anyone else viewing the project can immediately see the updated information and have a complete view of the project.
+
+For organizations which require extensive reporting or accountability – especially common in legal, governmental, or medical areas, this model becomes useful for tracking projects closely and even on a daily basis. For others, this may be unnecessary noise and can be distracting. Therefore, the default for this notification can be set by the System Administrator and adjusted on a per-task update basis by the individual user.
+
+### Todo List
+
+The most commonly used interface in the entire system is the “Todo List”. The default installation has this as all users’ first screen after Login. The columns represent the Task name, the color-coded Project name, and finally the color-coded date information. The color-coded date information is by far the most important aspect and represents the status of the Task itself. The four colors represent “Future Tasks” (white), “Started and on time” (green), “Should have started” (peach), and “Overdue” (red). This is an efficient way to monitor all your assigned open tasks and review deadlines across all Tasking. With the proper permissions, you can also choose to view other users’ lists.
+
+### Costcode Management
+
+Costcodes – called Billing Codes, Project Codes, etc by some organizations – are a simple method of allowing different users to track their time against specific types of tasks on individual task log entries. Some of this information can be used to track the type of work performed – such as administrative work versus development work – or even between different developers with differing billing rates. The Billing-code Management in the System Admin section goes into greater detail on configuring this information for your users.
+
+D> There has been quite a bit of discussion and development towards
+supporting detailed budget tracking and concepts such as Earned Value Management within Web2project. Although none of these efforts are currently available to the general public, consistent usage of Costcodes are vital to tracking the relevant information.
 
 ## User Admin & Permissions
 
+Now that you have a Company and a Project in your system, it is time to create your a User. Remember that more than anything Web2project is a collaborative tool and the goal of it is to share information. However, it is quite common that you will need to keep certain aspects private to protect the confidential or proprietary information of your customers. Therefore, the creation of Users and setting their permissions become some of the most important aspects of its day to day usage. Unfortunately, it can also be quite difficult to understand at first glance. The basics of Permissions are covered here, but for a more rigorous discussion, please review “Permissions 201” in the System Administration section.
+
+### Create a User
+
+Creating your first User can be a confusing experience if you do not understand the process in the beginning. First click “User Admin” in the main navigation and then “add user”.
+
+From here, all the standard user fields are available including username, password, and email address. You must also assign the User to a specific Company. This does not determine any permissions, but it does begin to build the associations. Once you save this information, the User account will be created along with the corresponding Contact record. The user now has an account with no Roles or permissions and can therefore do nothing, not even log into Web2project.
+
+Q> The Web2project permissions system assigns zero privileges by default.
+Before a new User can log in, they must be assigned a Role in the User Administration Module.
+
+### Assign Roles
+
+To let the User log in for the first time, he must be assigned a Role. The four base roles at installation are Administrator, Project Worker, Guest, and Anonymous and grant progressively more and more restrictive permissions.
+
+Administrator – An Administrator can do anything they choose within the system. This includes creating, editing or deleting any information along with assigning Tasks, changing Users’ passwords, or even creating other Administrators.
+Project Worker – A Project Worker can create, edit, or delete any non-administrative information throughout the system. They can create Companies or Projects, assign Tasks, and log time against any task in the system. Most users will be a variation of this role.
+Guest – A Guest can view any non-administrative information. They cannot create, edit, or delete anything and therefore this works well as a basis for a Customer Role.
+Anonymous – An Anonymous can see the navigation and nothing else. While this role may seem silly at first glance, it can serve as a reasonable basis for highly limited Users who should only view specific Tasks. By assigning this role as a start, no existing information in the system is made available whatsoever.
+
+### Add / Deny Permissions
+
+There are five attributes which can be connected with any Module to expand or limit these basic Roles as needed. The attributes are Access, Add, Delete, Edit, and View and can be assigned to the Module as a whole or to specific aspects of the Module. For example, a Resource Manager type user might have a Project Worker role supplemented with Allow permissions to Access, Add, View in the User Admin. This would give him access to create new users as necessary without the ability to delete users. To further safeguard against abuse of this account, the System Administrator could add Deny permissions to anything done by the Resource Manager user to the System Administrator account.
+
+For more details and examples of permissions, please read Permissions 201 below.
+
 ## Contacts
+
+Every User in the system has a Contact entry. In addition, a User can create any number of Contact records for other people relevant to a Company, Project, or even to individual tasks. These sorts of associations become useful when a Project effort spans multiple companies, requires coordination with external people, or even vendors.
+
+### Create Contacts
+
+Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. DotProject looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
+
+### Attachment to Projects / Tasks
+
+Reporting and information sharing with external project stakeholders is quickly becoming the norm in project management. To facilitate this, Web2project offers the flexibility of giving the project manager the ability to attach Contacts to specific projects or even individual Tasks within a Project. From that time on, whenever a the Project or Task are updated, the user updating the information can choose to notify the Contacts. Alternatively, this notification can be set as a global default within the System Admin.
 
 ## Calendar & Events
 
+One of the most useful things of any collaboration system is a single shared Calendar for all users. This is useful for coordinating schedules, reviewing priorities, and even determining individual availability. DotProject offers this basic functionality and quite a bit more combining the Events, Tasks, and offering a variety of filtered display options.
+
+### Basic Display
+
+The base view of the Calendar Module is a simple month view similar to Outlook, Thunderbird, or Evolution. It always defaults to the current month displaying all of the Users’ Tasks and Events. This view is filtered according to two aspects: Company and Ownership. At any time, a User can change the Company filter from any one to all of them. This gives a quick review on a per-customer basis with no additional effort. The Ownership filter allows a User to change their view based on All Events, Events I Created, and My Events. By changing the combination of these two aspects, Users can look at the information from a variety of angles and determine a great deal about most projects.
+
+I> In many cases, even filtering Events and Tasks by Company will still display too much information to be useful. Therefore, additional filters has been added to filter by a specific Project.
+
+D> To make life simpler for all involved, it is currently planned to implement iCal output for any active Web2project user. This will provide a simple way to monitor a calendar from within a third–party application such as Sunbird or Outlook.
+
+From the Month View, a user can click on the button on the far left of any line. This will take the User to a Week View based on the selected Company. It breaks down the week into a simple layout similar to a weekly planner. The Ownership filter is still available but in order to change the Company, the User must go back to the Month view.
+
+### Creating Events / Recurring Events
+
+Creating an Event in Web2project can be done at anytime from anywhere in the system by selecting “New Event” in the upper right hand corner. You simply name the event, give a brief description, select the relevant project, invite members, at set the recurrence schedule. If you set a recurring event, Web2project will automatically add it to all invitee’s calendars and email a notification immediately.
+
+Q> Although every Event can be attached to a Project, there is no Events tab
+on the View Project screen. It will likely be developed in Head and released as a patch at a later date.
+
 ## Files
+
+Once your project begins, you will likely want to attach information from individual files. Common additions are contracts, requirements, technical specifications, relevant standards, or any of a plethora of other things. While these can be handled in a third-party Document Management System or a wiki, it is often better to have a single location for pulling all this information together into a single interface for review, comment, update, or perusal.
+
+### File Association / Attachment
+
+The three ways of getting to this module are all effectively the same. The fastest is to select “New File” from the “New Item” dropdown in the upper right corner of any screen. Alternatively, you can select the File module from the main navigation and then click on the “New File” button. Finally, you can select a particular project or task, click on the Files tab, and then click on “Attach a file”.
+
+You can then select a Category of the File – default options are “Document” and “Application” – assign a specific Project/Task, and fill in a description. The primary benefit of attaching the file through an individual Project or Task is that this information will automatically be filled in on this screen. Regardless, if you attach a file and associate it with a Project or Task, the owner will immediately be notified of the new file available.
+
+### Check-in / Check-out / Update
+
+As most projects progress, new versions of documents become available, documents change, and old information becomes less relevant. In order to handle this, Web2project has a simple versioning feature with checkin/checkout functionality. A user simply clicks on the “co” column to checkout the file. They fill in a comment and download it immediately. When their modifications are complete, they click on the “co” column again, fill in a new comment, denote whether this is a major or minor revision, and save.
+
+The previous version of the file is kept untouched and the new file is displayed. Older versions of every file are kept for archival purposes and are denoted in the version column with a number in parentheses. By clicking on this number, all previous versions of the file are displayed and available for download. This protects files from being lost either due to malicious or accidental actions.
 
 ## Forums
 
+One of the simple ways to improve tracking of your Project is to ensure that all relevant discussion, communications, etc are attached to the Project. To make this process easier, Web2project has a simple threaded forum system built-in. It is not as advanced or flexible as some systems such as phpBB or vBulletin but since it is part of Web2project, it will automatically have the same look and feel in addition to all the security and permissions benefits.
+
+### Create a Forum
+
+Click on “Forums” in the top navigation and you should see a list of existing Forums in your system. From there simply click the “new forum” on the far right of your screen. This will take you to a screen where you name the forum, attach it to a Project, select an Owner, and assign a moderator. Since Project Permissions apply here, attaching the Forum to a Project ensures that your Project information is protected as expected. 
+Create a Thread
+Once you have a forum, you can begin to create threads. A thread is simply a line of discussion based on a topic. Any number of responses can be attached to the topic and anyone with proper permissions can respond as necessary. These responses can be browsed by Date, Thread, or contributor.
+
+### Forum / Thread Watch
+
+The most important aspect of the entire Forum module is the ability to set “Watches”. When an individual sets a watch on a thread or an entire forum, Web2project will automatically notify them each and every time there is a new comment. This ensures that the relevant information gets to the interested people as fast as possible with minimal effort.
+
+
 ## SmartSearch
 
-## System Admin
+In the latest release of Web2project (v2.1.0), the SmartSearch module was rebuilt from the ground up by Pedroa and has proven to be a huge advance over the previous version. For the results returned, it displays them separated by the individual modules.
+
+The first and most basic search method does a simple string match between your search terms and the names and information within Web2project. This search is works on the basis of an “or” and checks for any of your terms in any of the names or descriptions of items within the system. To improve your search, simply checking the “All words” box will refine the search accordingly. If this refinement is still not sufficient or you have more information to use, by checking the “Modules selection” box, you can select specific modules to include in your search. Finally, if none of these options are sufficient to limit your search, there are still Advanced options. By adjust these, your search can become case sensitive and even ignore special characters.
+
+After submitting a keyword, you will get back a list of everywhere in the system this word appears – limited to your permissions – along with a link directly to the content. Wildcard searching is not supported at this time.
