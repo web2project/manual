@@ -1,1 +1,3 @@
 # Module Building Guide
+
+http://wiki.web2project.net/index.php?title=Category:Module_Building_Guide
