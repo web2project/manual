@@ -2,7 +2,7 @@
 
 Q> I’m trying to use PHP 5.2 and Web2project isn’t working. Why not?
 
-Web2project has ended support for all versions of PHP prior to 5.3 as of January 2014. The core PHP group itself has deprecated it also, so no more security fixes are available for any version of PHP prior to 5.3.
+Web2project has ended support for all versions of PHP prior to 5.3.8 as of January 2014. The core PHP group itself has deprecated it also, so no more security fixes are available for any version of PHP prior to 5.3.
 
 Q> Help! I’ve lost my Company/Project/Task and now I can’t find it on any of the lists!
 

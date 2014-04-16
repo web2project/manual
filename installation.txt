@@ -4,9 +4,9 @@ Installing or upgrading your web2project is quite simple. The definitive copy of
 
 Requirements:
 
-* PHP 5.3.8 - web2project does not work with PHP4 due to its use of the public, private, and protected keywords;
+* PHP 5.3.8 - web2project does not work with earlier versions due to its use of namespaces;
 
-* Apache 1.x+ - web2project might work with other web servers, it has not been tested completely;
+* Apache 2.x+ - web2project might work with other web servers, it has not been tested completely;
 
 * Mysql 5.x+ - web2project does not currently work with other databases;
 
@@ -22,7 +22,7 @@ Requirements:
 
 5. To have your system run maintenance tasks - email notices, etc - set up a "cronjob" similar to below. Where "{web2project installation}" is replaced by your system's path. This is a Linux/Unix-style example, for other operation systems, adjust accordingly:
 
-	wget -O - -q http://{web2project installation}/queuescanner.php
+	`wget -O - -q http://{web2project installation}/queuescanner.php`
 
 6. Log into your system.
 

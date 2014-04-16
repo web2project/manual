@@ -2,19 +2,19 @@
 
 ## The Admin Account
 
-W> After successful installation, immediately log in as Admin and change the default password. Do not proceed with using Web2project until you make this change.
+W> After successful installation, immediately log in as admin and change the default password. Do not proceed with using the system until you make this change.
 
-To make this change, log in and select User Admin from the navigation menu to see all active users in your system. Simply click the Edit icon () immediately to the left of the Login Name to change the password and fill in his details.
+To change the password, log in and select User Admin from the navigation menu to see all active users in your system. Simply click the username and then click the "change password" button in the upper right corner. This will show a small popup screen allowing you to set a new password.
 
 ## Create a Company
 
-Now it is time to log in and create your first company. The fastest way is to click Company from the Navigation Menu and then click the “New Company” button on the far right. This screen is where you fill in basic information on your organization. Nearly everything in the system – Projects, Users, Contacts, Files, Forums, and even Permissions – is attached to a Company.
+Now it is time to log in and create your first company. The fastest way is to click Company from the top navigation menu and then click the “New Company” button on the far right. This screen is where you fill in basic information on your organization. Nearly everything in the system – Projects, Users, Contacts, Files, Forums, and even Permissions – is attached to a Company.
 
 Within CaseySoftware, much of the work is for other organizations. Creating a Company entry for each organization is a simple way of organizing Projects and limiting Permissions and respecting privacy and confidentiality requirements. Before you deploy Web2project for your organization, you should carefully consider your information security needs.
 
-Once you save, you will be ready to continue. At any time, you can click back on the Company link and see all companies in the system filtered by Company Owner.
+Once you save, you will be ready to continue. At any time, you can click back on the Company link and see all companies in the system and optionally filter by Company Owner.
 
-Q> If you believe your company has disappeared, check the Owner Filter in upper right-hand corner. Most likely you have changed this filter to a different user, just change it to “All” and all Companies to which you have permissions to view will appear.
+Q> If you believe your company has disappeared, check the Owner Filter in upper right-hand corner as most likely you have changed this filter to a different user. Just change it to “All” and all Companies to which you have permissions to view will appear.
 
 ## Create Users & Permissions
 
@@ -28,11 +28,13 @@ Q> If you have created a new User and they cannot log in, check to make sure the
 
 ## Create a Project
 
-Now you are ready to create your first Project. The easiest way is to click Project from the Navigation Menu and then click the “New Project” button on the far right. Alternatively, on any screen within Web2project, a simple dropdown – as pictured – can allow you quick access to immediately create new items throughout the system.
+Now you are ready to create your first Project. The easiest way is to click Project from the navigation menu and then click the “New Project” button on the far right. Alternatively, on any screen within Web2project, a simple dropdown – as pictured – can allow you quick access to immediately create new items throughout the system.
 
-As you create Projects, it is important to choose a distinctive color. This color becomes useful as it will designate the project on the Calendar, on Users’ Todo lists, and elsewhere throughout the system. Selecting a specific Project Owner and Company is required. This becomes increasingly important as your permission and management requirements grow over time. Remember that anyone who has the correct permissions can return to this screen and edit the Project, so most decisions made when a project is created can be reconsidered and changed without difficulty at a later stage.
+As you create Projects, it is important to choose a unique color. This color becomes useful as it will designate the project on the Calendar, on Users’ Todo lists, and elsewhere throughout the system. Next, select a specific Project Owner and Company. This becomes increasingly important as your permission and management requirements grow over time. Remember that anyone who has the correct permissions can return to this screen and edit the Project, so most decisions made when a project is created can be reconsidered and changed without difficulty at a later stage.
 
-Once you fill in the information relevant to your project, click “submit” to return to the project list. Remember, if you believe your project has disappeared, check the Owner and Company filters in upper right-hand corner. This is one of the most common problems new users face.
+Once you fill in the information relevant to your Project, click “submit” to return to the project list. Remember, if you believe your project has disappeared, check the Owner and Company filters in upper right-hand corner. This is one of the most common problems new users face.
+
+Q> If you believe your project has disappeared, check the Owner or Company filters in upper right-hand corner as most likely you have changed one of them. Just change both to “All” and all Projects to which you have permissions to view will appear.
 
 ## Create & Assign Tasks
 
