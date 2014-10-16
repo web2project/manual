@@ -2,7 +2,7 @@
 
 Q> I’m trying to use PHP 5.2 and Web2project isn’t working. Why not?
 
-Web2project has ended support for all versions of PHP prior to 5.3.8 as of January 2014. The core PHP group itself has deprecated it also, so no more security fixes are available for any version of PHP prior to 5.3.
+Web2project has ended support for all versions of PHP prior to 5.3.8 as of January 2014. The core PHP group itself has deprecated it also, so no more security fixes are available for any version of PHP prior to 5.3. Please upgrade your PHP version.
 
 Q> Help! I’ve lost my Company/Project/Task and now I can’t find it on any of the lists!
 
@@ -10,7 +10,7 @@ The most common cause of this problem is Owner-based Filtering on the list scree
 
 Q> I just created a Task and assigned myself. Why didn’t I get an email notification?
 
-By default Web2project assumes that the creator of the Task knows that the Task was created. In the System Configuration, you can change this to automatically notify the Task’s creator.
+By default Web2project assumes that the creator of the Task knows that the Task was created. In the System Configuration, you can change this to automatically notify the creator.
 
 Q> I just created a new User and they can’t log in, why not?
 
@@ -18,7 +18,7 @@ The Web2project permissions system assigns no privileges by default. Before a ne
 
 Q> My date is in a screwy format! How do I fix it?
 
-You just need to change your system preferences. Select “My Info” in the upper right-hand corner and then “edit preferences” just above your profile. This will allow you to choose a date format, an icon set, and even your look and feel. In addition, if you want to change the defaults for future users, within the System Admin, select “Default User Preferences”. This will allow you to edit the same details for all users created after this time. By design, it does not edit existing users’ preferences, this is not an error.
+You just need to change your system preferences. Select “My Info” in the upper right-hand corner and then “edit preferences” just above your profile. This will allow you to choose a date format. In addition, if you want to change the defaults for future users, within the System Admin, select “Default User Preferences”. This will allow you to edit the same details for all users created after this time. By design, it does not edit existing users’ preferences, this is not an error.
 
 Q> What does the Public Module do?
 
@@ -26,11 +26,11 @@ Nothing, it exists purely for public messages like “Access Denied”. It shoul
 
 Q> I’ve just installed a Module and I don’t see it. Where is it?
 
-Before a Module will appear in the navigation, it must be installed and unhidden. Occasionally, special steps require that will require additional configuration and/or settings to be adjusted. Most module developers will include a `README` file which describes this process in detail.
+Before a Module will appear in the navigation, it must be installed and activated. Occasionally, special steps require that will require additional configuration and/or settings to be adjusted. Most module include a `README` file which describes this process in detail.
 
 Q> How can I customize Web2project to match my organization’s Look and Feel guidelines and/or website?
 
-Although many of the aspects are properly defined in the CSS, the current Web2project release is still rather difficult to theme. Regardless, the most commonly changed aspects (header, footer, and login page) are available within the `/style/default` within your installation.
+Although many of the aspects are properly defined in the CSS, the current Web2project release is still rather difficult to theme. Regardless, the most commonly changed aspects (header, footer, and login page) are available within the `/style/_common` within your installation. You can learn more about theming in Chapter TODO
 
 Q> Where can I find add-on modules, customizations, language packs, etc?
 
@@ -44,7 +44,7 @@ Q> Can the latest Github development be used for production?
 
 Technically, yes, but it is not recommended. When there are architecture or UI changes, there are often times when the codebase is unstable and not suitable for production use. If you choose to use it anyway, you do so at your own risk.
 
-Q> I found a bug, what do I do with it?
+Q> OMG. I found a bug, what do I do!?
 
 The best thing to do is visit Web2project’s [bug tracker](http://bugs.web2project.net/) and check to see if the issue has been reported or even resolved. If it has not been reported, please do so and be as descriptive as possible. If another user or developer can’t reproduce it, we can’t fix it. If it *has* been reported, you can choose to monitor it and the system will send you an email when updates occur to it. If it has been resolved and you need the fix, read the next question. 
 
