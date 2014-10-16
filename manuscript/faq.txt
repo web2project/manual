@@ -34,7 +34,7 @@ Although many of the aspects are properly defined in the CSS, the current Web2pr
 
 Q> Where can I find add-on modules, customizations, language packs, etc?
 
-Many add-on modules are available from our [Github project](https://github.com/web2project) and many were written by the Web2project community. If you don’t see the translation you need, please consider writing your own and sharing it with the community.
+Many add-on modules are available from our [Github project](https://github.com/web2project) and many were written by the Web2project community. All translations are available in our [locales repository](https://github.com/web2project/locales). If you don’t see the translation you need, please consider writing your own and sharing it with the community.
 
 Q> How do I get the code from Github?
 
@@ -42,23 +42,23 @@ You can either clone the repository from our [Github repository](https://github.
 
 Q> Can the latest Github development be used for production?
 
-Technically, yes, but it is not recommended. When there are architecture or UI changes, there are often times when the codebase is unstable and not suitable for production use.
+Technically, yes, but it is not recommended. When there are architecture or UI changes, there are often times when the codebase is unstable and not suitable for production use. If you choose to use it anyway, you do so at your own risk.
 
 Q> I found a bug, what do I do with it?
 
-The best thing to do is visit Web2project’s [bug tracker](http://bugs.web2project.net/) and check to see if the issue has been reported or even resolved. If it has not been reported, please report it. If it has been reported, you can choose to monitor it. Either way, please be as descriptive as possible. If another user or developer can’t reproduce it, we can’t fix it. If it has been resolved and you need the fix, read the next question.
+The best thing to do is visit Web2project’s [bug tracker](http://bugs.web2project.net/) and check to see if the issue has been reported or even resolved. If it has not been reported, please do so and be as descriptive as possible. If another user or developer can’t reproduce it, we can’t fix it. If it *has* been reported, you can choose to monitor it and the system will send you an email when updates occur to it. If it has been resolved and you need the fix, read the next question. 
 
 Q> When I look in the Web2project bug list, it says my issue is fixed in development, but Github master is still broken!
 
-In Github, the master branch is always considered stable and usually identical to the latest release. All development is done on the `develop` branch. The two branches are merged just before the next release.
+In Github, the master branch is always considered stable and usually identical to the latest release. All development is done on a development branch. The two branches are merged just before the next release. If you *need* these fixes, you may be able to merge them into your master branch, but there are no promises.
 
 Q> Where else can I get support and help with Web2project?
 
-There are a variety of locations available. First and foremost, there are the [Web2project Support Forums](http://support.web2project.net). Questions and comments can be posted there freely and anyone in the community can answer you. Alternatively, there are many recommendations and explanations available on the Web2project Wiki. 
+There are a variety of locations available. First and foremost, there are the [Web2project Support Forums](http://support.web2project.net). Questions and comments can be posted there freely and anyone in the community can answer you. Alternatively, there are many recommendations and explanations available on the [Web2project Wiki](http://wiki.web2project.net/). 
 
 Q> Web2project is a great tool! How can I support the project?
 
-There are a variety of ways to show your support. First of all, if you or your organization have the financial means you can always donate to the project using the information from our [Support Web2project page](http://support.web2project.net/page/support-web2project.html). Alternatively and more importantly, you can be an active part of the community. You can submit bug reports, submit patches, test release candidates, answer questions in the forums, convince your boss to evaluate the tool, and generally let us know how you are using Web2project and what we can do to make things even better for you. Like any Open Source project, the success and usefulness of the tool is based directly upon feedback and support from the community.
+There are a variety of ways to show your support. First of all, if you or your organization have the financial means you can always donate to the project using the information from our [Support Web2project page](http://support.web2project.net/page/support-web2project.html). Alternatively and more importantly, you can be an active part of the community. You can submit bug reports, share patches, test release candidates, answer questions in the forums, convince your boss to evaluate the tool, or generally let us know how you are using Web2project and what we can do to make things even better. Like any Open Source project, the success of the project is based directly upon feedback and support from the community.
 
 Q> Web2project is great, but it doesn’t do X. How can I get it to do X?
 
@@ -66,4 +66,6 @@ Before you do anything else, search in both the [Support Forums](http://support.
 
 Q> Why are you writing this manual and what are you getting out of this?
 
-Keith Casey and CaseySoftware, LLC have been deeply involved with Web2project since its inception and led the community effort throughout its lifetime. This manual is one aspect of this effort and will hopefully encourage additional organizations to use Web2project and improve the overall system and the whole community. Any and all proceeds will be used to support the project’s infrastructure. If you are interested in additional training, support, or custom development, please feel free to contact us at CaseySoftware.com.
+Keith Casey and CaseySoftware, LLC have been deeply involved with Web2project since its inception and led the community effort throughout its lifetime. This manual is one aspect of this effort and will hopefully encourage additional organizations to use Web2project and improve the overall system and the community as a whole. Any and all proceeds from this book will be used to support the project’s infrastructure.
+
+If you are interested in additional training, support, or custom development, please feel free to contact us at CaseySoftware.com.

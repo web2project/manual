@@ -2,13 +2,13 @@
 
 ## The Admin Account
 
-W> After successful installation, immediately log in as admin and change the default password. Do not proceed with using the system until you make this change.
+W> After successful installation, immediately log in as admin and change the default password. Do not consider the system secure until you have changed the default admin password.
 
 To change the password, log in and select User Admin from the navigation menu to see all active users in your system. Simply click the username and then click the "change password" button in the upper right corner. This will show a small popup screen allowing you to set a new password.
 
 ## Create a Company
 
-Now it is time to log in and create your first company. The fastest way is to click Company from the top navigation menu and then click the “New Company” button on the far right. This screen is where you fill in basic information on your organization. Nearly everything in the system – Projects, Users, Contacts, Files, Forums, and even Permissions – is attached to a Company.
+Now it is time to create your first company. The fastest way is to click Company from the top navigation menu and then click the “New Company” button on the far right. This screen is where you fill in basic information on your organization. Nearly everything in the system – Projects, Users, Contacts, Files, Forums, and even Permissions – is attached to a Company.
 
 Within CaseySoftware, much of the work is for other organizations. Creating a Company entry for each organization is a simple way of organizing Projects and limiting Permissions and respecting privacy and confidentiality requirements. Before you deploy Web2project for your organization, you should carefully consider your information security needs.
 
