@@ -4,15 +4,11 @@
 
 There are a number of Addon Modules available for Web2project and more are released every month. At the present time, there are modules for Holidays, a Microsoft Project Importer, Risk Management, Timecard and Todolist Management. Each of these is installed the same way:
 
-Download your desired module from Github or your selected provider.
-
-Confirm that your module is supported under Web2project v3.
-
-Expand the compressed file to the directory and upload it to your `/web2project/modules` directory.
-
-Within your System Admin Module, click on View Modules. Near the bottom of this list you should see your module with a link labeled “install”.
-
-Click “install” to install it, click “disabled” to enable it, click “configure” if it appears, and finally click “hidden” in the far right column to unhide it.
+1. Download your desired module from Github or your selected provider.
+1. Confirm that your module is supported under Web2project v3.
+1. Expand the compressed file to the directory and upload it to your `/web2project/modules` directory.
+1. Within your System Admin Module, click on View Modules. Near the bottom of this list you should see your module with a link labeled “install”.
+1. Click “install” to install it, click “disabled” to enable it, click “configure” if it appears, and finally click “hidden” in the far right column to unhide it.
 
 Your module should now be fully installed with the tables updated, required values inserted, and a link appearing in the navigation bar. To remove a module, you can temporarily hide it by clicking “visible” or completely remove it and its supporting data by clicking the “remove” link.
 
@@ -25,13 +21,11 @@ Most organizations and Project Managers come from a tradition of using Microsoft
 ### Install
 
 To install this module, please follow the standard module installation procedure:
-Download the latest version for CaseySoftware.com
 
-Unzip this file to your `/web2project/modules/` directory. It should create a subdirectory called importers.
-
-Navigate to System Admin -> View Modules and you should see `importers` near the bottom of the list.
-
-On that row, select “install”. The screen should refresh. Now select “hidden” to make it display in your module navigation.
+1. Download the latest version for CaseySoftware.com
+1. Unzip this file to your `/web2project/modules/` directory. It should create a subdirectory called importers.
+1. Navigate to System Admin -> View Modules and you should see `importers` near the bottom of the list.
+1. On that row, select “install”. The screen should refresh. Now select “hidden” to make it display in your module navigation.
 
 ### Usage
 
