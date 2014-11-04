@@ -31,7 +31,7 @@ At the time of this writing, there are no known issues with the latest Web2proje
 
 * First, we filter all input with the assumption that it is not safe by default.
 * Next, we implemented a simple .htaccess script modeled after Drupal’s .htaccess. This prevents anyone from accessing files other than an enumerated list.
-* Finally, since the first solution was only effective in an Apache environment, we have inserted a simple sentinel function to prevent unauthorized access.
+* Finally, since the .htaccess solution was only effective in an Apache environment, we have inserted a simple sentinel function to prevent unauthorized access.
 
 Regardless of the above steps, care should be taken to limit ftp and database access to authorized and trusted individuals and to ensure that your directory and file permissions are configured properly.
 
