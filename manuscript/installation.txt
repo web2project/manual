@@ -1,6 +1,6 @@
 # Installation & Configuration
 
-Installing or upgrading your web2project is quite simple. The definitive copy of this guide is online at https://github.com/web2project/web2project/wiki/Installation but this file should help if you don't have that available.
+Installing or upgrading your web2project is quite simple. The definitive copy of this [Installation Guide](https://github.com/web2project/web2project/wiki/Installation) is online but this section should help if you don't have that available.
 
 Requirements:
 
