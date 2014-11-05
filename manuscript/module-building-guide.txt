@@ -14,3 +14,20 @@ Failure to follow the recommendations in this section can lead to non-functionin
 *  All code within a module SHOULD adhere to the formatting specified by the [PEAR Coding Standard](http://pear.php.net/manual/en/standards.php). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
 
 This is still under development here: [Module Building Guide Wiki](http://wiki.web2project.net/index.php?title=Category:Module_Building_Guide)
+
+## Basic File Structure
+
+Building a proper module in web2project requires a handful of key files in a particular structure. Each of which serve a specific purpose in the operation of the system. For a module called "Todos" - available from the web2project Modules - we would have the following file structure (filenames are case sensitive):
+
+
+
+
+
+## Naming Conventions
+
+Web2project works on the basis of "The easy way should also be the right way." A key reason that this works is because of our Naming Conventions. It allows quite a few things to "just work" without additional effort, configuration, or coding by anyone working on any module. As long as you stick to our conventions, your modules and customizations should need minimal updates between web2project releases.
+
+There are three layers of the system that all interact together: the database, the module's business logic, and the view/templating layer. Since everything begins with the module, we'll begin there.
+
+### Modules
+
