@@ -20,9 +20,6 @@ This is still under development here: [Module Building Guide Wiki](http://wiki.w
 Building a proper module in web2project requires a handful of key files in a particular structure. Each of which serve a specific purpose in the operation of the system. For a module called "Todos" - available from the web2project Modules - we would have the following file structure (filenames are case sensitive):
 
 
-
-
-
 ## Naming Conventions
 
 Web2project works on the basis of "The easy way should also be the right way." A key reason that this works is because of our Naming Conventions. It allows quite a few things to "just work" without additional effort, configuration, or coding by anyone working on any module. As long as you stick to our conventions, your modules and customizations should need minimal updates between web2project releases.
@@ -74,6 +71,5 @@ There are three layers of the system that all interact together: the **database*
 
 ### Exceptions
 
-* The directories and main classes for the System Admin, SmartSearch, Project Designer, and History Modules are in folders and files with singular nouns instead of plural as you'd expect;
-**   There's no specific plan of action to correct these oddities;
+* The directories and main classes for the System Admin, SmartSearch, Project Designer, and History Modules are in folders and files with singular nouns instead of plural as you'd expect; *There's no specific plan of action to correct these oddities.*
 * The Department Module's database structure correctly names the table 'departments' but uses the column name prefix of 'dept' instead of the expected 'department'.
