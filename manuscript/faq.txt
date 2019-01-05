@@ -1,12 +1,20 @@
-# Frequently Asked Questions
+# Appendix A: Frequently Asked Questions
 
-Q> I’m trying to use PHP 5.2 and Web2project isn’t working. Why not?
+## Infrastructure
 
-Web2project ended support for all versions of PHP prior to 5.3.8 as of January 2014. The core PHP group itself has deprecated it also, so no more security fixes are available for any version of PHP prior to 5.3. Please upgrade your PHP version.
+Q> Why doesn't Web2Project work with PHP 5.x?
+
+The core PHP group itself ended all PHP 5.x support - including security fixes - as of January 2019. Web2project will follow suit by mid-2019. Please upgrade your PHP version to 7.2+
+
+Q> The Installer/Upgrader says I don't have GD Support. How do I add it?
+
+Install the php7-gd module via apt-get or your favorite package manager and restart Apache. Then it should appear in your phpinfo() list as expected.
+
+## Day to Day Usage
 
 Q> Help! I’ve lost my Company/Project/Task and now I can’t find it on any of the lists!
 
-The most common cause of this problem is Owner-based Filtering on the list screen. Go to the relevant listing and look in the upper right-hand corner at the box named “Owner Filter” on the Company List or “Company/Division” on the Project List or “User” and “Company” and “Task Filter” on the Task List. By setting all of these values to “All” and you should see the full list.
+The most common cause of this problem is Owner-based Filtering on the list screen. Go to the relevant list and look in the upper right-hand corner for the filters. Most modules filter by Owner but some modules allow more options. Setting all of these values to “All” and you should see the full list.
 
 Q> I just created a Task and assigned myself. Why didn’t I get an email notification?
 
