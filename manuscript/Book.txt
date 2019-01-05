@@ -8,3 +8,4 @@ add-on-modules.txt
 system-admin.txt
 styling.txt
 faq.txt
+release-notes.txt
