@@ -1,0 +1,17 @@
+# Introduction
+
+This guide was initially written in reference to Web2project v3.3.0 and has been updated to incorporate the features, fixes, and changes through the latest master development. While much of it will be applicable to the entire 3.x series, you may notice certain differences in functionality, user interface, and features. As we release new major versions of Web2project, we will work to update this manual in a timely manner.
+
+*All screenshots were taken from the production system currently in use by CaseySoftware, LLC using the default Web2project style. Sensitive information has been obscured on purpose.*
+
+## Conventions used in this Manual
+
+Web2project is an Open Source project. Therefore, development moves unevenly between holidays, personal commitments, new organizations adopting it, and everything else. As a result, there are always various versions of Web2project available for download in addition to the master/release branch. Sometimes these versions change behavior or system settings so to make these points clear, we've added this notation:
+
+W> There are a number of places within Web2project where you can misconfigure or damage your data by accident. When you see the warning icon, you should read carefully and follow the directions precisely.
+
+Q> This icon denotes a Frequently Asked Question. While we work to resolve and simplify these items, there are just some complicated concepts within project management as a whole and the software specifically.
+
+D> We use the discussion icon to designate features discussed or planned for future development but have little to no supporting functionality in the system. We include them here to provide context and explanation for the roadmap.
+
+I> We've used the information icon to denote features available in `develop` branch. The development version always has the latest and greatest features, fixes, and functionality but has not been tested as official releases have been. Unless you are a PHP developer or willing to live with instability, we do not recommend using this code in production systems. Consider it a preview of work to come.
