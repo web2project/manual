@@ -108,3 +108,7 @@
 * Test Classes: 28
   * Test Methods: 551
 * 2.04% duplicated lines of code (~1332)
+
+## Previous Release Notes
+
+Release notes for all previous Web2Project releases are available on [our documentation site](http://docs.web2project.net/release-notes/index.html).
