@@ -7,5 +7,5 @@ module-building-guide.txt
 add-on-modules.txt
 system-admin.txt
 styling.txt
-faq.txt
-release-notes.txt
+app-a-faq.txt
+app-b-release-notes.txt
