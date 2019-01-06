@@ -94,6 +94,8 @@ Q> When I look in the Web2project bug list, it says my issue is fixed in develop
 
 In Github, the master branch is always considered stable and usually identical to the latest release. All development is done on a development branch. The two branches are merged just before the next release. If you *need* these fixes, you may be able to merge them into your master branch, but please be careful.
 
+## Ongoing Support
+
 Q> Where else can I get support and help with Web2project?
 
 There are a variety of locations available. First and foremost, there are the [Web2project Support Forums](http://support.web2project.net). Questions and comments can be posted there freely and anyone in the community can answer you. Alternatively, there are many recommendations and explanations available on the [Web2project Wiki](http://wiki.web2project.net/). 
