@@ -2,7 +2,7 @@
 
 ## Infrastructure
 
-Q> Why doesn't Web2Project work with PHP 5.x?
+Q> Why doesn't Web2project work with PHP 5.x?
 
 The core PHP group itself ended all PHP 5.x support - including security fixes - as of January 2019. Web2project will follow suit by mid-2019. Please upgrade your PHP version to 7.2+
 
