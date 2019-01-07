@@ -2,7 +2,7 @@
 
 ## The Admin Account
 
-W> After successful installation, immediately log in as admin and change the default password. Do not consider the system secure until you have changed the default admin password.
+W> After you install, you must immediately log in as admin and change the default password. You system is not secure  not consider the system secure until you have changed the default admin password.
 
 To change the password, log in and select User Admin from the navigation menu to see all active users in your system. Simply click the username and then click the "change password" button in the upper right corner. This will show a small popup screen allowing you to set a new password.
 
