@@ -1,5 +1,5 @@
 ch01-introduction.txt
-installation.txt
+ch02-installation.txt
 getting-started.txt
 best-practices.txt
 core-modules.txt
