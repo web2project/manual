@@ -114,7 +114,7 @@ Dependencies – Dependencies are represented by arrows connecting tasks from on
 
 Milestones – A milestone – regardless of its duration is designated with a black diamond on a single date.
 
-### Task Logs / Reporting
+### Task Logs / Reporting {#reporting-module}
 
 Whenever a User wishes to log time against the task, they can view the Task and click “New Log” or they can click “Log” from the Todo List screen. Either route gives a simple interface for the user to update the progress, the hours worked, to select a costcode, and attach a comment. Web2project requires a comment of some type to be logged, but there are no requirements in terms of the number of characters or form of the comment. The primary options available here are the email notifications. These three options determine who gets the status update. By default, only the Task Owner is notified but by selecting “Task Assignees”, “Task Contacts”, or “Project Contacts”, the respective group can be notified immediately upon update.
 
