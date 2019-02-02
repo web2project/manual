@@ -1,7 +1,6 @@
 ch01-introduction.txt
 ch02-installation.txt
 ch03-getting-started.txt
-best-practices.txt
 core-modules.txt
 module-building-guide.txt
 add-on-modules.txt
