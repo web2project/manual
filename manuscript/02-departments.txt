@@ -1,0 +1,7 @@
+## Departments {#module-departments}
+
+Departments are simply groupings within a Company. There can be an unlimited number of departments for any company and departments can have sub-departments. Since a department is so similar to a Company, it has many of the same fields and is treated in an almost identical manner. Since a Department has no meaning without a parent Company, the Department module should only be accessed through the listing on a Company’s View page.
+
+### Create a Department
+
+Creating a Department requires an existing Company. First select a Company, the Departments tab, and finally the “new department” button. Since departments are often in different physical locations than their parent company, a department entry allows for completely different contact information and even a different URL.

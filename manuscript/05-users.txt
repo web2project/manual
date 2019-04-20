@@ -1,0 +1,28 @@
+## User Admin & Permissions {#module-users}
+
+Now that you have a Company and a Project in your system, it is time to create your a User. Remember that more than anything Web2project is a collaborative tool and the goal of it is to share information. However, it is quite common that you will need to keep certain aspects private to protect the confidential or proprietary information of your customers. Therefore, the creation of Users and setting their permissions become some of the most important aspects of its day to day usage. Unfortunately, it can also be quite difficult to understand at first glance. The basics of Permissions are covered here, but for a more rigorous discussion, please review “Permissions 201” in the System Administration section.
+
+### Create a User
+
+Creating your first User can be a confusing experience if you do not understand the process in the beginning. First click “User Admin” in the main navigation and then “add user”.
+
+From here, all the standard user fields are available including username, password, and email address. You must also assign the User to a specific Company. This does not determine any permissions, but it does begin to build the associations. Once you save this information, the User account will be created along with the corresponding Contact record. The user now has an account with no Roles or permissions and can therefore do nothing, not even log into Web2project.
+
+Q> The Web2project permissions system assigns zero privileges by default.
+Before a new User can log in, they must be assigned a Role in the User Administration Module.
+
+### Assign Roles
+
+To let the User log in for the first time, he must be assigned a Role. The four base roles at installation are Administrator, Project Worker, Guest, and Anonymous and grant progressively more and more restrictive permissions.
+
+Administrator – An Administrator can do anything they choose within the system. This includes creating, editing or deleting any information along with assigning Tasks, changing Users’ passwords, or even creating other Administrators.
+Project Worker – A Project Worker can create, edit, or delete any non-administrative information throughout the system. They can create Companies or Projects, assign Tasks, and log time against any task in the system. Most users will be a variation of this role.
+Guest – A Guest can view any non-administrative information. They cannot create, edit, or delete anything and therefore this works well as a basis for a Customer Role.
+Anonymous – An Anonymous can see the navigation and nothing else. While this role may seem silly at first glance, it can serve as a reasonable basis for highly limited Users who should only view specific Tasks. By assigning this role as a start, no existing information in the system is made available whatsoever.
+
+### Add / Deny Permissions
+
+There are five attributes which can be connected with any Module to expand or limit these basic Roles as needed. The attributes are Access, Add, Delete, Edit, and View and can be assigned to the Module as a whole or to specific aspects of the Module. For example, a Resource Manager type user might have a Project Worker role supplemented with Allow permissions to Access, Add, View in the User Admin. This would give him access to create new users as necessary without the ability to delete users. To further safeguard against abuse of this account, the System Administrator could add Deny permissions to anything done by the Resource Manager user to the System Administrator account.
+
+For more details and examples of permissions, please read Permissions 201 below.
+

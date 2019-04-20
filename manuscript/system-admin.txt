@@ -1,4 +1,4 @@
-# System Administration
+# System Administration {#module-system-admin}
 
 The default installation will allow you to immediately begin using the system in a production capacity. There will be generic values set on the login page, the notification emails, and a few other places but you can quickly and easily change any of them via the System Administration. Therefore, it is suggested that you go into the System Administration immediately after install to customize it to your organization.
 

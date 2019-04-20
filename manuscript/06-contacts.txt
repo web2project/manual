@@ -1,0 +1,11 @@
+## Contacts {#module-contacts}
+
+Every User in the system has a Contact entry. In addition, a User can create any number of Contact records for other people relevant to a Company, Project, or even to individual tasks. These sorts of associations become useful when a Project effort spans multiple companies, requires coordination with external people, or even vendors.
+
+### Create Contacts
+
+Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. DotProject looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
+
+### Attachment to Projects / Tasks
+
+Reporting and information sharing with external project stakeholders is quickly becoming the norm in project management. To facilitate this, Web2project offers the flexibility of giving the project manager the ability to attach Contacts to specific projects or even individual Tasks within a Project. From that time on, whenever a the Project or Task are updated, the user updating the information can choose to notify the Contacts. Alternatively, this notification can be set as a global default within the System Admin.

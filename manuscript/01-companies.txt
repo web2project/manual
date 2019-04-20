@@ -1,0 +1,20 @@
+## Companies {#module-companies}
+
+The companies module lets you provide information regarding the organization who owns the [Projects](#module-projects).
+
+Creating companies is one of the most important but often misinterpreted aspects within the system. In most Web2project installations, you will have a single company and manage all of their projects from there. This is by far the simplest set up and a reasonable way to get started for many organizations where information security requirements are relatively simple and straightforward.
+
+For organizations who have stricter information security requirements such as those who perform services for other companies, you'll need a more complex model quickly. In that scenario, it is usually better to create a distinct Company for each customer. These Companies then serve as the foundation for permissions and information protection throughout the system.
+
+Companies may have a tree of [Departments](#module-departments) associated with it, as well as a multitude of [Contacts](#module-contacts) and [Users](#module-users) (people that can log in the system and be assigned to tasks). The default company module in Web2Project not only allows you to add or edit companies, but you can also classify them according to company type. You can also see what users belong to that company, current active projects, archived projects, departments, users, contacts, events and [Files](#module-files).
+
+### Create a Company
+
+To create a Company, you can either select the Company module from the navigation and click the “new company” button or you can select “Company” from the “New Item” dropdown.
+
+{float=right}
+![Creating a new Company](images/companies/addedit.png)
+
+Most of the fields on this screen are self-explanatory and allow you to fill in basic contact information on the Company. The more important fields are “Company Owner” and “Type” which both drive the “Company List” screen. The “Company Owner” does grant any permissions, it is used only for filtering. The “Type” is used to categorize each company into a selected tab and is also used for filtering.
+
+Q> Whenever you believe a company has disappeared from the company list, check the “Owner filter” in the upper right-hand corner. Change this dropdown to “All” and your company should reappear. If the company does not appear, the only alternatives are that you don’t have permission to view it or it is not in the system.

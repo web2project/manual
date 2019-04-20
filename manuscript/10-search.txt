@@ -1,0 +1,7 @@
+## SmartSearch {#module-smartsearch}
+
+In the latest release of Web2project (v2.1.0), the SmartSearch module was rebuilt from the ground up by Pedroa and has proven to be a huge advance over the previous version. For the results returned, it displays them separated by the individual modules.
+
+The first and most basic search method does a simple string match between your search terms and the names and information within Web2project. This search is works on the basis of an “or” and checks for any of your terms in any of the names or descriptions of items within the system. To improve your search, simply checking the “All words” box will refine the search accordingly. If this refinement is still not sufficient or you have more information to use, by checking the “Modules selection” box, you can select specific modules to include in your search. Finally, if none of these options are sufficient to limit your search, there are still Advanced options. By adjust these, your search can become case sensitive and even ignore special characters.
+
+After submitting a keyword, you will get back a list of everywhere in the system this word appears – limited to your permissions – along with a link directly to the content. Wildcard searching is not supported at this time.
