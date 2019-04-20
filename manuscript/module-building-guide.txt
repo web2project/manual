@@ -13,7 +13,7 @@ Failure to follow the recommendations in this section can lead to non-functionin
 *  A module SHOULD adhere to our custom [[Naming Conventions]] for variables, methods, etc.
 *  All code within a module SHOULD adhere to the formatting specified by the [PEAR Coding Standard](http://pear.php.net/manual/en/standards.php). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
 
-This is still under development here: [Module Building Guide Wiki](http://wiki.web2project.net/index.php?title=Category:Module_Building_Guide)
+This is still under development here: [Module Building Guide Wiki](http://docs.web2project.net/docs/module-building-guide.html)
 
 ## Basic File Structure
 
