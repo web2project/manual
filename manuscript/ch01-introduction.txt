@@ -14,4 +14,4 @@ Q> This icon denotes a Frequently Asked Question. While we work to resolve and s
 
 D> We use the discussion icon to designate features discussed or planned for future development but have little to no supporting functionality in the system. We include them here to provide context and explanation for the roadmap.
 
-I> We've used the information icon to denote features available in `develop` branch. The development version always has the latest and greatest features, fixes, and functionality but has not been tested as official releases have been. Unless you are a PHP developer or willing to live with instability, we do not recommend using this code in production systems. Consider it a preview of work to come.
+I> We've used the information icon to denote features available in `develop` branch. The development version always has the latest and greatest features, fixes, and functionality but has not been tested as official releases have been. Unless you are a PHP developer and willing to live with instability, we do not recommend using this code in production systems. Consider it a preview of work to come.
