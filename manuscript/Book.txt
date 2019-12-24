@@ -3,6 +3,12 @@ ch02-installation.txt
 ch03-getting-started.txt
 core-modules.txt
 
+
+
+
+
+
+06-contacts.txt
 07-events.txt
 08-files.txt
 09-forums.txt
