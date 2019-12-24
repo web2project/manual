@@ -1,0 +1,36 @@
+# Template for Add On Modules
+
+This is a simple template that you should fill in if you add an Add On Module to the Web2project Manual.
+
+## Module Name
+
+You should include at least one paragraph on what the module is, the problem it solves, and why it is important. *Please don't describe how you did it or the libraries involved unless those details are important to the problem solved.*
+
+Further, every module should include this information:
+
+* Name: Module Name
+* Folder: Which folder holds this module?
+* Creator(s): Please give attribution
+* Maintainer(s): Optional if the same as the Creator
+* License: What license is this module available under?
+* Minimum w2p Version: The earliest version of web2project this module works with
+* Maximum w2p Version: This last version of web2project this module works with. This should be a version not just "latest"
+* Repository: Likely a Github or Gitlab url 
+
+### Installation
+
+Required. How does one go about installing this module? If it's the default process, just note it. You don't have to re-include the steps here.
+
+### Release Notes
+
+Optional. When included, this should note improvements, new features, and bug fixes broken out by version.
+
+### Open Issues
+
+Required. This should include a link to where users can file bug reports, feature requests, or get help.
+
+This can optionally describe important limitations or gaps.
+
+### Additional Notes
+
+Option section for any extra information.
