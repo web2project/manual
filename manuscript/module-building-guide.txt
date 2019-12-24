@@ -171,7 +171,7 @@ Hooks are how we extend the system by allowing you to connect into specific proc
   * hook_preLoad and hook_postLoad execute immediately before and after the `load()` method is called. The postLoad is only called if the method is successful.
   * hook_preStore and hook_postStore execute immediately before and after the `store()` method is called. Note that this is called both when an object is created and updated. The postStore is only called if the method is successful.
   * hook_preCreate and hook_postCreate execute during the `store()` but before and after a new object gets created. The postCreate is only called if the method is successful.
-  * hook_preUpdate and hook_postUpdate execute during the `store()` but before and after an existing object gets updated. The postCreate is only called if the method is successful.
+  * hook_preUpdate and hook_postUpdate execute during the `store()` but before and after an existing object gets updated. The postUpdate is only called if the method is successful.
 
 
 
