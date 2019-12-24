@@ -1,8 +1,6 @@
 # Themes & Styling
 
-Previous releases of Web2project were not the easiest thing to customize. There were many aspects – such as the table layouts – which were hard-coded in the page generation. To be honest, it was a hot mess of HTML, CSS and PHP which was hardly worthy of a modern piece of software.
-
-As of v3.0, much of that has changed. There is an ongoing major effort to convert the entire system to be XHTML 1.0 and CSS 2.0 compliant. This allows you to customize the colors of various screens, adjust the fonts and modify the sizes of various components with a handful of CSS tweaks and modifications. 
+Web2project has never been the easiest thing to customize and theme but has gotten steadily better as we've extracted and cleaned up html and css. As of v3.0, much of the system is clean, compliant XHTML 1.0 and CSS 2.0. This allows you to customize the colors of various screens, adjust the fonts and modify the sizes of various components with a handful of CSS tweaks and modifications.
 
 Further, we are in the process of implementing a templating layer. Any HTML used within the core system will be contained within the styles/_common directory. Each of these templates will be included within their modules similar to any other templating layer with a snippet like this:
 
@@ -10,15 +8,15 @@ Further, we are in the process of implementing a templating layer. Any HTML used
 
 which resolves to this file by default:
 
-`./styles/_common/companies/list.php`
+`styles/_common/companies/list.php`
 
 If you wish to customize this for your needs, create a file such as this:
 
-`./styles/(your theme)/companies/list.php`
+`styles/(your theme)/companies/list.php`
 
 Once you select your preferred theme (via the User Preferences), your custom file will override the default _common file automatically with no additional configuration. This same principle can be applied to all addedit, view, list, and subview templates.
 
-In some cases, the module-specific template may be overridden by a generic system-wide template such as:
+In some cases, a module may not have a specific template and instead fall back to a system-wide default template such as:
 
 `./styles/_common/list.php`
 
