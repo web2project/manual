@@ -6,7 +6,7 @@ core-modules.txt
 
 
 
-
+04-tasks.txt
 05-users.txt
 06-contacts.txt
 07-events.txt
