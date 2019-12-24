@@ -1,11 +1,86 @@
 ## Contacts {#module-contacts}
 
-Every User in the system has a Contact entry. In addition, a User can create any number of Contact records for other people relevant to a Company, Project, or even to individual tasks. These sorts of associations become useful when a Project effort spans multiple companies, requires coordination with external people, or even vendors.
+The contacts module is a place to store information about users and additional contacts. When you add a new user to the database they are automatically added to the contacts page, however not all contacts need to be registered users.
 
-### Create Contacts
+You can access the data in this module by clicking on the contacts link in the main navigation. You can also access contacts from the add/edit project, add/edit task, resources, and other places throughout the dynamic application.
+
+### Creating a Contact (Contact Add/Edit Page)
 
 Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. DotProject looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
 
-### Attachment to Projects / Tasks
+{float=right}
+![Creating a Contact](images/contacts/addedit.png)
 
-Reporting and information sharing with external project stakeholders is quickly becoming the norm in project management. To facilitate this, Web2project offers the flexibility of giving the project manager the ability to attach Contacts to specific projects or even individual Tasks within a Project. From that time on, whenever a the Project or Task are updated, the user updating the information can choose to notify the Contacts. Alternatively, this notification can be set as a global default within the System Admin.
+Sometimes you may want to add a contact to the system rather than make the contact an actual user.  The add/edit contacts page allows you to enter user data without having to create a login.
+
+From this page you can keep detailed records about a person such as:
+
+* Their name
+* Job Title
+* Company
+* Department
+* Address
+* Country
+* Phone numbers
+* Emails (2X)
+* Web Address
+* Instant Messenger(s)
+* General Notes
+
+### Attach Contacts to Projects / Tasks
+
+Reporting and information sharing with external project stakeholders is absolutely required for successful project management. To facilitate this, Web2project offers the flexibility of giving the project manager the ability to attach Contacts to specific projects or even individual Tasks within a Project. From that time on, whenever a the Project or Task are updated, the user updating the information can choose to notify the Contacts. Alternatively, this notification can be set as a global default within the System Admin.
+
+### View your Contact List (Contact Index Page)
+
+{float=right}
+![View your Contact List](images/contacts/index.png)
+
+The contacts list view is the default page for the contacts tab.
+
+From this page you can:
+
+1.	Search for contacts using a search field.
+1.	Download a CSV of specific or entire list.
+1.	View contact name, company, phone, email and location
+1.	Email the contact
+1.	Edit the contact
+1.	Send an instant message and more
+
+
+### View a specific Contact (Contact View Page)
+
+TODO
+
+
+### Confirming Email (Contacts email confirm)
+
+{float=right}
+![Confirming Email](images/contacts/email_confirm.png)
+
+Starting on web2Project the Contacts Confirming Email lets you notify you contacts to complete their contacts for you. <br />
+Imagine you only have the Name and Email of a contact and you'd like to have the rest of his information, then simply edit the contact record and set the Waiting Update checkbox on the top right and submit.<br />
+This will issue an email to your contact like the one seen on the image, with an URL for your contact.<br />
+This URL will lead your contact to his contact record form and he will be able to edit and add the missing information for you.
+
+### Import Contacts from LDAP Active Directory
+
+Create a service Account, the account only needs to be a member of the domain users group in active directory in order to search ldap.
+
+Go to Import Contacts from LDAP Directory
+These are my setting, you would replace them to match your environment.
+
+Server: 10.10.10.10
+Protocol: Version 3
+Bind Name: CN=project,CN=Users,DC=peanutbutter,DC=com
+Bind Password: (password for the user account used in Bind Name above)
+Base DN: OU=111,OU=Cary,OU=WRUsers,DC=peanutbutter,DC=com
+Filter: (objectclass=Person)
+
+Bind Name: must contain the full path to the user account you will be using to search ldap
+For the "Base DN" be sure to use OU for an organizational unit and CN for a Container, CN would be used if your users were in the default "User" folder created when you install Active Directory. As an example if I wanted to import from that directory you would use this.
+Base DN: CN=Users,DC=wrinternal01,DC=com
+If I want to import the contacts from and organizational unit you created you would use this as an example.
+Base DN: OU=MYUsers,DC=wrinternal01,DC=com
+If you have multiple OU's which contain users you will need to modify the Base DN and import each one separately, if you know of a better way please tack it on to this post.
+
