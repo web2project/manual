@@ -2,23 +2,35 @@
 
 The goal of this section is to document a clear, repeatable way for developers to create modules to supplement and enhance the operation of the web2project system. There are numerous code samples included because showing is often more important than explaining. As certain non-core functionality becomes standardized, some of it will be added to the core system itself. This will not only simplify Add On development but also make sure that all modules adhere to the same standards and logic flows.
 
-Failure to follow the recommendations in this section can lead to non-functioning modules, brittle code prone to breaking, security vulnerabilities, and even bad hair days. None of these are pleasant.
+Failure to follow the recommendations in this section will lead to poor modules, brittle code, security vulnerabilities, and even bad hair days. None of these are pleasant.
 
 ## Expectations
 
-*  All input MUST be filtered before it is used in '''any''' capacity to help prevent security vulnerabilities such as [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) and [Cross Site Scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
-*  A module MUST NOT have raw SQL statements.
+*  All input MUST be filtered before it is used in **any** capacity to help prevent security vulnerabilities such as [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) and [Cross Site Scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+*  A module MUST NOT include or construct raw SQL statements.
 *  A module MUST NOT have references to the w2p_Database_Query class/object outside of the module's core class and (optional) subclasses.
 *  A module SHOULD use core web2project function/method/API calls instead of copy/pasting logic into your own module.
-*  A module SHOULD adhere to our custom [[Naming Conventions]] for variables, methods, etc.
-*  All code within a module SHOULD adhere to the formatting specified by the [PEAR Coding Standard](http://pear.php.net/manual/en/standards.php). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
-
-This is still under development here: [Module Building Guide Wiki](http://docs.web2project.net/docs/module-building-guide.html)
+*  A module SHOULD adhere to our [Naming Conventions](https://docs.web2project.net/docs/naming-conventions.html) for variables, methods, etc.
+*  All code within a module SHOULD adhere to the formatting specified by the [PSR-4 Coding Standard](http://www.php-fig.org/psr/psr-4/). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
 
 ## Basic File Structure
 
-Building a proper module in web2project requires a handful of key files in a particular structure. Each of which serve a specific purpose in the operation of the system. For a module called "Todos" - available from the web2project Modules - we would have the following file structure (filenames are case sensitive):
+Building a module in web2project requires a handful of key files in a specific structure. Each of which serve a key purpose in the operation of the system. For a module called "Todos" - available from the web2project Modules - we would have the following file structure (filenames are case sensitive):
 
+Filename  | Status | Description | Notes
+----- |:-----:| ----- | -----
+/todos/                                 | required | folder | Base folder of the module
+/todos/README.md                        | required | [Module Details](/docs/readme-reqs.html) | Information about the module, its release history, etc
+/todos/setup.php                        | required | [Setup Instructions](/docs/setup.html) | Contains and executes the install/uninstall logic
+/todos/todos.class.php                  | required | [Primary Model](/docs/core-class.html) | Defines all the business logic and CRUD operations for the module
+/todos/index.php                        | required | [List View](/docs/views.html) | Normally shows a list of any top-level items
+/todos/index.js                         | optional |  | Javascript that gets included in the Index layout
+/todos/addedit.php                      | optional | [Add/Edit View](/docs/views.html) | View that provides a form to add or edit the item
+/todos/addedit.js                       | optional |  | Javascript that gets included in the Add/Edit layout
+/todos/view.php                         | optional | [Item View](/docs/views.html) | View that provides a page to view the item
+/todos/view.js                          | optional |  | Javascript that gets included in the view layout
+/todos/do_todos_aed.php                 | optional | [Primary Controller](/docs/primary-controller.html) | Acts as the Controller/Dispatcher for most of the primary actions
+/todos/companies_tab.view.todolist.php  | optional | [Subview](/docs/subviews.html) | Provides a embedded tab subview on the Company View page
 
 ## Naming Conventions
 
