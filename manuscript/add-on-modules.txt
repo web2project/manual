@@ -1,31 +1,22 @@
 # Add On Modules
 
+Please visit our [Add On Modules page](https://docs.web2project.net/modules/add-on.html) for the most up to date and complete information.
+
 ## Installing New Modules
 
 There are a number of Addon Modules available for Web2project and more are released every month. At the present time, there are modules for Holidays, a Microsoft Project Importer, Risk Management, Timecard and Todolist Management. Each of these is installed the same way:
 
 1. Download your desired module from Github or your selected provider.
-1. Confirm that your module is supported under Web2project v3.
+1. Confirm that your module is supported under your version of Web2project.
 1. Expand the compressed file to the directory and upload it to your `/web2project/modules` directory.
 1. Within your System Admin Module, click on View Modules. Near the bottom of this list you should see your module with a link labeled “install”.
 1. Click “install” to install it, click “disabled” to enable it, click “configure” if it appears, and finally click “hidden” in the far right column to unhide it.
 
 Your module should now be fully installed with the tables updated, required values inserted, and a link appearing in the navigation bar. To remove a module, you can temporarily hide it by clicking “visible” or completely remove it and its supporting data by clicking the “remove” link.
 
-## Holidays
-
 ## Project Importer
 
 Most organizations and Project Managers come from a tradition of using Microsoft Project for their planning, estimation, and management. While many prefer to continue using it after installing Web2project, most people wish to import their Project templates and active projects to benefit from the collaborate aspects of Web2project.
-
-### Install
-
-To install this module, please follow the standard module installation procedure:
-
-1. Download the latest version for CaseySoftware.com
-1. Unzip this file to your `/web2project/modules/` directory. It should create a subdirectory called importers.
-1. Navigate to System Admin -> View Modules and you should see `importers` near the bottom of the list.
-1. On that row, select “install”. The screen should refresh. Now select “hidden” to make it display in your module navigation.
 
 ### Usage
 
@@ -45,14 +36,8 @@ Assign the usernames who match your imported resources. Any resources not mapped
 
 ### Known Issues & Limitations
 
-This module has been validated to work with Web2project v3.0 and above. If you are using any version prior to this, please upgrade as soon as possible to address various security, usability, and functionality issues.
+This module has been validated to work with Web2project v3.0 and above. If you are using any version prior to this, please upgrade as soon as possible.
  
 ### Disclaimer
 
 Microsoft Project is an application wholly owned by Microsoft Corporation. CaseySoftware, LLC and the Web2project Team does not imply or claim any involvement or ownership in any way, shape, or form.
-
-## Risk Management Module
-
-## Timecard
-
-## Todolist Module
