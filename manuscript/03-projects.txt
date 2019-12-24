@@ -60,7 +60,7 @@ Each tab contains a table where projects are listed. Each row represents a proje
 ### View a specific Project (Projects View Page)
 
 {float=right}
-![View a Project](images/projects/view.png)
+![View a specific Project](images/projects/view.png)
 
 Clicking on the projects name in the projects list takes you to the project view page. This page displays important information about the project and other elements related to it.
 
