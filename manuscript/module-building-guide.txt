@@ -159,3 +159,19 @@ and the contained class will be `C{plural modulename}_{singular subclass}` using
 
 Beyond that, the Naming Conventions section fills in the rest of the detail.
 
+## Extending the System
+
+Hooks are how we extend the system by allowing you to connect into specific processes and actions in standard, consistent ways with minimal effort without modifying Web2project core. This ensures you can accomplish what you need and your modules remain compatible through Web2project upgrades.
+
+*  The hook_calendar method opens a module class to make date-relevant data available to external code. This is only used by the Tasks and Events module in Core.
+*  The hook_cron method opens a module class to interact with activities which are Schedule-able like sending reminders or updating data.
+*  The hook_search method opens a module class to make it searchable to our SmartSearch module.
+*  The Workflow Hooks are an entire class of hooks that get called as you interact with data objects. The complete list is:
+  * hook_preDelete and hook_postDelete execute immediately before and after the `delete()` method is called. The postDelete is only called if the method is successful.
+  * hook_preLoad and hook_postLoad execute immediately before and after the `load()` method is called. The postLoad is only called if the method is successful.
+  * hook_preStore and hook_postStore execute immediately before and after the `store()` method is called. Note that this is called both when an object is created and updated. The postStore is only called if the method is successful.
+  * hook_preCreate and hook_postCreate execute during the `store()` but before and after a new object gets created. The postCreate is only called if the method is successful.
+  * hook_preUpdate and hook_postUpdate execute during the `store()` but before and after an existing object gets updated. The postCreate is only called if the method is successful.
+
+
+
