@@ -1,1 +1,50 @@
 ## Resources {#module-resources}
+
+The Resource Module is a useful tool when you need to allocate or track resources related to a [Project](/modules/projects.html) or [Task](/modules/tasks.html). Additional resources could include things like conference room, copiers, ect..
+
+### Resources List View (Resources Index)
+
+{float=right}
+![Resources List View](images/resources/index.png)
+
+The Resource Index page contains a set of tabs which you can define in the system administration lookup values. By default these tab represent the resource type.
+
+Tab 1: All resource
+
+Tab 2: Equipment
+
+Tab3: Tools
+
+Tab4: Venue
+
+The first column shows the Resource ID. The second column shows the resource name, and the third column shows the maximum allocation for that resource.
+
+To create a new resource, click the new resource button on the upper right of the page.
+
+### Resource View page (Resources view)
+
+{float=right}
+![Resource View](images/resources/view.png)
+
+Clicking on the resource ID will take you to the resource view page which shows detailed information about the source.
+
+* Resource ID
+* Name of Resource
+* Type
+* Max Allocation
+* Description
+
+### Resources Add/Edit Screen (Resources addedit)
+
+{float=right}
+![Resources Add/Edit](images/resources/addedit.png)
+
+Clicking on the "New Resource" button or the "edit resource" button will take you to the Add Resource page.
+
+From this page you can:
+
+* Manually create an ID for the resource
+* Give the resource a name
+* Assign the type of resource
+* Maximum Allocation
+* Add Notes about the resource.
