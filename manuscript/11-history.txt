@@ -1,1 +1,3 @@
 ## History {#module-history}
+
+This is the history module.
