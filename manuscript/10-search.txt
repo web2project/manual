@@ -1,7 +1,34 @@
 ## SmartSearch {#module-smartsearch}
 
-In the latest release of Web2project (v2.1.0), the SmartSearch module was rebuilt from the ground up by Pedroa and has proven to be a huge advance over the previous version. For the results returned, it displays them separated by the individual modules.
+The SmartSearch Module in web2Project allows you to perform global searches for data throughout the system. The core of the module is hidden by default from the main menu, but its function is access via the Global Search.
 
-The first and most basic search method does a simple string match between your search terms and the names and information within Web2project. This search is works on the basis of an “or” and checks for any of your terms in any of the names or descriptions of items within the system. To improve your search, simply checking the “All words” box will refine the search accordingly. If this refinement is still not sufficient or you have more information to use, by checking the “Modules selection” box, you can select specific modules to include in your search. Finally, if none of these options are sufficient to limit your search, there are still Advanced options. By adjust these, your search can become case sensitive and even ignore special characters.
+### To View The SmartSearch Module
 
-After submitting a keyword, you will get back a list of everywhere in the system this word appears – limited to your permissions – along with a link directly to the content. Wildcard searching is not supported at this time.
+At the top of most pages in web2Project you’ll notice a text box called “Global Search”. When you type data into this text box and hit enter or return the SmartSearch begins to function and will display your results within the module itself.
+
+You can also enable the SmartSearch Module to be a menu idem via the System Administration > Modules.
+
+### Understanding the Interface
+
+After you perform your initial search the SmartSearch Module will display the results for each module that has data related to your criteria.
+
+For example, if you performed a search for the word “Training” lets assume that you have a project containing the word “Training” as well as Task or Logs. The module will display the results for each module it found containing the word Training on separate rows in the results page.
+
+What happens if the module displays to many results? The SmartSearch Module allows you to narrow down your search criteria. On the results page you will notice three checkboxes followed after the search box.
+
+* All Words
+* Modules Selection
+* Advanced Search
+
+You can specify words and even choose to only search specific modules; in addition you can perform an advanced search to narrow down your results even more.
+
+When you click in the Modules Selection checkbox an array of checkboxes will appear. Click on the module you wish to narrow your search to.
+
+When you click on the Advanced Search three more text boxes appear in addition to more options that include:
+
+* Ignore Special Characters
+* Ignore Case
+* Display all Fields
+* Show Empty.
+
+Simply choose your options and press the search button to perform your search.
