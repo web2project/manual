@@ -4,10 +4,10 @@ Please visit our [Add On Modules page](https://docs.web2project.net/modules/add-
 
 ## Installing New Modules
 
-There are a number of Addon Modules available for Web2project and more are released every month. At the present time, there are modules for Holidays, a Microsoft Project Importer, Risk Management, Timecard and Todolist Management. Each of these is installed the same way:
+There are a number of Addon Modules available for Web2Project and more are released every month. At the present time, there are modules for Holidays, a Microsoft Project Importer, Risk Management, Timecard and Todolist Management. Each of these is installed the same way:
 
 1. Download your desired module from Github or your selected provider.
-1. Confirm that your module is supported under your version of Web2project.
+1. Confirm that your module is supported under your version of Web2Project.
 1. Expand the compressed file to the directory and upload it to your `/web2project/modules` directory.
 1. Within your System Admin Module, click on View Modules. Near the bottom of this list you should see your module with a link labeled “install”.
 1. Click “install” to install it, click “disabled” to enable it, click “configure” if it appears, and finally click “hidden” in the far right column to unhide it.
@@ -16,13 +16,13 @@ Your module should now be fully installed with the tables updated, required valu
 
 ## Project Importer
 
-Most organizations and Project Managers come from a tradition of using Microsoft Project for their planning, estimation, and management. While many prefer to continue using it after installing Web2project, most people wish to import their Project templates and active projects to benefit from the collaborate aspects of Web2project.
+Most organizations and Project Managers come from a tradition of using Microsoft Project for their planning, estimation, and management. While many prefer to continue using it after installing Web2Project, most people wish to import their Project templates and active projects to benefit from the collaborate aspects of Web2Project.
 
 ### Usage
 
 Within Microsoft Project, open your project as usual. In the File Menu, select “Save As…” and under file-type, choose “xml” and save your file.
 
-Within Web2project, select “Project Importer” from your module navigation (normally at the top).
+Within Web2Project, select “Project Importer” from your module navigation (normally at the top).
 
 Select “Browse”, select the file you created in Step 1, and select “Import Data”.
 
@@ -32,12 +32,12 @@ If a matching company was found, the Importer will automatically assign it. Alte
 
 Input a Project name. If the imported name is already in use, the module will note it here.
 
-Assign the usernames who match your imported resources. Any resources not mapped to current Web2project Users will automatically be created as Users in an Inactive state.
+Assign the usernames who match your imported resources. Any resources not mapped to current Web2Project Users will automatically be created as Users in an Inactive state.
 
 ### Known Issues & Limitations
 
-This module has been validated to work with Web2project v3.0 and above. If you are using any version prior to this, please upgrade as soon as possible.
+This module has been validated to work with Web2Project v3.0 and above. If you are using any version prior to this, please upgrade as soon as possible.
  
 ### Disclaimer
 
-Microsoft Project is an application wholly owned by Microsoft Corporation. CaseySoftware, LLC and the Web2project Team does not imply or claim any involvement or ownership in any way, shape, or form.
+Microsoft Project is an application wholly owned by Microsoft Corporation. CaseySoftware, LLC and the Web2Project Team does not imply or claim any involvement or ownership in any way, shape, or form.

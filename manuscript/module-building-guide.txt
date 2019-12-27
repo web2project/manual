@@ -1,6 +1,6 @@
 # Module Building Guide
 
-The goal of this section is to document a clear, repeatable way for developers to create modules to supplement and enhance the operation of the web2project system. There are numerous code samples included because showing is often more important than explaining. As certain non-core functionality becomes standardized, some of it will be added to the core system itself. This will not only simplify Add On development but also make sure that all modules adhere to the same standards and logic flows.
+The goal of this section is to document a clear, repeatable way for developers to create modules to supplement and enhance the operation of the Web2Project system. There are numerous code samples included because showing is often more important than explaining. As certain non-core functionality becomes standardized, some of it will be added to the core system itself. This will not only simplify Add On development but also make sure that all modules adhere to the same standards and logic flows.
 
 Failure to follow the recommendations in this section will lead to poor modules, brittle code, security vulnerabilities, and even bad hair days. None of these are pleasant.
 
@@ -9,7 +9,7 @@ Failure to follow the recommendations in this section will lead to poor modules,
 *  All input MUST be filtered before it is used in **any** capacity to help prevent security vulnerabilities such as [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) and [Cross Site Scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
 *  A module MUST NOT include or construct raw SQL statements.
 *  A module MUST NOT have references to the w2p_Database_Query class/object outside of the module's core class and (optional) subclasses.
-*  A module SHOULD use core web2project function/method/API calls instead of copy/pasting logic into your own module.
+*  A module SHOULD use core Web2Project function/method/API calls instead of copy/pasting logic into your own module.
 *  A module SHOULD adhere to our [Naming Conventions](https://docs.web2project.net/docs/naming-conventions.html) for variables, methods, etc.
 *  All code within a module SHOULD adhere to the formatting specified by the [PSR-4 Coding Standard](http://www.php-fig.org/psr/psr-4/). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
 
@@ -17,7 +17,7 @@ To see this guide in action, check out the [Todo Module](https://github.com/web2
 
 ## Basic File Structure
 
-Building a module in web2project requires a handful of key files in a specific structure. Each of which serve a key purpose in the operation of the system. For a module called "Todos" - available from the web2project Modules - we would have the following file structure (filenames are case sensitive):
+Building a Web2Project module requires a handful of key files in a specific structure. Each of which serve a key purpose in the operation of the system. For a module called ToDos - [available from Github](https://github.com/web2project/modules-todos) - we would have the following file structure (filenames are case sensitive):
 
 Filename  | Status | Description | Notes
 ----- |:-----:| ----- | -----
@@ -36,7 +36,7 @@ Filename  | Status | Description | Notes
 
 ## Naming Conventions
 
-Web2project works on the basis of "The easy way should also be the right way." A key reason that this works is because of our Naming Conventions. It allows quite a few things to "just work" without additional effort, configuration, or coding by anyone working on any module. As long as you stick to our conventions, your modules and customizations should need minimal updates between web2project releases.
+Web2Project works on the basis of "The easy way should also be the right way." A key reason that this works is because of our Naming Conventions. It allows quite a few things to "just work" without additional effort, configuration, or coding by anyone working on any module. As long as you stick to our conventions, your modules and customizations should need minimal updates between Web2Project releases.
 
 There are three layers of the system that all interact together: the **database**, the module's **business logic**, and the **view/templating layer**. Since everything begins with the module, we'll begin there.
 
@@ -85,7 +85,7 @@ _url | task_related_url, project_url | This is a simple text field with a 'test'
 * The class's name property should end with '_name' - ex: CTask->task_name, CEvent->event_name;
 * A module MAY have subclasses;
 * Subclass(es) name MUST be the singular form of the module name prefixed by the letter C and then followed by an underscore (_) and singular form of the subclass - ex: File Folders -> CFile_Folder, Task Logs -> CTask_Log;
-* All classes and subclasses MUST respect core web2project permissions and ACLs;
+* All classes and subclasses MUST respect core Web2Project permissions and ACLs;
 
 ### View/Templating
 
@@ -101,9 +101,9 @@ _url | task_related_url, project_url | This is a simple text field with a 'test'
 
 ## Routing & Filesystem
 
-Every single request within Web2project routes to a specific path/file/action combination. The general pattern is:
+Every single request within Web2Project routes to a specific path/file/action combination. The general pattern is:
 
-```web2project/index.php?m={modulename}&a={action}&id={id}``` 
+```web2project/index.php?m={modulename}&a={action}&id={id}```
 
 where **{modulename}** is the directory, **{action}** is the file, and **{id}** is the specific item you're editing.
 
@@ -143,13 +143,13 @@ Url  | Maps to | Description
 
 #### Autoloader
 
-web2project implements [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) from the PHP Framework Interoperability Group therefore all classes are structured as w2p_Namespace_Class with the '.class.php' suffix. For example, the class **w2p_Core_BaseObject** will be found in *classes/w2p/Core/BaseObject.class.php* while **w2p_Database_Query** will be found in *classes/w2p/Database/Query.class.php*.
+Web2Project implements [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) from the PHP Framework Interoperability Group therefore all classes are structured as w2p_Namespace_Class with the '.class.php' suffix. For example, the class **w2p_Core_BaseObject** will be found in *classes/w2p/Core/BaseObject.class.php* while **w2p_Database_Query** will be found in *classes/w2p/Database/Query.class.php*.
 
-It is unlikely that you will need to add core classes to Web2project but if you follow our naming convention, they will automatically be loaded without any additional effort or configuration.
+It is unlikely that you will need to add core classes to Web2Project but if you follow our naming convention, they will automatically be loaded without any additional effort or configuration.
 
 #### Modules
 
-Web2project module classes are a little different because they can be added or removed as needed. In general, the class file will map directly from the module name. The pattern is:
+Web2Project module classes are a little different because they can be added or removed as needed. In general, the class file will map directly from the module name. The pattern is:
 
 `modules/{plural modulename}/{plural modulename}.class.php`
 
@@ -163,7 +163,7 @@ Beyond that, the Naming Conventions section fills in the rest of the detail.
 
 ## Extending the System
 
-Hooks are how we extend the system by allowing you to connect into specific processes and actions in standard, consistent ways with minimal effort without modifying Web2project core. This ensures you can accomplish what you need and your modules remain compatible through Web2project upgrades.
+Hooks are how we extend the system by allowing you to connect into specific processes and actions in standard, consistent ways with minimal effort without modifying Web2Project core. This ensures you can accomplish what you need and your modules remain compatible through Web2Project upgrades.
 
 *  The hook_calendar method opens a module class to make date-relevant data available to external code. This is only used by the Tasks and Events module in Core.
 *  The hook_cron method opens a module class to interact with activities which are Schedule-able like sending reminders or updating data.

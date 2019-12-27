@@ -6,7 +6,7 @@ You can access the data in this module by clicking on the contacts link in the m
 
 ### Creating a Contact (Contact Add/Edit Page)
 
-Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. Web2project looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
+Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2Project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. Web2Project looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
 
 {float=right}
 ![Creating a Contact](images/contacts/addedit.png)
@@ -29,7 +29,7 @@ From this page you can keep detailed records about a person such as:
 
 ### Attach Contacts to Projects / Tasks
 
-Reporting and information sharing with external project stakeholders is absolutely required for successful project management. To facilitate this, Web2project offers the flexibility of giving the project manager the ability to attach Contacts to specific projects or even individual Tasks within a Project. From that time on, whenever a the Project or Task are updated, the user updating the information can choose to notify the Contacts. Alternatively, this notification can be set as a global default within the System Admin.
+Reporting and information sharing with external project stakeholders is absolutely required for successful project management. To facilitate this, Web2Project offers the flexibility of giving the project manager the ability to attach Contacts to specific projects or even individual Tasks within a Project. From that time on, whenever a the Project or Task are updated, the user updating the information can choose to notify the Contacts. Alternatively, this notification can be set as a global default within the System Admin.
 
 ### View your Contact List (Contact Index Page)
 
@@ -52,7 +52,7 @@ From this page you can:
 {float=right}
 ![Confirming Email](images/contacts/email_confirm.png)
 
-Starting on web2Project the Contacts Confirming Email lets you notify you contacts to complete their contacts for you. <br />
+Starting on Web2Project the Contacts Confirming Email lets you notify you contacts to complete their contacts for you. <br />
 Imagine you only have the Name and Email of a contact and you'd like to have the rest of his information, then simply edit the contact record and set the Waiting Update checkbox on the top right and submit.<br />
 This will issue an email to your contact like the one seen on the image, with an URL for your contact.<br />
 This URL will lead your contact to his contact record form and he will be able to edit and add the missing information for you.

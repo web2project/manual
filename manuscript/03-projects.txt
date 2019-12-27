@@ -1,6 +1,6 @@
 ## Projects {#module-projects}
 
-The entire purpose of web2Project is to provide a single place where a team can come together to collaborate and share information to to effectively manage projects. Therefore, the bulk of a project manager’s time will be spent working in the Project and Task modules. All other modules, tools, and functionality supplement those modules which makes the Projects module one of the most complex modules in the system.
+The entire purpose of Web2Project is to provide a single place where a team can come together to collaborate and share information to to effectively manage projects. Therefore, the bulk of a project manager’s time will be spent working in the Project and Task modules. All other modules, tools, and functionality supplement those modules which makes the Projects module one of the most complex modules in the system.
 
 ### Creating a Project
 
@@ -15,14 +15,14 @@ Next, all Projects have a Status. Status is a way of identifying and grouping Pr
 
 Next, you can choose to Import Tasks. This allows you to create project template which allows for any project to begin with an existing set of tasks which just have to be assigned to the specific dates and participants. Alternatively, templates can be imported repeatedly to create distinct task groups. Within CaseySoftware, the most common template is called a “Phase Template” which encapsulates an entire development phase from Requirements Discovery to Development to Delivery. By importing this repeatedly, multiple development phases can be established and scheduled as necessary. 
 
-The rest of the fields available are purely for display purposes and not related to the current functionality of the system. For example, the Target and Actual Budgets are available for editing but are not updated or tracked anywhere in the system. The two URLs (URL, Staging URL) are references to external websites which might be relevant to a project. They will not normally point to websites or pages internal to your Web2project.
+The rest of the fields available are purely for display purposes and not related to the current functionality of the system. For example, the Target and Actual Budgets are available for editing but are not updated or tracked anywhere in the system. The two URLs (URL, Staging URL) are references to external websites which might be relevant to a project. They will not normally point to websites or pages internal to your Web2Project.
 
 Finally, your new Project must be saved by clicking “submit”. If for some reason, you have made a mistake in creating your project, you can edit or even delete it from the View Project page if you have the proper permissions.
 
 I> There are five major features currently implemented concerning Project Templates.
 First, there are two primary date options:
-Selecting an Offset Date allows you to specify an arbitrary date in the future for the project to begin and Web2project will sequentially schedule all start and end dates into the future from this point.
-Selecting an End Date does the exact opposite. After choosing an End Date for your project, Web2project will schedule all tasks from the end of the project backwards into the past resulting in an estimated start date.
+Selecting an Offset Date allows you to specify an arbitrary date in the future for the project to begin and Web2Project will sequentially schedule all start and end dates into the future from this point.
+Selecting an End Date does the exact opposite. After choosing an End Date for your project, Web2Project will schedule all tasks from the end of the project backwards into the past resulting in an estimated start date.
 Next, there are three different import options:
 “Keep Assignees” will preserve the assignments of all the users within the imported project. No notifications are generated, but if you have laid out the assignments in advance, there is nothing further to do.
 “Import related files” does exactly what it describes. This comes in useful when you have forms, checklists, etc attached to specific Tasks. These files are automatically copied to the new project without further action. Your files are copied and the originals are not affected in any way.

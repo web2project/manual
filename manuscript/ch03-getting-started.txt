@@ -8,9 +8,9 @@ To change the password, log in and select User Admin from the navigation menu to
 
 ## Create a Company
 
-Now create your first company. The fastest way is to click Company from the top navigation menu and then click the “New Company” button on the far right. Alternatively, on any screen within Web2project, the *New Item* dropdown will allow you to immediately create a new Company. The next screen is where you fill in basic information on your organization. Nearly everything in the system – Projects, Users, Contacts, Files, Forums, and even Permissions – is attached to a Company.
+Now create your first company. The fastest way is to click Company from the top navigation menu and then click the “New Company” button on the far right. Alternatively, on any screen within Web2Project, the *New Item* dropdown will allow you to immediately create a new Company. The next screen is where you fill in basic information on your organization. Nearly everything in the system – Projects, Users, Contacts, Files, Forums, and even Permissions – is attached to a Company.
 
-Within CaseySoftware, much of the work is for other organizations. Creating a Company entry for each organization is a simple way of organizing Projects and limiting Permissions to respect privacy and confidentiality requirements. Before you deploy Web2project for your organization, you should carefully consider your information security needs.
+Within CaseySoftware, much of the work is for other organizations. Creating a Company entry for each organization is a simple way of organizing Projects and limiting Permissions to respect privacy and confidentiality requirements. Before you deploy Web2Project for your organization, you should carefully consider your information security needs.
 
 Once you save, you can continue. At any time, you can click back on the Company link and see all companies in the system and optionally filter by Company Owner.
 
@@ -20,7 +20,7 @@ Q> If you believe your company has disappeared, check the Owner Filter in upper 
 
 Now that we have a Company, we can create new Users. Creating a User is a two step process. First, you must create the User within the User Admin. You give them a Login Name (case insensitive), a password, and fill in basic profile information including their Company. Clicking “submit” at this point will create the User.
 
-Next, you must activate the User by assigning a specific set of Roles. Think of a Role as a permissions template which can be supplemented with Company or Project-specific permissions. The default Roles within Web2project are sufficient for the vast majority of organizations but you can add or refine those as necessary. Project Worker is the most commonly used Role in most organizations as it allows a User to have complete access to all non-administration modules.
+Next, you must activate the User by assigning a specific set of Roles. Think of a Role as a permissions template which can be supplemented with Company or Project-specific permissions. The default Roles within Web2Project are sufficient for the vast majority of organizations but you can add or refine those as necessary. Project Worker is the most commonly used Role in most organizations as it allows a User to have complete access to all non-administration modules.
 
 For example, if you have a contractor working on a single project and you wish to deny access to all other projects, you can apply the Project Worker Role and then add the description “Deny on All Projects” and “Allow” to the specific project. More information and detailed explanations of Roles and Permissions are found in [Permissions 201](#permissions-201).
 
@@ -28,7 +28,7 @@ Q> If you create a new User and they can't log in, the most common issue is they
 
 ## Create a Project
 
-Now you can create your first Project. The fastest way is to click Project from the navigation menu and then click the “New Project” button on the far right. Alternatively, on any screen within Web2project, the *New Item* dropdown will allow you to immediately create a new Project. The next screen is where you fill in basic information on your Project.
+Now you can create your first Project. The fastest way is to click Project from the navigation menu and then click the “New Project” button on the far right. Alternatively, on any screen within Web2Project, the *New Item* dropdown will allow you to immediately create a new Project. The next screen is where you fill in basic information on your Project.
 
 As you create Projects, it is important to choose a unique color. This color designates the Project on the Calendar, Users’ Todo lists, and elsewhere throughout the system so choosing a unique color is useful as you use the system. Next, select a specific Project Owner and Company. This will be increasingly important as your permission and management requirements grow over time. Once you fill in the information relevant to your Project, click “submit” to return to the project list.
 
@@ -46,7 +46,7 @@ This screen lists all of the users' assigned Tasks, including information on the
 
 ## Task Logs
 
-To work on a Task, simply click "log" to the left of the Task name. If you are actively working on the Task now, click on the "Start" button. Web2project will start counting up the minutes. Once you are done, click "Stop", fill in a comment, change the Progress if applicable, and click "Update Task". You will immediately see the Task Overview screen with a complete list of all Task Logs.
+To work on a Task, simply click "log" to the left of the Task name. If you are actively working on the Task now, click on the "Start" button. Web2Project will start counting up the minutes. Once you are done, click "Stop", fill in a comment, change the Progress if applicable, and click "Update Task". You will immediately see the Task Overview screen with a complete list of all Task Logs.
 
 ## Reporting
 
@@ -54,4 +54,4 @@ The most commonly used Report is the "Task Log Report". It gives you single view
 
 The next most common report is the "Project Statistics Report". This gives an overview of a the status of a project including completed, in progress, and overdue tasks. In addition, it shows a simple breakdown of everyone’s hours on the project. This is a simple way of monitoring the overall health of a project – or all projects – without having to review each one.
 
-There are numerous other reports available within Web2project. Some of them may suit your organization’s requirements but many will not. Therefore, we recommend evaluating your reporting needs to determine which of the existing Reports work for your organization. A deeper discussion of reporting is available in the [Reporting Module](#reporting-module) section.
+There are numerous other reports available within Web2Project. Some of them may suit your organization’s requirements but many will not. Therefore, we recommend evaluating your reporting needs to determine which of the existing Reports work for your organization. A deeper discussion of reporting is available in the [Reporting Module](#reporting-module) section.

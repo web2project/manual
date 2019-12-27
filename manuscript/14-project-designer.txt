@@ -1,6 +1,6 @@
 ## Project Designer {#module-project-designer}
 
-The Project Designer Module was designed in web2Project as a means to streamline your daily workflow in part because it contains all the main minimum resources needed to effectively manage your [[project]] on one page.
+The Project Designer Module was designed in Web2Project as a means to streamline your daily workflow in part because it contains all the main minimum resources needed to effectively manage your [[project]] on one page.
 
 It is a panel based interface rather than the core tab interface and it reduces the need to click multiple tabs to accomplish something.  In addition its work area is somewhat customizable, and you can perform multiple actions at once.
 
@@ -33,7 +33,7 @@ The first panel is the projects panel. This is the same is the core project view
 
 ### Gantt Chart Panel
 
-The second panel is the Gantt Chart for this project. It shows all the task for this project in a date view timeline. For more information on web2Project Gantt Charts see core modules.
+The second panel is the Gantt Chart for this project. It shows all the task for this project in a date view timeline. For more information on Web2Project Gantt Charts see core modules.
 
 ### Task Panel
 

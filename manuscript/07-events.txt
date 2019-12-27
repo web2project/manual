@@ -1,6 +1,6 @@
 ## Calendar & Events {#module-events}
 
-One of the most useful things of any collaboration system is a single shared Calendar for all users. This is useful for coordinating schedules, reviewing priorities, and even determining individual availability. Web2project offers this basic functionality and quite a bit more combining the Events, Tasks, and offering a variety of filtered display options.
+One of the most useful things of any collaboration system is a single shared Calendar for all users. This is useful for coordinating schedules, reviewing priorities, and even determining individual availability. Web2Project offers this basic functionality and quite a bit more combining the Events, Tasks, and offering a variety of filtered display options.
 
 The Calendar module provides the users with interfaces to manage the Tasks and Events in a chronological way. Further, this module gives you the ability to view and filter Events according to Project or Company in addition to displaying by Day, Week, Month, and Year.
 
@@ -10,13 +10,13 @@ The base view of the Calendar Module is a simple month view similar to Outlook o
 
 I> In many cases, even filtering Events and Tasks by Company will still display too much information to be useful. Therefore, you can also filter by a specific Project.
 
-D> To make life simpler for all involved, it is currently planned to implement iCal output for any active Web2project user. This will provide a simple way to monitor a calendar from within a third–party application such as Google Calendar, Apple iCalendar, or Outlook.
+D> To make life simpler for all involved, it is currently planned to implement iCal output for any active Web2Project user. This will provide a simple way to monitor a calendar from within a third–party application such as Google Calendar, Apple iCalendar, or Outlook.
 
 From the Month View, a user can click on the button on the far left of any line. This will take the User to a Week View based on the selected Company. It breaks down the week into a simple layout similar to a weekly planner. The Ownership filter is still available but in order to change the Company, the User must go back to the Month view.
 
 ### Creating an Event / Recurring Events
 
-Creating an Event in Web2project can be done at anytime from anywhere in the system by selecting “New Event” in the upper right hand corner. You simply name the event, give a brief description, select the relevant project, invite members, at set the recurrence schedule. If you set a recurring event, Web2project will automatically add it to all invitee’s calendars and email a notification immediately.
+Creating an Event in Web2Project can be done at anytime from anywhere in the system by selecting “New Event” in the upper right hand corner. You simply name the event, give a brief description, select the relevant project, invite members, at set the recurrence schedule. If you set a recurring event, Web2Project will automatically add it to all invitee’s calendars and email a notification immediately.
 
 Q> Although every Event can be attached to a Project, there is no Events tab on the View Project screen. It will likely be developed in Head and released as a patch at a later date.
 

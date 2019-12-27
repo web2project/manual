@@ -111,4 +111,4 @@
 
 ## Previous Release Notes
 
-Release notes for all previous Web2project releases are available on [our documentation site](http://docs.web2project.net/release-notes/index.html).
+Release notes for all previous Web2Project releases are available on [our documentation site](http://docs.web2project.net/release-notes/index.html).

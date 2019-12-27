@@ -1,6 +1,6 @@
 # Template for Add On Modules
 
-This is a simple template that you should fill in if you add an Add On Module to the Web2project Manual.
+This is a simple template that you should fill in if you add an Add On Module to the Web2Project Manual.
 
 ## Module Name
 
@@ -13,8 +13,8 @@ Further, every module should include this information:
 * Creator(s): Please give attribution
 * Maintainer(s): Optional if the same as the Creator
 * License: What license is this module available under?
-* Minimum w2p Version: The earliest version of web2project this module works with
-* Maximum w2p Version: This last version of web2project this module works with. This should be a version not just "latest"
+* Minimum w2p Version: The earliest version of Web2Project this module works with
+* Maximum w2p Version: This last version of Web2Project this module works with. This should be a version not just "latest"
 * Repository: Likely a Github or Gitlab url 
 
 ### Installation

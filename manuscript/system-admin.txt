@@ -2,7 +2,7 @@
 
 The default installation will allow you to immediately begin using the system in a production capacity. There will be generic values set on the login page, the notification emails, and a few other places but you can quickly and easily change any of them via the System Administration. Therefore, it is suggested that you go into the System Administration immediately after install to customize it to your organization.
 
-W> Regardless of any other customizations you do or do not make to your system, upon successful installation, you should immediately change the password of your admin user. If you fail to change your password, you are creating a significant to your Web2project installation.
+W> Regardless of any other customizations you do or do not make to your system, upon successful installation, you should immediately change the password of your admin user. If you fail to change your password, you are creating a significant to your Web2Project installation.
 
 ## General Configuration
 
@@ -14,7 +14,7 @@ The final configuration options commonly modified are the Default Module and Sub
 
 ## Roles & Permissions
 
-The permissions system within Web2project is based on phpgACL. While it provides a robust and powerful method of permissions handling, it can be complex and difficult to understand at times. The most important aspect to remember is that Roles apply to Modules and Permissions apply to individual items.
+The permissions system within Web2Project is based on phpgACL. While it provides a robust and powerful method of permissions handling, it can be complex and difficult to understand at times. The most important aspect to remember is that Roles apply to Modules and Permissions apply to individual items.
 
 The four base roles at installation are Administrator, Project Worker, Guest, and Anonymous and grant progressively more and more restrictive permissions.
 
@@ -28,7 +28,7 @@ Anonymous – Anonymous can see the navigation and nothing else. While this role
 
 The common aspect to all four of these Roles is that their privileges and limitations are associated to the Module level exclusively. They do not grant or deny privileges to specific companies, projects, or tasks. This is where permissions come into play.
 
-Permissions are important to secure and protect information within Web2project. Depending on an individual Users’ permissions, they may be able to manage anything within the system, anything within a specific company, or potentially only log time against their assigned tasks. Permissions allow very specific circumstances where the System Administrator can grant or deny individuals access to individual companies, projects, or even contacts and files.
+Permissions are important to secure and protect information within Web2Project. Depending on an individual Users’ permissions, they may be able to manage anything within the system, anything within a specific company, or potentially only log time against their assigned tasks. Permissions allow very specific circumstances where the System Administrator can grant or deny individuals access to individual companies, projects, or even contacts and files.
 
 Q> By default, a Users’ permissions are cached by phpgACL for performance reasons. This allows the system to simply compare permissions instead of requiring a lookup with every single request. Unfortunately, this caching – default 60 minutes – can cause some oddities when you expect to see changes reflected immediately.
 
@@ -37,7 +37,7 @@ Q> By default, a Users’ permissions are cached by phpgACL for performance reas
 
 The most commonly asked questions in the forums revolve around permissions. The initial assumption when the permissions do not react as expected is that the permissions system is broken and therefore should be rebuilt from the ground up. While this may be true, the vast majority of permissions problems are eventually tracked back to improper settings, a misunderstanding of how it works, or conflicting permissions.
 
-The default permissions within Web2project are sufficient for a few organizations, but the vast majority will want to modify and customize permissions for their own business practices, workflows, and requirements. The most useful way to explain and demonstrate an advanced set of permissions requires an example. This example is taken from the permissions currently in use by CaseySoftware, LLC for the management of projects for various customer organizations worked on by various employees and contractors.
+The default permissions within Web2Project are sufficient for a few organizations, but the vast majority will want to modify and customize permissions for their own business practices, workflows, and requirements. The most useful way to explain and demonstrate an advanced set of permissions requires an example. This example is taken from the permissions currently in use by CaseySoftware, LLC for the management of projects for various customer organizations worked on by various employees and contractors.
 
 Goal:
 CaseySoftware, LLC has a number of customers with information which should be protected both from one another and unauthorized users. It also has a number of contractors and employees which should only see projects specific to the companies they are working with or for.
@@ -77,14 +77,15 @@ Finally, we must add one more limitation to the Role. By having this in place, w
 
 ## Session Management
 
-One of the most common complaints with Web2project 1.x involved the classic issue of “I was in the middle of doing X and my session timed out!”. In v2, this issue was resolved by the development of “Web2project extended sessions”. This allows the System Administrator to let Web2project manage sessions and configure a custom “Session Idle Time” and a “Session Maximum Lifetime”.
+One of the most common complaints with Web2Project 1.x involved the classic issue of “I was in the middle of doing X and my session timed out!”. In v2, this issue was resolved by the development of “Web2Project extended sessions”. This allows the System Administrator to let Web2Project manage sessions and configure a custom “Session Idle Time” and a “Session Maximum Lifetime”.
 
-Session Management for Web2project can be handled in two different ways. The first is the standard PHP session model. When a system administrator is given the permissions to access and adjust the PHP configuration, this works well for most organizations. If Web2project is being used in a shared hosting environment and the configuration cannot be changed, this often leads to session timeouts during periods of non-usage and can cause users to lose all information. Although this is not considered a bug in Web2project, another option was created in response to concerns about this situation.
+Session Management for Web2Project can be handled in two different ways. The first is the standard PHP session model. When a system administrator is given the permissions to access and adjust the PHP configuration, this works well for most organizations. If Web2Project is being used in a shared hosting environment and the configuration cannot be changed, this often leads to session timeouts during periods of non-usage and can cause users to lose all information. Although this is not considered a bug in Web2Project, another option was created in response to concerns about this situation.
 
-Within the Web2project System Configuration, there are three values of interest titled “Session Handler”, “Session Idle Time”, and “Session Maximum Lifetime”. All of these values are tied specifically to the Users’ browser cookies and therefore do not transfer between computers or between different browsers such as Internet Explorer and Firefox.
+Within the Web2Project System Configuration, there are three values of interest titled “Session Handler”, “Session Idle Time”, and “Session Maximum Lifetime”. All of these values are tied specifically to the Users’ browser cookies and therefore do not transfer between computers or between different browsers such as Internet Explorer and Firefox.
 
-To enable Web2project’s management of sessions, change the “Session Handler” to “Web2project Extended Sessions”. This will enable the second two values for configuration.
-The Idle Time defines how frequently a user must be active in the system before they are automatically logged out. This is used to prevent Web2project sessions from timing out at inappropriate times such as when a User begins to type data, then goes to lunch before returning to the session. Therefore, it is recommended to keep this set to a minimum of 1 – 2 hours. For organizations who allow a more relaxed security policy, this value can be set as high as the Maximum Lifetime.
+To enable Web2Project’s management of sessions, change the “Session Handler” to “Web2Project Extended Sessions”. This will enable the second two values for configuration.
+
+The Idle Time defines how frequently a user must be active in the system before they are automatically logged out. This is used to prevent Web2Project sessions from timing out at inappropriate times such as when a User begins to type data, then goes to lunch before returning to the session. Therefore, it is recommended to keep this set to a minimum of 1 – 2 hours. For organizations who allow a more relaxed security policy, this value can be set as high as the Maximum Lifetime.
 
 The Maximum Lifetime defines the longest amount of time a user can go between logging in and subsequently being required to re-enter a password to access to the system. For many organizations, one to two weeks – represented as 7d or 14d respectively – is sufficient and will provide a reasonable amount of security. For organizations who need tighter security, this value can be reduced to hours using the suffix of “h”. 
 
@@ -92,13 +93,13 @@ For both the Session Idle Time and Session Maximum Lifetime the default prefixes
 
 ## LDAP Authentication
 
-Part of the ongoing mission of the Web2project Team is to provide seamless integration with existing infrastructures. Towards this goal, a System Administrator can choose to have users authenticate against and LDAP server such as Active Directory, a Lotus Notes Server, or OpenLDAP. Within the System Configuration, find the section labeled “LDAP Settings”. Set each of these values to point at your LDAP server, set “User Authentication Method” to LDAP, and save.
+Part of the ongoing mission of the Web2Project Team is to provide seamless integration with existing infrastructures. Towards this goal, a System Administrator can choose to have users authenticate against and LDAP server such as Active Directory, a Lotus Notes Server, or OpenLDAP. Within the System Configuration, find the section labeled “LDAP Settings”. Set each of these values to point at your LDAP server, set “User Authentication Method” to LDAP, and save.
 
 Using LDAP does not remove the requirements of configuring your Roles or Permissions but it does allow the User to avoid requiring yet another password. By default, all users authenticating via LDAP receive the “Guest” Role until given a distinct Role.
 
 ## Using SSL
 
-If you wish to use a more secure connection method to Web2project (https), SSL is a viable option. After you have the SSL certificate installed, the following must be added to your .htaccess file in the root of your Web2project installation:
+If you wish to use a more secure connection method to Web2Project (https), SSL is a viable option. After you have the SSL certificate installed, the following must be added to your .htaccess file in the root of your Web2Project installation:
 
     RewriteEngine on
     RewriteCond %{SERVER_PORT} !443$
@@ -108,15 +109,15 @@ Once this command is in place, all requests to http://domainname.com/web2project
 
 ## Email Notifications
 
-Web2project sends emails for a variety of reasons including task notifications, tasklog updates, event notifications, etc. Regardless of your host operating system, you have the options of sending via the default email transport defined in your php.ini – called “PHP Default” – or sending through a separate SMTP host. If the PHP default is available to you, it is unlikely that additional configuration will be necessary. If you use the SMTP host, you can specify additional login credentials for Web2project to use and authenticate against.
+Web2Project sends emails for a variety of reasons including task notifications, tasklog updates, event notifications, etc. Regardless of your host operating system, you have the options of sending via the default email transport defined in your php.ini – called “PHP Default” – or sending through a separate SMTP host. If the PHP default is available to you, it is unlikely that additional configuration will be necessary. If you use the SMTP host, you can specify additional login credentials for Web2Project to use and authenticate against.
 
 ## Translation Management
 
-The translations available to Web2project users are extensive. At the time of this writing there are over thirty languages available. To install your own language package, you must follow these steps:
+The translations available to Web2Project users are extensive. At the time of this writing there are over thirty languages available. To install your own language package, you must follow these steps:
 
-Download your desired translation from www.Web2project.net;
+Download your desired translation from www.Web2Project.net;
 
-Create the corresponding language specific directory in your /locales directory within Web2project. This folder should be named according to your two character ISO language code – eg. en = English, fr = French, es = Spanish;
+Create the corresponding language specific directory in your /locales directory within Web2Project. This folder should be named according to your two character ISO language code – eg. en = English, fr = French, es = Spanish;
 
 Unzip your translation package and upload it into the directory you created;
 
@@ -128,13 +129,13 @@ One of the options in the System Configuration is “Translation Warning”. Thi
 
 ## User Preferences
 
-This screen is identical to the individual Users’ preference screens. As you create new Users in Web2project, you can use this screen to ensure their defaults such as their Time Format (12 or 24 hour clock), their date format, and their language are set correctly. This only applies to Users created after the changes are made to the Default Preferences. In order to change individual Users, you must edit and update them separately. The most important aspect of this interface is the “User Task Assignment Maximum”. By setting this value below 100%, you can create a workflow that does not allow the User to completely close his own tasks without review by a person with the proper authority such as a manager or project manager.
+This screen is identical to the individual Users’ preference screens. As you create new Users in Web2Project, you can use this screen to ensure their defaults such as their Time Format (12 or 24 hour clock), their date format, and their language are set correctly. This only applies to Users created after the changes are made to the Default Preferences. In order to change individual Users, you must edit and update them separately. The most important aspect of this interface is the “User Task Assignment Maximum”. By setting this value below 100%, you can create a workflow that does not allow the User to completely close his own tasks without review by a person with the proper authority such as a manager or project manager.
 
 Q> If you change the Default User Preferences, remember that it only changes the preferences of new users. To edit the Preferences of existing users, each one must be edited individually.
 
 ## Custom Field Editor
 
-Quite often a User will want to attach additional information which does not already fit within Web2project such as “Year Established” for a Company or “Codename” for a Project. The Custom Field Editor is a quick and simple way of adding new fields to certain modules without having to change the database, create custom code, or change any templates. To add these fields, simply follow this process:
+Quite often a User will want to attach additional information which does not already fit within Web2Project such as “Year Established” for a Company or “Codename” for a Project. The Custom Field Editor is a quick and simple way of adding new fields to certain modules without having to change the database, create custom code, or change any templates. To add these fields, simply follow this process:
 
 Select “Custom Field Editor” within the System Administration.
 Choose the relevant module by selecting “Add a new Custom Field to this Module”.

@@ -2,9 +2,9 @@
 
 Once your project begins, you will likely want to attach information from individual files. Common additions are contracts, requirements, technical specifications, relevant standards, or any of a plethora of other things. While these can be handled in a third-party Document Management System or a wiki, it is often better to have a single location for pulling all this information together into a single interface for review, comment, update, or perusal.
 
-The File Repository in web2Project is a well organized dynamic module for maintaining your assets that are associated with [Projects](/modules/projects.html), [Task](/modules/tasks.html), or the [Calendar](/modules/calendar.html). The files module appears in the main navigation by default, but you can also access files via projects, project designer, and task.
+The File Repository in Web2Project is a well organized dynamic module for maintaining your assets that are associated with [Projects](/modules/projects.html), [Task](/modules/tasks.html), or the [Calendar](/modules/calendar.html). The files module appears in the main navigation by default, but you can also access files via projects, project designer, and task.
 
-In the web2Project file repository you can:
+In the Web2Project file repository you can:
 
 * Create your own folders for any purpose.
 * Associate files to those folders
@@ -22,7 +22,7 @@ You can then select a Category of the File – default options are “Document�
 
 ### Check-in / Check-out / Update
 
-As most projects progress, new versions of documents become available, documents change, and old information becomes less relevant. In order to handle this, Web2project has a simple versioning feature with checkin/checkout functionality. A user simply clicks on the “co” column to checkout the file. They fill in a comment and download it immediately. When their modifications are complete, they click on the “co” column again, fill in a new comment, denote whether this is a major or minor revision, and save.
+As most projects progress, new versions of documents become available, documents change, and old information becomes less relevant. In order to handle this, Web2Project has a simple versioning feature with checkin/checkout functionality. A user simply clicks on the “co” column to checkout the file. They fill in a comment and download it immediately. When their modifications are complete, they click on the “co” column again, fill in a new comment, denote whether this is a major or minor revision, and save.
 
 The previous version of the file is kept untouched and the new file is displayed. Older versions of every file are kept for archival purposes and are denoted in the version column with a number in parentheses. By clicking on this number, all previous versions of the file are displayed and available for download. This protects files from being lost either due to malicious or accidental actions.
 
@@ -44,7 +44,7 @@ The default view of the files repository contains a table that lists the files c
 * The third column will show you the checkout reason when a file is checked out.
 * The fouth column shows the files name
 * The Fith Column shows a short description
-* The sixth Column shows the version number. When you checkout and file and then check it back in, web2Project will also track the file version number. When you click the file name, you will download the latest version of the file.
+* The sixth Column shows the version number. When you checkout and file and then check it back in, Web2Project will also track the file version number. When you click the file name, you will download the latest version of the file.
 * The seventh column will show you what category the file belongs. The category is defined by tabs.
 * The eight column will show you what folder the file belongs under
 * The ninth shows who uploaded the file
@@ -80,7 +80,7 @@ The add file page contacts a number of form elements that you can use to manage 
 {float=right}
 ![Use the File Explorer](images/files/explorer.png)
 
-The folder explorer in web2Project allows you to view files that are specific to that folder. You can also perform a number of functions within this view that you can do in the main file list.
+The folder explorer in Web2Project allows you to view files that are specific to that folder. You can also perform a number of functions within this view that you can do in the main file list.
 
 To access the folder explorer simply click on the folder name in the File list page.
 

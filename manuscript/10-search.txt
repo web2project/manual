@@ -1,10 +1,10 @@
 ## SmartSearch {#module-smartsearch}
 
-The SmartSearch Module in web2Project allows you to perform global searches for data throughout the system. The core of the module is hidden by default from the main menu, but its function is access via the Global Search.
+The SmartSearch Module in Web2Project allows you to perform global searches for data throughout the system. The core of the module is hidden by default from the main menu, but its function is access via the Global Search.
 
 ### To View The SmartSearch Module
 
-At the top of most pages in web2Project you’ll notice a text box called “Global Search”. When you type data into this text box and hit enter or return the SmartSearch begins to function and will display your results within the module itself.
+At the top of most pages in Web2Project you’ll notice a text box called “Global Search”. When you type data into this text box and hit enter or return the SmartSearch begins to function and will display your results within the module itself.
 
 You can also enable the SmartSearch Module to be a menu idem via the System Administration > Modules.
 
