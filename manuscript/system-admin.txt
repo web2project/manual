@@ -104,11 +104,11 @@ If you wish to use a more secure connection method to Web2project (https), SSL i
     RewriteCond %{SERVER_PORT} !443$
     RewriteRule ^(.*) https://%{SERVER_NAME}/$1 [R,L]
 
-Once this command is in place, all requests to http://domainname.com/dotproject/ would become https://domainname.com/dotproject/ and offer an additional layer of security to your users.
+Once this command is in place, all requests to http://domainname.com/web2project/ would become https://domainname.com/web2project/ and offer an additional layer of security to your users.
 
 ## Email Notifications
 
-DotProject sends emails for a variety of reasons including task notifications, tasklog updates, event notifications, etc. Regardless of your host operating system, you have the options of sending via the default email transport defined in your php.ini – called “PHP Default” – or sending through a separate SMTP host. If the PHP default is available to you, it is unlikely that additional configuration will be necessary. If you use the SMTP host, you can specify additional login credentials for Web2project to use and authenticate against.
+Web2project sends emails for a variety of reasons including task notifications, tasklog updates, event notifications, etc. Regardless of your host operating system, you have the options of sending via the default email transport defined in your php.ini – called “PHP Default” – or sending through a separate SMTP host. If the PHP default is available to you, it is unlikely that additional configuration will be necessary. If you use the SMTP host, you can specify additional login credentials for Web2project to use and authenticate against.
 
 ## Translation Management
 

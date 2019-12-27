@@ -45,7 +45,7 @@ W> If you run into any problems, we recommend that you resolve the issue and the
 11. The Installer will handle applying all updates.
 12. Use your system as normal.
 
-## Convert from dotProject
+## Converting from dotProject
 
 1. Back up your database, the `files` folder, and `includes/config.php`. You can never have too many backups.
 2. Uncompress your web2project archive (often named `web2project.tar.gz` or `web2project.zip`)

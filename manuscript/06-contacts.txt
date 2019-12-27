@@ -6,7 +6,7 @@ You can access the data in this module by clicking on the contacts link in the m
 
 ### Creating a Contact (Contact Add/Edit Page)
 
-Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. DotProject looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
+Creating your first contact is simple. Select Contacts from the top navigation and then click “new contact”. The information available is common to most address books where you can specify their name, company, and the exact name displayed for them. Alternatively, if your contact has sent you a vCard – normally attached to an email or available from their website – you can import that directly. In this case, Web2project will attempt to automatically attach the contact to an existing Company already within the system and if it is not found, simply create a new Company to represent it. Web2project looks for an exact match, so a difference between “Inc.” and “Incorporated” can cause a duplicate company to be created. This can be corrected by simply editing the Contact and assigning the proper Company.
 
 {float=right}
 ![Creating a Contact](images/contacts/addedit.png)
@@ -46,12 +46,6 @@ From this page you can:
 1.	Email the contact
 1.	Edit the contact
 1.	Send an instant message and more
-
-
-### View a specific Contact (Contact View Page)
-
-TODO
-
 
 ### Confirming Email (Contacts email confirm)
 
