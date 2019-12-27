@@ -101,6 +101,7 @@ Using LDAP does not remove the requirements of configuring your Roles or Permiss
 
 If you wish to use a more secure connection method to Web2Project (https), SSL is a viable option. After you have the SSL certificate installed, the following must be added to your .htaccess file in the root of your Web2Project installation:
 
+{linenos=off}
     RewriteEngine on
     RewriteCond %{SERVER_PORT} !443$
     RewriteRule ^(.*) https://%{SERVER_NAME}/$1 [R,L]
