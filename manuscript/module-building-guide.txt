@@ -1,4 +1,4 @@
-# Module Building Guide
+# Module Building Guide {#module-building-guide}
 
 The goal of this section is to document a clear, repeatable way for developers to create modules to supplement and enhance the operation of the Web2Project system. There are numerous code samples included because showing is often more important than explaining. As certain non-core functionality becomes standardized, some of it will be added to the core system itself. This will not only simplify Add On development but also make sure that all modules adhere to the same standards and logic flows.
 
@@ -22,17 +22,17 @@ Building a Web2Project module requires a handful of key files in a specific stru
 Filename  | Status | Description | Notes
 ----- |:-----:| ----- | -----
 /todos/                                 | required | folder | Base folder of the module
-/todos/README.md                        | required | [Module Details](/docs/readme-reqs.html) | Information about the module, its release history, etc
-/todos/setup.php                        | required | [Setup Instructions](/docs/setup.html) | Contains and executes the install/uninstall logic
-/todos/todos.class.php                  | required | [Primary Model](/docs/core-class.html) | Defines all the business logic and CRUD operations for the module
-/todos/index.php                        | required | [List View](/docs/views.html) | Normally shows a list of any top-level items
+/todos/README.md                        | required | [Module Details](https://docs.web2project.net/docs/readme-reqs.html) | Information about the module, its release history, etc
+/todos/setup.php                        | required | [Setup Instructions](https://docs.web2project.net/docs/setup.html) | Contains and executes the install/uninstall logic
+/todos/todos.class.php                  | required | [Primary Model](https://docs.web2project.net/docs/core-class.html) | Defines all the business logic and CRUD operations for the module
+/todos/index.php                        | required | [List View](https://docs.web2project.net/docs/views.html) | Normally shows a list of any top-level items
 /todos/index.js                         | optional |  | Javascript that gets included in the Index layout
-/todos/addedit.php                      | optional | [Add/Edit View](/docs/views.html) | View that provides a form to add or edit the item
+/todos/addedit.php                      | optional | [Add/Edit View](https://docs.web2project.net/docs/views.html) | View that provides a form to add or edit the item
 /todos/addedit.js                       | optional |  | Javascript that gets included in the Add/Edit layout
-/todos/view.php                         | optional | [Item View](/docs/views.html) | View that provides a page to view the item
+/todos/view.php                         | optional | [Item View](https://docs.web2project.net/docs/views.html) | View that provides a page to view the item
 /todos/view.js                          | optional |  | Javascript that gets included in the view layout
-/todos/do_todos_aed.php                 | optional | [Primary Controller](/docs/primary-controller.html) | Acts as the Controller/Dispatcher for most of the primary actions
-/todos/companies_tab.view.todolist.php  | optional | [Subview](/docs/subviews.html) | Provides a embedded tab subview on the Company View page
+/todos/do_todos_aed.php                 | optional | [Primary Controller](https://docs.web2project.net/docs/primary-controller.html) | Acts as the Controller/Dispatcher for most of the primary actions
+/todos/companies_tab.view.todolist.php  | optional | [Subview](https://docs.web2project.net/docs/subviews.html) | Provides a embedded tab subview on the Company View page
 
 ## Naming Conventions
 

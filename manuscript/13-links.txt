@@ -1,6 +1,6 @@
 ## Links {#module-links}
 
-The links module is an alternative resource where you can store quick links for reference and assign them to [Projects](/modules/projects.html) or [Task](/modules/tasks.html).
+The links module is an alternative resource where you can store quick links for reference and assign them to [Projects](#module-projects) or [Task](#module-tasks).
 
 This is particularly useful to store client or vendor websites, but can be used for a number of purposes including links to external project files.
 

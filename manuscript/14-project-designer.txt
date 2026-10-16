@@ -1,12 +1,12 @@
 ## Project Designer {#module-project-designer}
 
-The Project Designer Module was designed in Web2Project as a means to streamline your daily workflow in part because it contains all the main minimum resources needed to effectively manage your [[project]] on one page.
+The Project Designer Module was designed in Web2Project as a means to streamline your daily workflow in part because it contains all the main minimum resources needed to effectively manage your [project](#module-projects) on one page.
 
 It is a panel based interface rather than the core tab interface and it reduces the need to click multiple tabs to accomplish something.
 
 I> ProjectDesigner is active but hidden from the sidebar by default. Open it from a project with the “design this project” link at the top of the project page, or set it to “visible” under System Admin → View Modules. The *Use ProjectDesigner to View Projects by Default.* setting in System Configuration opens every project in ProjectDesigner instead.  In addition its work area is somewhat customizable, and you can perform multiple actions at once.
 
-For example, you might have a project that needs multiple [Tasks](/modules/tasks.html). Rather than use the core task interface, you can use the project designer to add multiple task with different names at once.
+For example, you might have a project that needs multiple [Tasks](#module-tasks). Rather than use the core task interface, you can use the project designer to add multiple task with different names at once.
 
 ### The Work Area
 
@@ -26,8 +26,8 @@ From this page you can also:
 * Go to core project view
 * Edit this project
 * Create a new project
-* Create an [Event](/modules/calendar.html)
-* Add a new [File](/modules/files.html).
+* Create an [Event](#module-events)
+* Add a new [File](#module-files).
 
 ### Projects Panel
 

@@ -178,7 +178,7 @@ Permissions are important to secure and protect information within Web2Project. 
 Q> For performance, Web2Project works out each User’s effective permissions ahead of time instead of evaluating every rule on every request. It recalculates them when the User logs in and whenever a Role, a permission or a module changes, so changes normally show up on the User’s next page. If a User still sees old permissions, ask them to log out and back in.
 
 
-## Permissions 201
+## Permissions 201 {#permissions-201}
 
 The most commonly asked questions in the forums revolve around permissions. The initial assumption when the permissions do not react as expected is that the permissions system is broken and therefore should be rebuilt from the ground up. While this may be true, the vast majority of permissions problems are eventually tracked back to improper settings, a misunderstanding of how it works, or conflicting permissions.
 
