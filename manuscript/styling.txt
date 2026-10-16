@@ -1,23 +1,34 @@
-# Themes & Styling
+# Themes & Styling {#themes}
 
-Web2project has never been the easiest thing to customize and theme but has gotten steadily better as we've extracted and cleaned up html and css. As of v3.0, much of the system is clean, compliant XHTML 1.0 and CSS 2.0. This allows you to customize the colors of various screens, adjust the fonts and modify the sizes of various components with a handful of CSS tweaks and modifications.
+Since v5.0, Web2Project has a single theme built on [Bootstrap](https://getbootstrap.com/) 5.3. The older w2p-snowball and wps-redmond themes, the per-user "User Interface Style" preference and the system-wide style setting are gone, so there is no theme to choose. Instead, you customize the one theme by overriding its files.
 
-Further, we are in the process of implementing a templating layer. Any HTML used within the core system will be contained within the styles/_common directory. Each of these templates will be included within their modules similar to any other templating layer with a snippet like this:
+## What's in the theme
 
-`include $AppUI->getTheme()->resolveTemplate('companies/list');`
+The theme lives in `style/bootstrap/`:
 
-which resolves to this file by default:
+* `header.php` and `footer.php` are the page shell: the bar across the top (sidebar toggle, logo, Global Search, the *New Item* menu, quick links and the user menu), the module sidebar and the footer.
+* `login.php` and `lostpass.php` are the sign-in and lost-password pages.
+* `main.css` maps the class names used throughout Web2Project (`std`, `tbl`, `list`, `button` and others) onto Bootstrap's look, and holds the application's own styles such as the task status colors and the calendars.
+* `overrides.php` defines the theme class and the tab boxes.
+* `css/`, `js/`, `fonts/` and `icons/` hold Bootstrap itself, the Nunito Sans and Poppins fonts and Bootstrap Icons. They are bundled, so the theme works without a CDN.
 
-`styles/_common/companies/list.php`
+Images the theme doesn't provide are loaded from `style/web2project/images/`.
 
-If you wish to customize this for your needs, create a file such as this:
+## Overriding a page template
 
-`styles/(your theme)/companies/list.php`
+Most of the HTML in Web2Project lives in templates in `style/_common/`. A module includes a template with a snippet like this:
 
-Once you select your preferred theme (via the User Preferences), your custom file will override the default _common file automatically with no additional configuration. This same principle can be applied to all addedit, view, list, and subview templates.
+{linenos=off}
+    include $AppUI->getTheme()->resolveTemplate('companies/view');
 
-In some cases, a module may not have a specific template and instead fall back to a system-wide default template such as:
+which looks for these files, in order:
 
-`./styles/_common/list.php`
+{linenos=off}
+    style/bootstrap/companies/view.php
+    style/_common/companies/view.php
 
-This generic template can be overriden in the same manner.
+To change a page, copy the template from `style/_common/` to the same path under `style/bootstrap/` and edit the copy. Web2Project uses your copy from then on, with no other configuration. The same works for the add/edit, view and list templates of every module, and for the generic `style/_common/list.php` used by modules without their own list template.
+
+For colors, fonts and spacing, edit `style/bootstrap/main.css`, or add your own rules at the end of it. Use Bootstrap's classes (`d-flex`, `btn btn-primary btn-sm`, `form-control`) in any new markup.
+
+W> Upgrades replace both `style/bootstrap/` and `style/_common/`. Keep a copy of every file you change and re-apply your changes after each upgrade.
