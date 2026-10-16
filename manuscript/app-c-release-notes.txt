@@ -1,113 +1,157 @@
-# Appendix B: v 3.4 Release Notes {#release-notes}
+# Appendix C: v5.0.0-rc1 Release Notes {#release-notes}
 
-**Note:** *The primary focus of this release was to a) reach full PHP 7.x compatibility, specifically focused on PHP 7.2 or above and b) reach full MySQL 5.6 compatibility. All other aspects were secondary to those.*
+**Release Date:** 16 October 2026
+
+I> The primary goals of this release were a new Bootstrap 5.3 interface, the removal of long-deprecated code and features, and a sweep of security and data-integrity fixes. This release removes the deprecated functions and class aliases, the old themes, PDF output and file check-in/check-out. Add-on modules and customizations that still depend on any of these will need to be updated before upgrading.
+
+## Downloading & Installing
+
+The only official distribution site is [GitHub](https://github.com/web2project/web2project/releases). Check out the [installation chapter](#installation) to get started.
+
+## Reporting Problems
+
+For more information, support, or to discuss upcoming features, please visit [Discussions](https://github.com/orgs/web2project/discussions). Report any issues you find in the [issue tracker](https://github.com/web2project/web2project/issues), and mark feature requests as requests rather than bugs.
 
 ## New Features
 
-* Updated to support PHP 7.x (7.0-7.2), not making use of new functionality yet
-* Updated to support MySQL 5.6, the big issue here was that it no longer supports 0000-00-00 as a valid null date
-* Updated the default database datetime from 0000-00-00 to 1000-01-01
-* Updated the password handler to use the password_hash 
-
-## Misc Changes/Improvements
-
-* Cleaned up various unnecessary queries
-* Updated the LDAP handler to use core functionality
-* Updated the username to allow for dashes, periods, and the @ sign, primarily to allow email addresses
-* Removed each() which is deprecated in PHP 7.x
+* New Bootstrap 5.3 interface
+  * Bootstrap 5.3.8 is bundled with the application, so no CDN is needed
+  * NiceAdmin-style header, sidebar, colours and typography, using the bundled Nunito Sans and Poppins fonts and Bootstrap Icons
+  * New sign-in, sign-up and lost-password pages
+  * Layout tables replaced with Bootstrap markup in every module, the shared templates and the installer
+  * Bootstrap is now the only theme, so the per-user and system-wide style settings are gone
+* Projects
+  * New "Tasks (All)" tab on the project view showing active and inactive tasks together in tree order (based on work by Klaus Buecher)
+  * Inactive tasks now have their own row colour and an entry in the task key
+  * Project budgets are shown on the project view again
+* Tasks
+  * The "show inactive tasks" link on the Tasks list now works, as a "show all tasks" / "show active tasks" toggle (based on work by Klaus Buecher)
+  * Resources assigned on a task's "Other resources" tab are saved again; nothing had saved them since v3.2 (based on work by Klaus Buecher)
+* Files
+  * The Files list is grouped under project headings
+  * The Files list hides files from projects and tasks the user isn't allowed to see
+  * New Owner and Category filters on the Files page, next to the Project filter. The owner filter also narrows the counts on the category tabs
+* Custom fields
+  * Custom fields work on users
+  * Calendar (event) custom fields work again
 
 ## Fixes/Bugs Closed
 
-* Restored the "show incomplete only" task list
-* [Issue 1083](http://bugs.web2project.net/view.php?id=1083) - assigned "Other resources" to a task will not be stored (v3.x)
-* [Issue 1171](http://bugs.web2project.net/view.php?id=1171) - Update password mechanism
-* [Issue 1505](http://bugs.web2project.net/view.php?id=1505) - Translation issue in project user interface
-* [Issue 1585](http://bugs.web2project.net/view.php?id=1585) - dynamic tasks are not always updated in projectdesigner
-* [Issue 1592](http://bugs.web2project.net/view.php?id=1592) - Added the user priority to the task tree
-* [Issue 1612](http://bugs.web2project.net/view.php?id=1612) - Cannot set user permissions
-* [Issue 1615](http://bugs.web2project.net/view.php?id=1615) - Shifted the task reminders to the Task post_store hook
-* [Issue 1617](http://bugs.web2project.net/view.php?id=1617) - Passing the project sort into later pages
-* [Issue 1626](http://bugs.web2project.net/view.php?id=1626) - timezone handling broken
-* [Issue 1628](http://bugs.web2project.net/view.php?id=1628) - Removed the minimum length for task name
-* [Issue 1630](http://bugs.web2project.net/view.php?id=1630) - Allowed the 'guest role' to view their own 'my info'
-* [Issue 1631](http://bugs.web2project.net/view.php?id=1631) - Number of projects in tab title is wrong, not based on permissions (Projects Module)
-* [Issue 1634](http://bugs.web2project.net/view.php?id=1634) - Custom Fields dropped when editing and saving task
-* [Issue 1635](http://bugs.web2project.net/view.php?id=1635) - EmailManager::getTaskNotify returns mail body without Projectname
-* [Issue 1638](http://bugs.web2project.net/view.php?id=1638) - DB QUERIES ERRORS - 1 too many
-* [Issue 1639](http://bugs.web2project.net/view.php?id=1639) - Custom fields are not showing in tasks
-* [Issue 1640](http://bugs.web2project.net/view.php?id=1640) - I can't update fields on Projects
-* [Issue 1641](http://bugs.web2project.net/view.php?id=1641) - users cannot login except admin
-* [Issue 1642](http://bugs.web2project.net/view.php?id=1642) - Incorrect datetime value: '2014-12-19 18:15:00&lt;br /&gt;' for column 'task_end_date'
-* [Issue 1648](http://bugs.web2project.net/view.php?id=1648) - Assigned users not shown
-* [Issue 1649](http://bugs.web2project.net/view.php?id=1649) - Incorrect % complete calculations for dynamic tasks
-* [Issue 1650](http://bugs.web2project.net/view.php?id=1650) - Incorrect % complete calculations for dynamic tasks
-* [Issue 1651](http://bugs.web2project.net/view.php?id=1651) - The Company Project list doesn't work after page 1
-* [Issue 1653](http://bugs.web2project.net/view.php?id=1653) - Fecility to Show/Hide or rearrange order of Columns
-* [Issue 1654](http://bugs.web2project.net/view.php?id=1654) - Pinned tasks cannot be unpinned
-* [Issue 1658](http://bugs.web2project.net/view.php?id=1658) - addedit layout broken in IE
-* [Issue 1662](http://bugs.web2project.net/view.php?id=1662) - add other resource broken (already in 3.2)
-* [Issue 1664](http://bugs.web2project.net/view.php?id=1664) - preset owner field in addedit with current user on create
-* [Issue 1665](http://bugs.web2project.net/view.php?id=1665) - date move in actions: is working days, not days
-* [Issue 1666](http://bugs.web2project.net/view.php?id=1666) - authentification ldap failed
-* [Issue 1667](http://bugs.web2project.net/view.php?id=1667) - Gantt Chart in mytasks broken
-* [Issue 1668](http://bugs.web2project.net/view.php?id=1668) - notify owner broken
-* [Issue 1669](http://bugs.web2project.net/view.php?id=1669) - queuescanner/reminder broken due to permissions
-* [Issue 1670](http://bugs.web2project.net/view.php?id=1670) - Unable to upload modules; perceived directory permissions
-* [Issue 1673](http://bugs.web2project.net/view.php?id=1673) - gant chart shows error
-* [Issue 1674](http://bugs.web2project.net/view.php?id=1674) - delete empty fields with icons in the tasks list of projects view
-* [Issue 1681](http://bugs.web2project.net/view.php?id=1681) - Custom fields lost when updating project status(es) from "Update Projects Statuses" button
-* [Issue 1682](http://bugs.web2project.net/view.php?id=1682) - BindHashToObject has bug if object is reused
-* [Issue 1683](http://bugs.web2project.net/view.php?id=1683) - Administrators cannot set user preferences / only user can set preferences
-* [Issue 1684](http://bugs.web2project.net/view.php?id=1684) - Active Sessions Display does not display "End User Session" or "Force User Logout" buttons
-* [Issue 1685](http://bugs.web2project.net/view.php?id=1685) - User Log Doesn't Work
-* [Issue 1686](http://bugs.web2project.net/view.php?id=1686) - Gantt Chart JPGraph PHP Error (owner_ids)
-* [Issue 1688](http://bugs.web2project.net/view.php?id=1688) - No Holidays in week_view
-* [Issue 1690](http://bugs.web2project.net/view.php?id=1690) - breadcrumbs: add: goto parent task
-* [Issue 1692](http://bugs.web2project.net/view.php?id=1692) - Subtasks not shown in tab
-* [Issue 1695](http://bugs.web2project.net/view.php?id=1695) - Security Issue in Search
-* [Issue 1696](http://bugs.web2project.net/view.php?id=1696) - does not show inactive tasks
-* [Issue 1697](http://bugs.web2project.net/view.php?id=1697) - add tab for all status
-* [Issue 1698](http://bugs.web2project.net/view.php?id=1698) - toggle button for inactive status broken
-* [Issue 1699](http://bugs.web2project.net/view.php?id=1699) - project view broken: $project_id is NULL
-* [Issue 1702](http://bugs.web2project.net/view.php?id=1702) - Task Permissions gone crazy?
-* [Issue 1704](http://bugs.web2project.net/view.php?id=1704) - Project tabs gives wrong project number if permissions restrict view (Projects Module)
-* [Issue 1705](http://bugs.web2project.net/view.php?id=1705) - Number of projects shown in company menu next to company name does not respect permissions (Companies Module)
-* [Issue 1711](http://bugs.web2project.net/view.php?id=1711) - Can't unselect project in Reports
-* [Issue 1712](http://bugs.web2project.net/view.php?id=1712) - Incorrect time calculating in the task with the dependence
-* [Issue 1713](http://bugs.web2project.net/view.php?id=1713) - dependencies use user TZ instead of mysql TZ
-* [Issue 1714](http://bugs.web2project.net/view.php?id=1714) - today button in header gone
-* [Issue 1715](http://bugs.web2project.net/view.php?id=1715) - project edit does not display budgets
-* [Issue 1716](http://bugs.web2project.net/view.php?id=1716) - Subproject: no token task created for parent project
-* [Issue 1725](http://bugs.web2project.net/view.php?id=1725) - Deleting subproject does not delete token task in parent project
-* [Issue 1729](http://bugs.web2project.net/view.php?id=1729) - Cosmetic: TipTip shows old Tip if current empty
-* [Issue 1730](http://bugs.web2project.net/view.php?id=1730) - Task log tab broken on project level
-* [Issue 1732](http://bugs.web2project.net/view.php?id=1732) - Project Name not appearing Assignment Notification
-* [Issue 1733](http://bugs.web2project.net/view.php?id=1733) - Target Budget does not save
-* [Issue 1739](http://bugs.web2project.net/view.php?id=1739) - User Priority broken
-* [Issue 1744](http://bugs.web2project.net/view.php?id=1744) - Parent drop down: also shows inactive tasks
-* [Issue 1746](http://bugs.web2project.net/view.php?id=1746) - Project owner sees only those tasks where he is assigned
-* [Issue 1748](http://bugs.web2project.net/view.php?id=1748) - pin in gettasktree misses and in join
+* Security
+  * Fixed stored and reflected XSS in the selector popup. Option labels are now escaped in every dropdown built with arraySelect() and in the project dropdown
+  * Public sign-up cleans the e-mail address before using it in the duplicate-address lookup (SQL injection)
+  * Translation files are read with a parser instead of eval() ([#313](https://github.com/web2project/web2project/issues/313))
+  * The translation editor only writes files for installed modules and languages; before, a crafted module name could write outside locales/
+  * The current password is checked with password_verify() when changing it, and saving a user no longer re-hashes the stored password ([#386](https://github.com/web2project/web2project/issues/386))
+  * The Active Sessions tab checks the session id before it reaches SQL
+  * Projects the user is denied are no longer counted in the company list or the project tabs
+* Data integrity
+  * A refused delete no longer runs its cleanup. For example, a user who owned a project used to lose their login and preferences even though the delete was refused
+  * Deleting a project removes its placeholder task from the parent project and its custom field values, and records the delete in the history
+  * Deleting a user, event, forum, message or task log removes its custom field values, and only the deleted object's own values
+  * Deleting a task removes its resource assignments. For a task with subtasks, the task's own assignments and dependencies are now removed too
+  * Contacts are no longer saved with owner -1 when no one is logged in
+* Users, permissions and LDAP
+  * Removed duplicate permission entries so User and Calendar permissions can be granted ([#385](https://github.com/web2project/web2project/issues/385))
+  * Users-module editors can save other users' preferences ([#385](https://github.com/web2project/web2project/issues/385))
+  * Restored the "delete User" action on the user view ([#385](https://github.com/web2project/web2project/issues/385))
+  * Changed passwords are stored as typed and the real result is reported; the strength meter loads again ([#386](https://github.com/web2project/web2project/issues/386))
+  * LDAP: new users always get a contact and their password is hashed once; existing users without a contact get a placeholder ([#320](https://github.com/web2project/web2project/issues/320))
+  * The access log records logins again, and the logout controls show on the Active Sessions tab
+  * Logins are recorded as open until they end. Before, every login was stored as already ended, so logouts were never recorded and anyone who had ever logged in showed as "Online". Logging out in one browser no longer closes the user's other logins
+  * A session's last-activity time is updated on every request, so active users are no longer logged out when the idle limit passes after login
+* Projects and tasks
+  * Fixed the project Task Logs tab crashing on first visit and for projects with subprojects
+  * Fixed the project list being empty for users without full department rights
+  * "Update projects status" preselects the current status and shows the result
+  * Fixed a task's Child Tasks tab always being empty
+  * Task reminders are sent again
+  * Tasks moved by a dependency keep their dates in UTC instead of shifting by the user's offset (fix from Klaus Buecher)
+  * Re-parenting a task moves its subtasks along, so dynamic task dates roll up correctly (fix from Klaus Buecher)
+  * Moving a task to another project recalculates the old project's dynamic tasks (fix from Klaus Buecher)
+  * Duplicating a file gives the copy the current user, date and its own history entry instead of the original's. The same root cause meant `CTask::copy()`/`deepCopy()` never updated the target project's task count or gave the copies their own parent and position in the tree (reported by Klaus Buecher)
+  * The filter checkboxes on the To Do Gantt chart work ([#352](https://github.com/web2project/web2project/issues/352))
+  * The project list's "LP" column shows the problem icon for projects with a task log flagged as a problem again; it always showed "-"
+  * Moving a task to another project updates the old project's task count, including when the move leaves it with no tasks
+* Dates and time zones
+  * `w2p_Utilities_Date::convertTZ()` returned the wrong time and often the wrong date (16:13 UTC became 08:13 for Indianapolis instead of 12:13, and a January date became today). This fixes the times in task reminder e-mails, the "today" marker on the Gantt charts and the month calendar, and the Tasks per User report's date range
+* Pagination and lists
+  * Page links keep the current view and sort order
+  * The Files list page links stay on the current project, company or task
+  * The company Files tab shows that company's files
+  * Selecting a project on the Files page no longer turns off the category tabs, so project and category can be combined
+* Resources
+  * Adding or editing a resource works on new installs. The installer left the Resources tables at an old module version, so saving failed with "Unknown column 'resource_description'" and there were no resource types (migration 068)
+* Reports
+  * Fixed the Project Statistics report crashing when there are no projects
+  * The Project Statistics report counts unassigned tasks correctly; its "No Assignee" row never went past 1
+  * The Task Logs reports apply their company filter, which was never read
+  * Report messages and values that were computed but never output are shown
+* Database and upgrades
+  * Works with MySQL 8's default sql_mode (ONLY_FULL_GROUP_BY is turned off for web2project's connection)
+  * Migration errors are reported instead of silently dropped. A fresh install now completes with none
+  * Fixed migrations that errored on web2project databases or failed on strict servers (012, 033, 050/051, 056)
+  * Migration 056 keeps the version history
+  * Database version is now 68 (new migrations 063–068)
+* PHP 8 and the error log
+  * A logged-in crawl of 257 pages now produces no PHP warnings or notices (421 before the final round of fixes): list tables, reports, ProjectDesigner, the ACL view, the role list, the Task Logs tab and task saves (`array_sum()` on dependency lists)
+  * Replaced the removed `$php_errormsg` and `mysql_get_client_info()`
+  * Fixed the LDAP authenticator's method signature, a misspelled constant, a quoted preference name and a class/file name mismatch
+  * Fixed the translation editor crash on strings of 40 or more characters
+
+## Misc Changes/Improvements
+
+* Removed
+  * PDF output (reports, Gantt charts and forums)
+  * File check-in/check-out ([#376](https://github.com/web2project/web2project/issues/376)), file change e-mail notifications and the file version field
+  * The w2p-snowball and wps-redmond themes, and theme selection
+  * includes/deprecated_functions.php (66 functions) and the 37 deprecated class aliases (CAppUI, CDate, DBQuery, CTitleBlock and others). Third-party code still using them will now fail with undefined-function or undefined-class errors
+  * The remaining deprecated db_* helpers, replaced with w2p_Database_Connection
+* Code cleanup
+  * PHPDoc cleaned up across all classes, modules and tests
+  * Removed commented-out PHP and JavaScript code and statements that could never run
+  * Fixed invalid HTML (duplicate and malformed attributes, unclosed elements, table/form nesting, deprecated tags) and made the directory-guard index files valid HTML5. No deprecated HTML tags (such as `<font>` and `<center>`) remain in /modules
+* Unit Tests
+  * The include tests now run as part of phpunit.xml and use the PHPUnit 11 API
+  * Removed tests for deleted deprecated methods and fixed broken assertions
+  * The phploc build target writes a real XML report
+* Version set to 5.0.0 (Composer package 5.0)
 
 ## Open/Known Issues
 
-*  There are a number of PHP 5.x functions used that are deprecated in PHP 7.x and may be removed in 8.x. We'll update and eliminate those during 2019.
-*  If you upgrade from dotProject, you may have an oddity with your default theme/display as the name has changed.  If this happens, edit your preferences, change to one of the existing themes, and save.
+* The database layer - ADODB - is ancient and needs to be replaced. This is massive and touches every component.
+* The date handling - PEAR Date - is ancient and needs to be updated to use Carbon.
+* Names are still printed unescaped in some list tables and page titles (Companies, Projects and Tasks lists, calendar views, project and task views). This needs a central escaping pass.
+* Uploaded files are stored inside the web root and protected only by an Apache 2.2-style `.htaccess` ([#394](https://github.com/web2project/web2project/issues/394), [#395](https://github.com/web2project/web2project/issues/395)).
+* Public sign-up has no captcha or rate limit, and it e-mails the plaintext password ([#363](https://github.com/web2project/web2project/issues/363)).
+* Session logout links are GET requests (admin only).
+* Opening a file link while logged out gives a fatal error in `fileviewer.php`.
+* The task tree joins user priorities and pins without the user, so the "U" column and the pin icon can show another user's values, and ProjectDesigner doesn't filter tasks by per-task permissions.
+* The week view shades working days by column position, not by weekday.
+* The placeholder task for an empty subproject gets the current date instead of the subproject's dates.
+* The unit test suite runs 509 tests with 7 errors and 15 failures.
 
-## Code Quality Metrics
-* Lines of Code: 65296 (9282 of comments, 56014 of code)
-* Cyclomatic Complexity/LoC: 0.25
-  * Complexity/Class: 14.5
-  * Complexity/Method: 2.4
-* Classes: 170 (165 Concrete, 5 Abstract, 2 Interfaces)
-  * Lines of Code/Class: 66
+## System Metrics
+
+These figures come from phploc, run over everything except the third-party `lib` and `vendor` folders.
+
+* Lines of Code: 61617 (9450 of comments, 52167 of code)
+* Cyclomatic Complexity:
+  * Per Class: 18.75 (min: 1.0, max: 252.0)
+  * Per Method: 2.49 (min: 1.0, max: 61.0)
+  * Per Line of Code: 0.26
+* Interfaces: 2
+* Traits: 0
+* Classes: 132 (127 Concrete, 5 Abstract)
+  * Lines of Code/Class: 84
   * Class Constants: 6
-  * Methods: 1654 (1605 static, 49 non-static)
+  * Methods: 1603 (50 static, 1553 non-static)
+    * Public: 1480
+    * Protected: 113
+    * Private: 10
   * Lines of Code/Method: 6
-* Functions: 267
-* Constants: 67
-* Test Classes: 28
-  * Test Methods: 551
-* 2.04% duplicated lines of code (~1332)
+* Functions: 206
+* Constants: 73
 
 ## Previous Release Notes
 
