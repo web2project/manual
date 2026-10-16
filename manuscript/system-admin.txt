@@ -4,6 +4,45 @@ The default installation will allow you to immediately begin using the system in
 
 W> Regardless of any other customizations you do or do not make to your system, upon successful installation, you should immediately change the password of your admin user. If you fail to change your password, you are creating a significant to your Web2Project installation.
 
+## The System Admin Page {#system-admin-page}
+
+The System Admin page is split into these sections:
+
+**System Status**
+
+* System Configuration
+* Reminders that need your attention: *Set the Admin Email Address* while it is still the default, *Apply System Updates* when database updates are waiting, *Select a Timezone* when the server time zone isn't set, and *Upgrade Available!* when a newer release is out
+
+**Preferences**
+
+* Default User Preferences
+* System Lookup Keys
+* System Lookup Values
+* Custom Field Editor
+
+**Modules**
+
+* View Modules
+
+**Language Support**
+
+* Translation Management
+
+**Administration**
+
+* User Roles
+* Users Permissions Information
+* PHP Info
+
+**Budgeting Setup** (only when *Display Budget Information* is on)
+
+* Billing Code Table
+* Setup Budgets
+
+## Applying System Updates
+
+After you upgrade, *Apply System Updates* runs the database migrations that haven't been applied yet. It lists any SQL errors it hits; a clean upgrade reports none. See the [Installation Guide](#upgrade-instructions).
+
 ## General Configuration
 
 The first values that should be changed in your System Admin are the values listed here. This will ensure that your login page, emails, and page titles represent your organization. One of the most useful aspects is changing the “Email Prefix” to something meaningful and filter-able. The default for CaseySoftware is “[cs-dP]” and allows for messages to be filtered quickly and efficiently with automated tools common to most email clients.
@@ -11,6 +50,110 @@ The first values that should be changed in your System Admin are the values list
 The next aspect to change are the Calendar values. These values determine the display of every calendar throughout your system and even assist in the auto-calculation of task start and end dates in addition to durations. The Start and End Hour values are based on a 24-hour clock and the Working Days assume Monday = 1, Tuesday = 2, etc. The Calendar Minute Increment is not generally used in the Task scheduling and is more often used in the Events Management on the Calendar. Therefore, if your working schedule was 9am to 5pm Monday through Friday, your Start and End Hours would be 9 and 17 respectively while your Calendar Working Days would be 1,2,3,4,5.
 
 The final configuration options commonly modified are the Default Module and Submodule. These two parameters determine the first page a user sees when they log in. 
+
+## System Configuration Reference {#system-configuration}
+
+The settings are grouped by area. Hover over the (i) icon next to each setting for a short description.
+
+### System
+
+* **Company Name**: shown at the top of the sign-in box.
+* **Debug Level** and **Show Debug Messages**: see [Turn on Debugging](https://docs.web2project.net/docs/turn-on-debugging.html). Leave them at 0 and off on a live system.
+* **Enable Gantt Charts**: turns the Gantt charts on or off. They need PHP's `gd` extension.
+* **Host Locale**: the default language for the site.
+* **Log Changes**: records changes in the History module.
+* **Page Size**: the number of records per page in long lists.
+* **Page Title**: shown in the browser's title bar.
+* **Memory Limit for Gantt**: raises PHP's memory limit while drawing Gantt charts, for example `64M` or `128M`.
+* **Site Domain**: used to complete e-mail addresses entered without a domain.
+* **Server Timezone**: the time zone of the server itself. Each user also sets their own time zone in *Preferences*.
+* **System Administrator Email Address**: where system messages, such as new sign-up notices, are sent.
+* **Check for Official Updates?**: checks for a newer release and shows *Upgrade Available!* on the System Admin page. **Last Check for System Updates** shows when it last checked.
+
+### Users
+
+* **Activate External User Creation**: shows a sign-up link on the sign-in page. It is on by default; see [Security Notes](#public-sign-up) before you leave it on.
+* **Admin Username**: the login name of the administrative user.
+* **Minimum Password Length** and **Minimum Username Length**.
+
+### User Authentication Settings
+
+* **User Authentication Method**: "Standard web2Project" (the web2project database), "LDAP" or "PostNuke".
+* **Postnuke login also allows Standard Login**: with PostNuke authentication, also accept web2project logins.
+
+### Budgeting
+
+* **Currency Symbol**.
+* **Display Budget Information**: shows budgets on projects, tasks and other modules, and adds the *Budgeting Setup* section to the System Admin page. See [Project Budgeting](https://docs.web2project.net/docs/project-budgeting.html).
+
+### Calendar
+
+* **Calendar Start Hour** and **Calendar End Hour**: the working day, from 0 to 23.
+* **Calendar Minute Increment**: the steps in the calendar's time pickers.
+* **Show MiniCals in Day View**.
+* **Calendar Working Days**: a comma-separated list where 0 is Sunday. Monday to Friday is `1,2,3,4,5`.
+* **Daily Working Hours**: the length of a working day, for example `8.0`.
+
+### Files
+
+* **Maximum File Size for Indexing**: files larger than this (in kilobytes) aren't indexed for searching. A negative value indexes every file.
+* **Default File Indexing Parser**, **MS Word Indexing Parser**, **Html File Indexing Parser** and **PDF Indexing Parser**: the programs used to extract text from uploaded files for searching, for example `/usr/bin/strings` or `/usr/bin/pdftotext`.
+* **Preserve File Settings on CI** and **Allow Editing of Previous Versions** belonged to file check-in and file versions, which v5.0 removed. They no longer do anything.
+
+### LDAP Settings
+
+* **LDAP Host** and **LDAP Port** (389 by default).
+* **LDAP Version**: leave at 3 unless your server needs otherwise.
+* **LDAP Base DN**: the base Distinguished Name for searches.
+* **LDAP User Filter**: how to find a user, for example `(uid=%USERNAME%)`.
+* **LDAP Search User** and **LDAP Search User Password**: the full DN and password of an account that can search the directory.
+* **Full LDAP Connect String**: if set, overrides most of the settings above.
+* **LDAP also allows standard login**: also accept users who exist only in the web2project database.
+
+See [LDAP Authentication](#ldap) below for a worked Active Directory example.
+
+### Locales
+
+* **Translation Warning**: marks strings that have no translation.
+* **Translation Alert String**: the marker added to them, `^` by default.
+
+### Email Settings
+
+* **Email Prefix**: added to the start of every e-mail subject.
+* **Email Transport**: "PHP Default" (PHP's `mail()`) or "SMTP".
+* **SMTP Host**, **SMTP Port** (25 by default) and **SMTP Secure** ("(None)", "TLS" or "SSL").
+* **Host requires login**, **SMTP Username** and **SMTP Password**.
+* **SMTP Server Timeout**: in seconds.
+* **SMTP Debug**: shows the SMTP conversation on screen. Leave it off on a live system.
+* **Queue Email for later sending**: puts e-mail in the event queue. It is sent when `queuescanner.php` runs from cron (see [Server and Database Configuration](#scheduled-tasks)) or, with *Scan Event Queue on Session Garbage Collection* on, when old sessions are cleaned up.
+
+### Projects
+
+* **Use ProjectDesigner to View Projects by Default.**: opens projects in ProjectDesigner instead of the project view.
+* **Restrict Project Colour Selection**: limits project colours to the *ProjectColors* lookup values.
+* **Template Projects Status Id**: the *ProjectStatus* value used for template projects (6, "Template", by default).
+
+### Session Handling Settings
+
+* **Session Handler**: "web2Project Extended Sessions" stores sessions in the database (the default); "PHP Default" uses PHP's own sessions.
+* **Session Idle Time** (default `2d`) and **Session Maximum Lifetime** (default `1m`): in seconds unless followed by `h`, `d`, `m` or `y`. Only one letter is allowed, so `28h` is valid and `2d4h` is not.
+* **Scan Event Queue on Session Garbage Collection**: processes the event queue when old sessions are cleaned up, as an alternative to cron.
+
+### Start Up
+
+* **Default Module**, **Default Submodule** and **Default Tabbed Subview**: the page users see after they sign in. The default is the Calendar's day view.
+
+### Tasks
+
+* **Overallocation Checking**: an unfinished feature. Leave it off.
+* **Check Task Dates**: requires start and end dates on every task.
+* **Default Company Filter** ("All Companies" or "Active User's Company") and **Default Task Filter**: the filters the Tasks list starts with.
+* **Edit Multiple Task Assignments**: lets users change assignments for a block of tasks from the Tasks list.
+* **Restrict Task Time Editing**: only the task owner, the project owner or an administrator can change task times.
+* **Show All Task Assignees**: lists every assignee in task lists instead of the first one and a count.
+* **Send Task Reminders**: e-mails the assignees when a task is due and every day it is overdue until it is complete. It needs the cron job.
+* **Number of days warning for due tasks**: how many days before the due date the first reminder is sent.
+* **Maximum number of reminders to send**: the total number of reminders for one task, including the early warnings.
 
 ## Roles & Permissions
 
@@ -91,11 +234,33 @@ The Maximum Lifetime defines the longest amount of time a user can go between lo
 
 For both the Session Idle Time and Session Maximum Lifetime the default prefixes are as follows: h – hours, d – days, m – months, and y – years.
 
-## LDAP Authentication
+## LDAP Authentication {#ldap}
 
 Part of the ongoing mission of the Web2Project Team is to provide seamless integration with existing infrastructures. Towards this goal, a System Administrator can choose to have users authenticate against and LDAP server such as Active Directory, a Lotus Notes Server, or OpenLDAP. Within the System Configuration, find the section labeled “LDAP Settings”. Set each of these values to point at your LDAP server, set “User Authentication Method” to LDAP, and save.
 
 Using LDAP does not remove the requirements of configuring your Roles or Permissions but it does allow the User to avoid requiring yet another password. By default, all users authenticating via LDAP receive the “Guest” Role until given a distinct Role.
+
+### Example: Active Directory
+
+First, create a service account in Active Directory. It only needs to be a member of the Domain Users group to search the directory.
+
+Then go to System Admin → System Configuration and set:
+
+* **User Authentication Settings**
+  * User Authentication Method: LDAP
+* **Users**
+  * Activate External User Creation: off (optional, but recommended)
+* **LDAP Settings**
+  * LDAP also allows standard login: on, so the admin account keeps working
+  * LDAP Host: the IP address or fully qualified name of a domain controller, for example `dc.peanutbutter.com`
+  * LDAP Port: 389, the default port for Active Directory
+  * LDAP Version: 3
+  * LDAP Base DN: your domain, for example `DC=peanutbutter,DC=com` for peanutbutter.com
+  * LDAP Search User: the full path to the service account, for example `CN=project,CN=Users,DC=peanutbutter,DC=com`. Use OU for an organizational unit and CN for a container; CN=Users is the default "Users" folder created when you install Active Directory.
+  * LDAP Search User Password: the service account's password
+  * LDAP User Filter: `sAMAccountName=%USERNAME%`
+
+Now your users can log in with their Active Directory usernames and passwords. The first time someone logs in, Web2Project creates their user account and contact, with no role; give them a role in User Admin before they can do anything.
 
 ## Using SSL
 
@@ -151,3 +316,33 @@ Q> In releases prior to 2.1.0, the Custom Fields were displayed in the order the
 ## Billing-code Management
 
 For organizations who perform contracting for other organizations often have reporting requirements involving multiple billing codes, numerous billing rates, and a variety of invoicing systems which may vary from customer to customer. This screen gives the administrator the option to set billing codes with distinct billing rates to individual Companies. These codes immediately become available in the Tasklogs for logging time, in the Reporting Module and even in the Addon Invoice Module.
+
+## System Lookup Keys
+
+System Lookup Keys and System Lookup Values are used together to build drop-down lists, tabs and similar pre-set choices.
+
+**Warning:** *Unless you are a programmer we strongly recommend that you do not modify this section!*
+
+## System Lookup Values
+
+System Lookup Values hold the choices themselves. This includes standard drop-down lists and tabs such as those on the Projects list.
+
+For example the Projects list tabs come from the "ProjectStatus" values:
+
+{linenos=off}
+    0|Not Defined 1|Proposed 2|In Planning 3|In Progress 4|On Hold 5|Complete 6|Template
+
+Changing these values changes the tabs, but you can't change the "All Projects", "All Active" or "Archived" tabs, which are built in.
+
+Other commonly edited lists are *FileType* (the Files categories), *BudgetCategory* (billing and budget categories) and *ResourceTypes* (the Resources types).
+
+It is strongly recommended you do not modify these settings unless you are comfortable with what you're doing. Modifying the wrong system values could have undesired results.
+
+## View Modules {#view-modules}
+
+View Modules lists the installed and available modules. From here you can install, activate or disable, upgrade, configure and remove modules, change their order, and choose whether each appears in the navigation.
+
+* The arrows move a module up or down, which also changes its position in the navigation.
+* Select "visible" or "hidden" to show or hide it in the navigation.
+* Some core modules, such as Reports and Resources, are installed but hidden or disabled by default.
+* Add On modules are uploaded with *Select a module to upload*, if the `modules` folder is writable, or copied into `modules/` by hand. Check them against [Updating Add On Modules for v5.0](#upgrading-modules) first.
