@@ -21,6 +21,8 @@ core-modules.txt
 16-resources.txt
 
 system-admin.txt
+server-configuration.txt
+security-notes.txt
 styling.txt
 module-building-guide.txt
 app-a-faq.txt
