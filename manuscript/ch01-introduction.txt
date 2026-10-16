@@ -1,8 +1,8 @@
 # Introduction
 
-This guide was initially written in reference to Web2Project v3.3.0 and has been updated to incorporate the features, fixes, and changes through the latest master development. While much of it will be applicable to the entire 3.x series, you may notice certain differences in functionality, user interface, and features. As we release new major versions of Web2Project, we will work to update this manual in a timely manner.
+This guide is written in reference to Web2Project v5.0.0, which introduced a new Bootstrap interface and removed a number of long-deprecated features. Much of it also applies to earlier releases, but you may notice differences in functionality, user interface, and features; the [release notes](#release-notes) summarize what changed in v5.0. As we release new major versions of Web2Project, we will work to update this manual in a timely manner.
 
-*All screenshots were taken from the production system currently in use by CaseySoftware, LLC using the default Web2Project style. Sensitive information was obscured on purpose.*
+*The screenshots were taken from the production system in use by CaseySoftware, LLC with the Web2Project style of the time, before the v5.0 interface. Sensitive information was obscured on purpose. Where a screen has changed, the text describes the v5.0 version.*
 
 ## Conventions used in this Guide
 
@@ -14,4 +14,4 @@ Q> This icon denotes a Frequently Asked Question. While we work to resolve and s
 
 D> We use the discussion icon to designate features discussed or planned for future development but have little to no supporting functionality in the system. We include them here to provide context and explanation for the roadmap.
 
-I> We've used the information icon to denote features available in `develop` branch. The development version always has the latest and greatest features, fixes, and functionality but has not been tested as official releases have been. Unless you are a PHP developer and willing to live with instability, we do not recommend using this code in production systems. Consider it a preview of work to come.
+I> We use the information icon for notes worth knowing before you go further, such as a module that is turned off by default or a feature that changed or was removed in the current version.
