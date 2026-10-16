@@ -13,12 +13,11 @@ core-modules.txt
 08-files.txt
 09-forums.txt
 10-search.txt
-11-history.txt
-12-help.txt
 13-links.txt
 14-project-designer.txt
 15-reports.txt
 16-resources.txt
+17-other-modules.txt
 
 system-admin.txt
 server-configuration.txt
