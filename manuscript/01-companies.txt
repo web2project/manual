@@ -15,7 +15,7 @@ Companies may have a tree of [Departments](#module-departments) associated with 
 
 To create a Company, you can either select the Company module from the navigation and click the “new company” button or you can select “Company” from the “New Item” dropdown.
 
-Most of the fields are self-explanatory and allow you to fill in basic contact information on the Company. The more important fields are 'Company Owner' and 'Type' which both drive the 'Company List' screen. The 'Company Owner' does grant any permissions, it is used only for filtering. The 'Type' is used to categorize each company into a selected tab and is also used for filtering.
+Most of the fields are self-explanatory and allow you to fill in basic contact information on the Company. The more important fields are 'Company Owner' and 'Type' which both drive the 'Company List' screen. The 'Company Owner' does not grant any permissions; it is used only for filtering. The 'Type' is used to categorize each company into a selected tab and is also used for filtering.
 
 ### View a Company
 
@@ -34,29 +34,29 @@ By default, the tabs include:
 1. View [Events](#module-events)
 1. View [Files](#module-files)
 
-<strong>Active Projects</strong>
+**Active Projects**
 
 The Active Projects tab displays a list of projects which are active regardless of the particular Project Type, Status, or percent complete. By default, the list includes the project's Name, Owner, Start Date, Status, and Budget. 
 
-<strong>Archived Projects</strong>
+**Archived Projects**
 
 The Archived Projects tab displays a list of inactive projects. By default, the list includes the project's Name, Owner, Start Date, Status, and Budget.
 
-<strong>Departments</strong>
+**Departments**
 
 The Departments tab lists the departments within the company and the user count for each. You can also click on the "New Department" button to add a new department to that company. Click on any department name to view its detail.
 
-<strong>Contacts</strong>
+**Contacts**
 
 The Contacts tab lists all the contacts within the company including their name, email, and phone number.
 
-<strong>Events</strong>
+**Events**
 
 The Events tab displays all the events assigned to the company including their Name, Start Time, and End Time.
 
-<strong>Files</strong>
+**Files**
 
-The Files tab displays all the files assigned to any project or task within the company. These files also appear under their assigned projects or tasks.view the folder structure, files and file type. Click on any file to download it.
+The Files tab displays all the files assigned to any project or task within the company. These files also appear under their assigned projects or tasks. Click on any file to download it.
 
 ### List Companies
 

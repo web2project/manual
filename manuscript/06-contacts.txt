@@ -52,7 +52,10 @@ From this page you can:
 {float=right}
 ![Confirming Email](images/contacts/email_confirm.png)
 
-Starting on Web2Project the Contacts Confirming Email lets you notify you contacts to complete their contacts for you. <br />
-Imagine you only have the Name and Email of a contact and you'd like to have the rest of his information, then simply edit the contact record and set the Waiting Update checkbox on the top right and submit.<br />
-This will issue an email to your contact like the one seen on the image, with an URL for your contact.<br />
-This URL will lead your contact to his contact record form and he will be able to edit and add the missing information for you.
+The Contacts Confirming Email lets you ask your contacts to complete their own contact details for you.
+
+Imagine you only have the Name and Email of a contact and you'd like to have the rest of their information. Simply edit the contact record, tick the Waiting Update checkbox and save.
+
+This sends an email to your contact like the one in the image, with a link for your contact.
+
+The link leads your contact to their contact record form, where they can edit and add the missing information for you.
