@@ -10,6 +10,9 @@ I> The History module is active but hidden from the sidebar by default. Changes 
 
 #### Viewing the History
 
+{float=right}
+![The History page](images/history/index.png)
+
 The History page lists the recorded changes, oldest first, split into pages. Use the **Changes to** filter at the top to choose which changes to show: "Show all", one module at a time (Projects is selected at first), or "Login/Logouts".
 
 The columns are:
@@ -26,11 +29,17 @@ The Login/Logouts filter shows the sessions that administrators ended from the A
 
 #### History on a project
 
+{float=right}
+![A project's History tab](images/history/project_tab.png)
+
 Projects also have a History tab, which lists the changes to that project.
 
 ### Help {#module-help}
 
 Many fields and icons in Web2Project show a short explanation when you hover over them. In System Configuration, every setting has an (i) icon with a description.
+
+{float=right}
+![The Help window](images/help/window.png)
 
 For anything else, select the **Help** icon (a question mark) in the bar at the top of every page. On narrow screens it is in the user menu. It opens a small window with links to where to find help:
 

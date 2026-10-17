@@ -6,6 +6,9 @@ I> The Resources module is installed but turned off by default. To use it, go to
 
 ### Resources List (Resources Index)
 
+{float=right}
+![The Resources list](images/resources/index.png)
+
 The Resources list has an "All Resources" tab and one tab per resource type. The types are the *ResourceTypes* lookup values in System Admin → System Lookup Values, so you can add, rename or remove them there. A new install starts with "All resources", "Equipment", "Tool" and "Venue"; an upgraded system keeps the types it had.
 
 By default the list has these columns:
@@ -20,9 +23,15 @@ To create a new resource, select the "New Resource" button at the top of the pag
 
 ### Resource View
 
+{float=right}
+![View a Resource](images/resources/view.png)
+
 The resource view shows the resource's **Identifier**, **Name**, **Type**, **Percent Allocation** (its maximum allocation) and **Description**. The links at the top go back to the list or to editing the resource.
 
 ### Add or Edit a Resource
+
+{float=right}
+![Edit a Resource](images/resources/addedit.png)
 
 The form has these fields:
 
@@ -33,6 +42,10 @@ The form has these fields:
 * **Notes**
 
 ### Assigning Resources to Tasks
+
+![Task form: Other resources tab](images/tasks/addedit_5.png)
+
+![A task's Other resources tab](images/resources/task_tab.png)
 
 When the module is active, the task form has an **Other resources** tab. Select a resource from **Resources**, choose a percentage, and add it to **Assigned to Task** with the ">" button; "<" removes it. The assignments are saved with the task. (Before v5.0 they were not saved at all.)
 
