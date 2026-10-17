@@ -10,6 +10,9 @@ If you'd rather not show SmartSearch in the sidebar, set it to “hidden” unde
 
 ### Understanding the Interface
 
+{float=right}
+![SmartSearch results](images/smartsearch/index.png)
+
 After you perform your initial search the SmartSearch Module will display the results for each module that has data related to your criteria.
 
 For example, if you performed a search for the word “Training” lets assume that you have a project containing the word “Training” as well as Task or Logs. The module will display the results for each module it found containing the word Training on separate rows in the results page.
@@ -21,6 +24,9 @@ What happens if the module displays too many results? The SmartSearch Module all
 * Advanced search
 
 You can specify words and even choose to only search specific modules; in addition you can perform an advanced search to narrow down your results even more.
+
+{float=right}
+![Modules selection and Advanced search](images/smartsearch/options.png)
 
 When you click in the Modules selection checkbox an array of checkboxes will appear, with “Select all” and “Deselect all” buttons. Click on the modules you wish to narrow your search to.
 

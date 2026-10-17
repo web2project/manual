@@ -15,6 +15,14 @@ More detail on each of these is in [Server and Database Configuration](#server-c
 
 ## Install Instructions
 
+![Installer: start](images/installer/welcome.png)
+
+![Installer step 1: requirements](images/installer/requirements.png)
+
+![Installer step 2: database settings](images/installer/database.png)
+
+![Installer step 3: finished](images/installer/finished.png)
+
 1. Download the latest release from [GitHub](https://github.com/web2project/web2project/releases) and uncompress it.
 1. Upload the resulting folder to a web-accessible directory on your web server. Note the resulting URL as this will be your new web2project installation.
 1. Create a MySQL database and a user with full access to the database. Save these database name and credentials as you will need them later.
@@ -39,6 +47,9 @@ W> If you run into any problems, we recommend that you resolve the issue and the
 
 
 ## Upgrade Instructions {#upgrade-instructions}
+
+{float=right}
+![Apply System Updates](images/system-admin/upgrade.png)
 
 1. Back up your database and `files` folder. You can never have too many backups.
 2. Download the latest release from [GitHub](https://github.com/web2project/web2project/releases) and uncompress it.
