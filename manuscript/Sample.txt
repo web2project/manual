@@ -1,2 +1,6 @@
 ch01-introduction.txt
 ch02-installation.txt
+
+app-a-faq.txt
+app-b-add-on-modules.txt
+app-c-release-notes.txt
