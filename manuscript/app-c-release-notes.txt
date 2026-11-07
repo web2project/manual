@@ -1,4 +1,4 @@
-# Appendix C: v5.0.0-rc1 Release Notes {#release-notes}
+# Appendix C: Release Notes {#release-notes}
 
 **Release Date:** 16 October 2026
 
@@ -131,28 +131,6 @@ For more information, support, or to discuss upcoming features, please visit [Di
 * The placeholder task for an empty subproject gets the current date instead of the subproject's dates.
 * The unit test suite runs 509 tests with 7 errors and 15 failures.
 
-## System Metrics
-
-These figures come from phploc, run over everything except the third-party `lib` and `vendor` folders.
-
-* Lines of Code: 61617 (9450 of comments, 52167 of code)
-* Cyclomatic Complexity:
-  * Per Class: 18.75 (min: 1.0, max: 252.0)
-  * Per Method: 2.49 (min: 1.0, max: 61.0)
-  * Per Line of Code: 0.26
-* Interfaces: 2
-* Traits: 0
-* Classes: 132 (127 Concrete, 5 Abstract)
-  * Lines of Code/Class: 84
-  * Class Constants: 6
-  * Methods: 1603 (50 static, 1553 non-static)
-    * Public: 1480
-    * Protected: 113
-    * Private: 10
-  * Lines of Code/Method: 6
-* Functions: 206
-* Constants: 73
-
 ## v5.0.0-rc2 Release Notes {#release-notes-rc2}
 
 **Release Date:** 23 October 2026
@@ -248,28 +226,6 @@ I> The primary goals of this release were security hardening (CSRF tokens on eve
 * [#392](https://github.com/web2project/web2project/issues/392) The PDF libraries and fonts are still in lib/
 * The signup duplicate-email check strips hyphens and underscores before comparing (`do_user_aed.php`), so some valid addresses collide (not yet filed)
 * The unit test suite runs XXX tests with XXX errors and XXX failures. *(Not run yet: the suite needs a MySQL test database.)*
-
-### System Metrics
-
-These figures come from phploc 8.0.4, run over everything except the third-party `lib` and `vendor` folders.
-
-* Lines of Code: 62602 (9883 of comments, 52719 of code)
-* Cyclomatic Complexity:
-  * Per Class: 19.09 (min: 1, max: 252)
-  * Per Method: 2.52 (min: 1, max: 61)
-  * Per Line of Code: 0.26
-* Interfaces: 2
-* Traits: 0
-* Classes: 135 (130 Concrete, 5 Abstract)
-  * Lines of Code/Class: 84
-  * Class Constants: 14
-  * Methods: 1644 (50 static, 1594 non-static)
-    * Public: 1504
-    * Protected: 114
-    * Private: 26
-  * Lines of Code/Method: 6
-* Functions: 207 (202 named, 5 anonymous)
-* Constants: 67
 
 ## v5.0.0-rc3 Release Notes {#release-notes-rc3}
 
