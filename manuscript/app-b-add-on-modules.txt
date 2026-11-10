@@ -96,23 +96,122 @@ Report bugs and requests at [github.com/web2project/modules-todos/issues](https:
 
 See the [TodoList page](https://docs.web2project.net/modules/todos.html) for the release notes.
 
-## Notebook
+## Notebook {#module-notebook}
 
-Notebook keeps notes in Web2Project. A note has a title, a plain-text body, a category, a status and an optional URL. Version 5.0.0 of the module works with Web2Project v5.0 and later; download it from [GitHub](https://github.com/web2project/modules-notebook).
+Notebook gives your team one place for the notes that grow around a project: checklists, decisions waiting on someone, quotes, procedures and ideas. A note has a title, a plain-text body, a category, a status and an optional link to a document. You can file it on a [Company](#module-companies), a [Project](#module-projects) or a [Task](#module-tasks), and it then appears on that page's Notes tab, so the information sits next to the work it belongs to and doesn't get lost in e-mail.
+
+* Name: Notebook
+* Folder: `modules/notebook`
+* Creator(s): Pedro Azevedo
+* Maintainer(s): CaseySoftware, LLC and the Web2Project team
+* License: GPL, Clear BSD or MIT, whichever suits you
+* Minimum w2p Version: 5.0 (version 5.0.0 of the module; versions 3.x and 4.x are for Web2Project 3.x and 4.x)
+* Maximum w2p Version: 5.0
+* Repository: [github.com/web2project/modules-notebook](https://github.com/web2project/modules-notebook)
+
+### Installation
+
+Notebook installs the usual way; see Installing New Modules at the start of this appendix. Copy the `notebook` folder into `modules/`, then install it, enable it and make it visible in System Admin > [View Modules](#view-modules). Finally, give your roles access to the Notebook module in System Admin > User Roles: the role's Notebook permissions decide who can view, add, edit and delete notes.
+
+If you already use version 3.x or 4.x, **back up your database first**, replace the folder, and click "upgrade" next to Notebook. The upgrade changes your notes; see [Release Notes](#notebook-release-notes) below.
 
 ### Usage
 
-Select "Notebook" from the *Modules* group in the sidebar to see every note you can see. Each category has its own tab. Use the Company, Project and Status filters or the Search box to narrow the list; your choices are kept while you are logged in.
+#### The Notebook List
 
-To add a note, click "New Note", or open a company, project or task, go to its Notes tab and click "Add Note". A note added from a Notes tab is filed there. A note on a task also belongs to the task's project, and a note on a project to the project's company. Each user's page has a Notes tab that lists the notes that user wrote.
+{float=right}
+![Notebook List](images/notebook/index.png)
 
-Tick *Private* to keep a note to yourself: only you will see it. A note filed on a project or company is shown only to users who can see that project or company, and your role's Notebook permissions decide who can add, edit and delete notes.
+Select Notebook from the *Modules* group in the sidebar to see every note you can see. The list has an "All Notes" tab and one tab per category. The categories are the *NoteCategory* lookup values; a new installation has Unknown, Idea, Workflow and Document.
 
-The categories and statuses are System Lookup Values called `NoteCategory` and `NoteStatus`. Change them in System Admin > System Lookup Values.
+At the top of the page are the "New Note" button, **Status**, **Project** and **Company** filters, and a **Search** box that looks in note titles and bodies. Web2Project remembers your filters and search while you are logged in, so clear them to see everything again. The Company filter includes notes filed on that company's projects.
 
-### Known Issues & Limitations
+The list shows the newest notes first, with these columns:
 
-Note bodies are plain text. Versions before 5.0 used the TinyMCE editor; upgrading the module converts those notes to text, which keeps paragraphs, list items and links but drops images, tables and formatting. Back up your database before you upgrade. Notes created before 5.0 may have no creator: the upgrade fills it in from the History module's records where it can, and private notes without a creator are shown to system administrators.
+* **Note Title**: click it to open the note
+* **Category** and **Status**
+* **Project** and **Task**: where the note is filed, if anywhere
+* **Creator**: who wrote it
+* **Date**: when it was written
+
+#### Adding and Editing a Note
+
+{float=right}
+![Notebook Add/Edit](images/notebook/addedit.png)
+
+Click "New Note" on the Notebook list, or "Add Note" on a company's, project's or task's Notes tab. A note started from a Notes tab is filed there.
+
+The form has these fields:
+
+* **Note Title**: required
+* **Private**: tick it to keep the note to yourself (see below)
+* **Category**: puts the note on one of the list's tabs
+* **Status**: where the note stands. A new installation has Unknown, Reference, Read, Review, Do, Important and Requirement.
+* **Project** and **Task**: optional. Choose a project first, then click "Select Task..." to pick one of its tasks. Web2Project fills in the rest: a note on a task belongs to that task's project, and a note on a project to that project's company.
+* **Description**: the body of the note, required. It is plain text. Line breaks are kept, and web addresses become links when the note is shown.
+* **Note Doc URL**: an optional link to a document, such as a quote or a shared folder. Click "test" to open it in a new window.
+
+When you edit a note, the form also shows who created it and who changed it last.
+
+#### Viewing a Note
+
+{float=right}
+![Notebook View](images/notebook/view.png)
+
+Click a note's title to open it. The left column shows where the note is filed and who wrote and last changed it; the right column shows its category, status, link and body. "Edit Note" and "Delete Note" appear only if your role lets you edit or delete it.
+
+#### Notes Tabs on Other Pages
+
+{float=right}
+![A Project's Notes Tab](images/notebook/project_tab.png)
+
+Companies, projects and tasks each get a **Notes** tab listing the notes filed on them, with an "Add Note" button. A company's tab also lists the notes on its projects. Each user's page has a Notes tab with the notes that user wrote.
+
+#### Private Notes and Permissions
+
+Tick *Private* to keep a note to yourself. Only you will see it: it doesn't appear in other users' lists, Notes tabs or search results, and they can't open or change it. Private notes from before version 5.0 may have no recorded creator; those are shown to system administrators so they can be reassigned or removed.
+
+A note filed on a project or company is shown only to users who can see that project or company. Within that, your role's Notebook permissions decide whether you can add, edit and delete notes.
+
+Notes are also found by [SmartSearch](#module-smartsearch).
+
+### Release Notes {#notebook-release-notes}
+
+#### 5.0.0
+
+For Web2Project 5.0 and PHP 8.3 or later.
+
+* Note bodies are plain text. Earlier versions used the TinyMCE editor, which Web2Project 5.0 no longer ships. When you upgrade, bodies that contain HTML are converted to text: paragraphs, line breaks, list items and links are kept, but images, tables and text formatting are lost.
+* The upgrade fills in each note's creator from the History module's records where it can, and removes the old `note_title` column.
+* Security fixes: the search box is no longer open to SQL injection, the add/edit form escapes what it shows, and the pages check module access and project and company permissions.
+* Private notes are private, and Private can be unticked again.
+* Notes keep their project, task and company when added or edited, and the creator is saved.
+* The category tabs, the users' Notes tabs, the filters and the page links on the Notes tabs work.
+* An English translation file lists the module's strings, so it can be translated.
+
+#### 4.0.0
+
+For Web2Project 4.x. The note title moved to `note_name`, and the list uses the standard Web2Project list table.
+
+#### 3.0.0
+
+For Web2Project 3.x.
+
+### Open Issues
+
+Report bugs, ask for features or get help at [github.com/web2project/modules-notebook/issues](https://github.com/web2project/modules-notebook/issues).
+
+Known limitations:
+
+* Notes are plain text. There is no formatting, and you can't attach files to a note; use Note Doc URL to link to one, or keep it in [Files](#module-files).
+* Add On modules can't use Custom Fields yet, so you can't add your own fields to notes.
+* Notes created before version 5.0 may show no creator.
+
+### Additional Notes
+
+The categories and statuses are System Lookup Values called *NoteCategory* and *NoteStatus*. Change them in System Admin > System Lookup Values. Each category becomes a tab on the Notebook list.
+
+The module's English strings are in `modules/notebook/locales/en.inc`. To translate them, add a file such as `fr.inc` next to it, with one `"English"=>"Translation",` line per string.
 
 ## Updating Add On Modules for v5.0 {#upgrading-modules}
 
