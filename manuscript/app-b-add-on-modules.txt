@@ -96,6 +96,24 @@ Report bugs and requests at [github.com/web2project/modules-todos/issues](https:
 
 See the [TodoList page](https://docs.web2project.net/modules/todos.html) for the release notes.
 
+## Notebook
+
+Notebook keeps notes in Web2Project. A note has a title, a plain-text body, a category, a status and an optional URL. Version 5.0.0 of the module works with Web2Project v5.0 and later; download it from [GitHub](https://github.com/web2project/modules-notebook).
+
+### Usage
+
+Select "Notebook" from the *Modules* group in the sidebar to see every note you can see. Each category has its own tab. Use the Company, Project and Status filters or the Search box to narrow the list; your choices are kept while you are logged in.
+
+To add a note, click "New Note", or open a company, project or task, go to its Notes tab and click "Add Note". A note added from a Notes tab is filed there. A note on a task also belongs to the task's project, and a note on a project to the project's company. Each user's page has a Notes tab that lists the notes that user wrote.
+
+Tick *Private* to keep a note to yourself: only you will see it. A note filed on a project or company is shown only to users who can see that project or company, and your role's Notebook permissions decide who can add, edit and delete notes.
+
+The categories and statuses are System Lookup Values called `NoteCategory` and `NoteStatus`. Change them in System Admin > System Lookup Values.
+
+### Known Issues & Limitations
+
+Note bodies are plain text. Versions before 5.0 used the TinyMCE editor; upgrading the module converts those notes to text, which keeps paragraphs, list items and links but drops images, tables and formatting. Back up your database before you upgrade. Notes created before 5.0 may have no creator: the upgrade fills it in from the History module's records where it can, and private notes without a creator are shown to system administrators.
+
 ## Updating Add On Modules for v5.0 {#upgrading-modules}
 
 **Applies to**: v5.0.0 and later
