@@ -44,6 +44,58 @@ This module was validated with Web2Project v3.0 through v4.x and hasn't been upd
 
 Microsoft Project is an application wholly owned by Microsoft Corporation. CaseySoftware, LLC and the Web2Project Team does not imply or claim any involvement or ownership in any way, shape, or form.
 
+## Todos
+
+The Todos module (TodoList) keeps simple to-do items. Unlike a Task, a todo has no duration or percent complete: it is either done or not done. Each todo has:
+
+* a name
+* a due date, or none ("Later")
+* an assignee
+* an optional project, contact and category
+
+It's for the small things that don't belong in a project plan, like "call the client back" or "renew the certificate".
+
+* Name: Todos (TodoList)
+* Folder: `todos`
+* Creator(s): CaseySoftware, LLC
+* License: not stated (the repository has no license file)
+* Minimum w2p Version: 5.0, for version 3.0 of the module. Use version 2.0 on web2project 3.x and 4.x.
+* Maximum w2p Version: 5.0
+* Repository: [github.com/web2project/modules-todos](https://github.com/web2project/modules-todos)
+
+Version 3.0 also needs PHP 8.3 or later. The installer checks both.
+
+### Installation
+
+Use the standard process above. Installing adds the `todos` table and the `TodoType` lookup values, which hold the categories. Edit the categories under System Admin → System Lookup Values. Give your roles access to the Todos module.
+
+To upgrade from 1.x or 2.x, back up the `todos` table, replace the `todos` folder and click “upgrade” on the Todos row of View Modules. The upgrade fixes "Later" todos that showed as Overdue, and removes the leftover `todo_closed` column from installs that started on version 1.3 or earlier. On MySQL 8 that column made adding a todo fail with "Field 'todo_closed' doesn't have a default value". If you already upgraded to 3.0.0 and see that error, install 3.0.1 and upgrade again.
+
+### Usage
+
+Open *Todos* from the *Modules* group in the sidebar. The page has four tabs:
+
+* **Todo Items**: your open todos, grouped into Overdue, Today, Tomorrow, This Week, Next Week and Later. The form beside the list adds a todo or edits the one you select with the pencil icon. Tick a todo's checkbox to complete it, or use the trash icon to delete it.
+* **GTD Active Projects** and **GTD All Projects**: the next three open todos for each project, soonest first. Todos without a project are listed first.
+* **Closed Items**: completed todos, most recently changed first.
+
+The *Owner* filter in the title bar switches between your own todos, another user's and everyone's.
+
+For the due date, pick Today, Tomorrow, This Week, Next Week or Later, or choose a date. These follow your time zone preference and the first day of the week for your locale.
+
+Projects and Companies get a *Todolist* tab with that project's or company's open todos and the same form. Open todos due in the next 30 days, including overdue ones, appear in your Calendar Feed, and Smart Search finds your own open todos.
+
+A todo can be opened by its owner, by anyone who can view its project, or by a system administrator. Only its owner, someone who can edit its project, or a system administrator can change, complete or delete it.
+
+### Open Issues
+
+Report bugs and requests at [github.com/web2project/modules-todos/issues](https://github.com/web2project/modules-todos/issues).
+
+* The Todolist tab doesn't appear on a Contact's page, because the v5.0 Contact page doesn't show other modules' tabs ([web2project#561](https://github.com/web2project/web2project/issues/561)).
+* The module shows the generic sidebar icon until web2project lets add-on modules choose their own ([web2project#434](https://github.com/web2project/web2project/issues/434)).
+
+See the [TodoList page](https://docs.web2project.net/modules/todos.html) for the release notes.
+
 ## Updating Add On Modules for v5.0 {#upgrading-modules}
 
 **Applies to**: v5.0.0 and later
