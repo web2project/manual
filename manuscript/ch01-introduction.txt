@@ -1,14 +1,14 @@
 # Introduction
 
-This guide is written in reference to Web2Project v5.0.0, which introduced a new Bootstrap interface and removed a number of long-deprecated features. Much of it also applies to earlier releases, but you may notice differences in functionality, user interface, and features; the [release notes](#release-notes) summarize what changed in v5.0. As we release new major versions of Web2Project, we will work to update this manual in a timely manner.
+This guide is written in reference to web2project v5.0.0, which introduced a new Bootstrap interface and removed a number of long-deprecated features. Much of it also applies to earlier releases, but you may notice differences in functionality, user interface, and features; the [release notes](#release-notes) summarize what changed in v5.0. As we release new major versions of web2project, we will work to update this manual in a timely manner.
 
-*The screenshots were taken from the production system in use by CaseySoftware, LLC with the Web2Project style of the time, before the v5.0 interface. Sensitive information was obscured on purpose. Where a screen has changed, the text describes the v5.0 version.*
+*The screenshots were taken from the production system in use by CaseySoftware, LLC with the web2project style of the time, before the v5.0 interface. Sensitive information was obscured on purpose. Where a screen has changed, the text describes the v5.0 version.*
 
 ## Conventions used in this Guide
 
-Web2Project is an Open Source project. Therefore, development moves unevenly between holidays, personal commitments, new organizations adopting it, and everything else. As a result, there are always various versions of Web2Project available for download in addition to the master/release branch. Sometimes these versions change behavior or system settings so to make these points clear, we've added this notation:
+Web2project is an Open Source project. Therefore, development moves unevenly between holidays, personal commitments, new organizations adopting it, and everything else. As a result, there are always various versions of web2project available for download in addition to the master/release branch. Sometimes these versions change behavior or system settings so to make these points clear, we've added this notation:
 
-W> There are a number of places within Web2Project where you can misconfigure or damage your data by accident. When you see the warning icon, you should read carefully and follow the directions precisely.
+W> There are a number of places within web2project where you can misconfigure or damage your data by accident. When you see the warning icon, you should read carefully and follow the directions precisely.
 
 Q> This icon denotes a Frequently Asked Question. While we work to resolve and simplify these items, there are just some complicated concepts within project management as a whole and the software specifically.
 

@@ -1,6 +1,6 @@
 ## Projects {#module-projects}
 
-The entire purpose of Web2Project is to provide a single place where a team can come together to collaborate and share information to effectively manage projects. Therefore, the bulk of a project manager’s time will be spent working in the Project and Task modules. All other modules, tools, and functionality supplement those modules which makes the Projects module one of the most complex modules in the system.
+The entire purpose of web2project is to provide a single place where a team can come together to collaborate and share information to effectively manage projects. Therefore, the bulk of a project manager’s time will be spent working in the Project and Task modules. All other modules, tools, and functionality supplement those modules which makes the Projects module one of the most complex modules in the system.
 
 ### Creating a Project
 

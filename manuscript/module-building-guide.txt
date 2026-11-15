@@ -1,23 +1,23 @@
 # Module Building Guide {#module-building-guide}
 
-The goal of this section is to document a clear, repeatable way for developers to create modules to supplement and enhance the operation of the Web2Project system. There are numerous code samples included because showing is often more important than explaining. As certain non-core functionality becomes standardized, some of it will be added to the core system itself. This will not only simplify Add On development but also make sure that all modules adhere to the same standards and logic flows.
+The goal of this section is to document a clear, repeatable way for developers to create modules to supplement and enhance the operation of the web2project system. There are numerous code samples included because showing is often more important than explaining. As certain non-core functionality becomes standardized, some of it will be added to the core system itself. This will not only simplify Add On development but also make sure that all modules adhere to the same standards and logic flows.
 
 Failure to follow the recommendations in this section will lead to poor modules, brittle code, security vulnerabilities, and even bad hair days. None of these are pleasant.
 
 ## Expectations
 
-*  All input MUST be filtered before it is used in **any** capacity to help prevent security vulnerabilities such as [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [Cross Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
-*  A module MUST NOT include or construct raw SQL statements.
-*  A module MUST NOT have references to the w2p_Database_Query class/object outside of the module's core class and (optional) subclasses.
-*  A module SHOULD use core Web2Project function/method/API calls instead of copy/pasting logic into your own module.
-*  A module SHOULD adhere to our [Naming Conventions](https://docs.web2project.net/docs/naming-conventions.html) for variables, methods, etc.
-*  All code within a module SHOULD adhere to the formatting specified by the [PSR-4 Coding Standard](https://www.php-fig.org/psr/psr-4/). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
+* All input MUST be filtered before it is used in **any** capacity to help prevent security vulnerabilities such as [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [Cross Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+* A module MUST NOT include or construct raw SQL statements.
+* A module MUST NOT have references to the w2p_Database_Query class/object outside of the module's core class and (optional) subclasses.
+* A module SHOULD use core web2project function/method/API calls instead of copy/pasting logic into your own module.
+* A module SHOULD adhere to our [Naming Conventions](https://docs.web2project.net/docs/naming-conventions.html) for variables, methods, etc.
+* All code within a module SHOULD adhere to the formatting specified by the [PSR-4 Coding Standard](https://www.php-fig.org/psr/psr-4/). To evaluate your own code, please use [Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer/).
 
 To see this guide in action, check out the [Todo Module](https://github.com/web2project/modules-todos) as an example.
 
 ## Basic File Structure
 
-Building a Web2Project module requires a handful of key files in a specific structure. Each of which serve a key purpose in the operation of the system. For a module called ToDos - [available from Github](https://github.com/web2project/modules-todos) - we would have the following file structure (filenames are case sensitive):
+Building a web2project module requires a handful of key files in a specific structure. Each of which serve a key purpose in the operation of the system. For a module called ToDos - [available from Github](https://github.com/web2project/modules-todos) - we would have the following file structure (filenames are case sensitive):
 
 Filename  | Status | Description | Notes
 ----- |:-----:| ----- | -----
@@ -36,31 +36,31 @@ Filename  | Status | Description | Notes
 
 ## Naming Conventions
 
-Web2Project works on the basis of "The easy way should also be the right way." A key reason that this works is because of our Naming Conventions. It allows quite a few things to "just work" without additional effort, configuration, or coding by anyone working on any module. As long as you stick to our conventions, your modules and customizations should need minimal updates between Web2Project releases.
+Web2project works on the basis of "The easy way should also be the right way." A key reason that this works is because of our Naming Conventions. It allows quite a few things to "just work" without additional effort, configuration, or coding by anyone working on any module. As long as you stick to our conventions, your modules and customizations should need minimal updates between web2project releases.
 
 There are three layers of the system that all interact together: the **database**, the module's **business logic**, and the **view/templating layer**. Since everything begins with the module, we'll begin there.
 
 ### Modules
 
-*  Modules MUST have a unique name;
-*  The module directory MUST be lower case alphanumeric with no special characters - ex: projects, links;
-*  The module's files MUST be contained within its directory within the `/modules/` directory exclusively;
-*  The module MUST have a file named setup.php with a setup class that extends w2p_Core_Setup;
-*  The module's subclass file MUST be the plural form of the subclass name followed by '.class.php' - ex: File Folder -> files/folders.class.php, Task Logs -> tasks/logs.class.php;
-*  The module directory SHOULD be the plural form of the module name - ex: Project -> projects, Companies -> companies;
-*  The module class file SHOULD be the plural form of the module name followed by '.class.php - ex: Project -> projects.class.php, Companies -> companies.class.php;
-*  The module MAY have subclasses;
-*  The module MAY have a file named configure.php which allows for module-specific settings.
+* Modules MUST have a unique name;
+* The module directory MUST be lower case alphanumeric with no special characters - ex: projects, links;
+* The module's files MUST be contained within its directory within the `/modules/` directory exclusively;
+* The module MUST have a file named setup.php with a setup class that extends w2p_Core_Setup;
+* The module's subclass file MUST be the plural form of the subclass name followed by '.class.php' - ex: File Folder -> files/folders.class.php, Task Logs -> tasks/logs.class.php;
+* The module directory SHOULD be the plural form of the module name - ex: Project -> projects, Companies -> companies;
+* The module class file SHOULD be the plural form of the module name followed by '.class.php - ex: Project -> projects.class.php, Companies -> companies.class.php;
+* The module MAY have subclasses;
+* The module MAY have a file named configure.php which allows for module-specific settings.
 
 ### Database Schema
 
-*  The data table - different from linking or many:many tables - SHOULD be the plural form of the module name: ex: Project -> projects, Task -> tasks;
-*  Fields of the data tables SHOULD be prefixed with the singular form of the module name - ex: project_id, project_name;
-*  Foreign key relationships to other modules SHOULD be named modulename_othermodulename - ex: project_company links a Project to a specific Company, task_project links a Task to a specific Project;
-*  Field names SHOULD be expressive towards what they are: ex: project_id is the primary key, project_name is the name of the project;
-*  Date or datetime fields should be notes as such: ex: project_end_date vs task_end_datetime
-*  Fields which are enumerated types SHOULD be stored as integers referring to specific System Lookup Values;
-*  Fields which are enumerated types MUST have names which are easily converted to their System Lookup Values - ex: company_type -> CompanyType, project_status -> ProjectStatus, task_priority -> TaskPriority;
+* The data table - different from linking or many:many tables - SHOULD be the plural form of the module name: ex: Project -> projects, Task -> tasks;
+* Fields of the data tables SHOULD be prefixed with the singular form of the module name - ex: project_id, project_name;
+* Foreign key relationships to other modules SHOULD be named modulename_othermodulename - ex: project_company links a Project to a specific Company, task_project links a Task to a specific Project;
+* Field names SHOULD be expressive towards what they are: ex: project_id is the primary key, project_name is the name of the project;
+* Date or datetime fields should be notes as such: ex: project_end_date vs task_end_datetime
+* Fields which are enumerated types SHOULD be stored as integers referring to specific System Lookup Values;
+* Fields which are enumerated types MUST have names which are easily converted to their System Lookup Values - ex: company_type -> CompanyType, project_status -> ProjectStatus, task_priority -> TaskPriority;
 * Data types SHOULD be reflected via column name suffixes as described here:
 
 Suffix  | Example | Description
@@ -68,7 +68,7 @@ Suffix  | Example | Description
 _budget | project_actual_budget | This is a simple text field displayed with the user's preferred currency symbol. For rendering, it will always appear in the users' preferred currency format.
 _date | project_start_date, project_end_date | This is a simple text field displayed with a date picker for editing purposes. For rendering, it will always appear in the users' preferred short date format. It is not timezone sensitive aware and should not have user or system timezones applied.
 _datetime | (not used in the core system) | This is a simple text field displayed with both a date and time picker for editing purposes. It is timezone aware and is stored in the database in UTC. For rendering, it will always appear in the users' preferred long date format transformed according to their specified timezone.
-_description | company_description, project_description | This is always a dataype of 'text' and displayed in a textarea for editing purposes. For rendering, it automatically keeps all linebreaks and makes any urls clickable.
+_description | company_description, project_description | This is always a datatype of 'text' and displayed in a textarea for editing purposes. For rendering, it automatically keeps all linebreaks and makes any urls clickable.
 _email | company_email, contact_email | This is a simple text field. For rendering, it is automatically made clickable with a mailto link.
 (module names) | project_company, task_project, link_project | This is the most complex datatype currently in the system. It is usually displayed as a dropdown for editing purposes but may be handled via other means. For rendering purposes, it uses the specific suffix - company, project, department, task, user, etc - to lookup that object's name and link to it directly.
 _name | company_name, project_name, task_name | This is a simple text field. For rendering, it is made clickable to view the named object.
@@ -85,14 +85,14 @@ _url | task_related_url, project_url | This is a simple text field with a 'test'
 * The class's name property should end with '_name' - ex: CTask->task_name, CEvent->event_name;
 * A module MAY have subclasses;
 * Subclass(es) name MUST be the singular form of the module name prefixed by the letter C and then followed by an underscore (_) and singular form of the subclass - ex: File Folders -> CFile_Folder, Task Logs -> CTask_Log;
-* All classes and subclasses MUST respect core Web2Project permissions and ACLs;
+* All classes and subclasses MUST respect core web2project permissions and ACLs;
 
 ### View/Templating
 
-*  The module MUST have a file named index.php which usually generates a list table of items;
-*  The module SHOULD have a file named addedit.php which includes the HTML form to create or edit an item;
-*  The module MAY have a file named view.php which displays all of the information related to an item;
-*  The list table and view.php files SHOULD use the w2p_Output_HTMLHelper to format each data field properly.
+* The module MUST have a file named index.php which usually generates a list table of items;
+* The module SHOULD have a file named addedit.php which includes the HTML form to create or edit an item;
+* The module MAY have a file named view.php which displays all of the information related to an item;
+* The list table and view.php files SHOULD use the w2p_Output_HTMLHelper to format each data field properly.
 
 ### Exceptions
 
@@ -101,7 +101,7 @@ _url | task_related_url, project_url | This is a simple text field with a 'test'
 
 ## Routing & Filesystem
 
-Every single request within Web2Project routes to a specific path/file/action combination. The general pattern is:
+Every single request within web2project routes to a specific path/file/action combination. The general pattern is:
 
 ```web2project/index.php?m={modulename}&a={action}&id={id}```
 
@@ -109,18 +109,20 @@ where **{modulename}** is the directory, **{action}** is the file, and **{id}** 
 
 In this section, we'll use the relatively simple Company to walk through the mechanics. This is a list of all the files within the module directory:
 
-    /companies/
-       addedit.php
-       companies.class.php
-       do_company_aed.php
-       index.html
-       index.php
-       view.php
-       vw_companies.php
-       vw_contacts.php
-       vw_depts.php
-       vw_projects.php
-       vw_users.php
+```
+/companies/
+   addedit.php
+   companies.class.php
+   do_company_aed.php
+   index.html
+   index.php
+   view.php
+   vw_companies.php
+   vw_contacts.php
+   vw_depts.php
+   vw_projects.php
+   vw_users.php
+```
 
 **Note:** *Under no circumstances can you navigate to these files directly. All files are accessed through the central index.php which performs permissions check, logging, data validation, and a variety of other functions.*
 
@@ -143,13 +145,13 @@ Url  | Maps to | Description
 
 #### Autoloader
 
-Web2Project implements [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) from the PHP Framework Interoperability Group therefore all classes are structured as w2p_Namespace_Class with the '.class.php' suffix. For example, the class **w2p_Core_BaseObject** will be found in *classes/w2p/Core/BaseObject.class.php* while **w2p_Database_Query** will be found in *classes/w2p/Database/Query.class.php*.
+Web2project implements [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) from the PHP Framework Interoperability Group therefore all classes are structured as w2p_Namespace_Class with the '.class.php' suffix. For example, the class **w2p_Core_BaseObject** will be found in *classes/w2p/Core/BaseObject.class.php* while **w2p_Database_Query** will be found in *classes/w2p/Database/Query.class.php*.
 
-It is unlikely that you will need to add core classes to Web2Project but if you follow our naming convention, they will automatically be loaded without any additional effort or configuration.
+It is unlikely that you will need to add core classes to web2project but if you follow our naming convention, they will automatically be loaded without any additional effort or configuration.
 
 #### Modules
 
-Web2Project module classes are a little different because they can be added or removed as needed. In general, the class file will map directly from the module name. The pattern is:
+Web2project module classes are a little different because they can be added or removed as needed. In general, the class file will map directly from the module name. The pattern is:
 
 `modules/{plural modulename}/{plural modulename}.class.php`
 
@@ -163,12 +165,12 @@ Beyond that, the Naming Conventions section fills in the rest of the detail.
 
 ## Extending the System
 
-Hooks are how we extend the system by allowing you to connect into specific processes and actions in standard, consistent ways with minimal effort without modifying Web2Project core. This ensures you can accomplish what you need and your modules remain compatible through Web2Project upgrades.
+Hooks are how we extend the system by allowing you to connect into specific processes and actions in standard, consistent ways with minimal effort without modifying web2project core. This ensures you can accomplish what you need and your modules remain compatible through web2project upgrades.
 
-*  The hook_calendar method opens a module class to make date-relevant data available to external code. This is only used by the Tasks and Events module in Core.
-*  The hook_cron method opens a module class to interact with activities which are Schedule-able like sending reminders or updating data.
-*  The hook_search method opens a module class to make it searchable to our SmartSearch module.
-*  The Workflow Hooks are an entire class of hooks that get called as you interact with data objects. The complete list is:
+* The hook_calendar method opens a module class to make date-relevant data available to external code. This is only used by the Tasks and Events module in Core.
+* The hook_cron method opens a module class to interact with activities which are Schedule-able like sending reminders or updating data.
+* The hook_search method opens a module class to make it searchable to our SmartSearch module.
+* The Workflow Hooks are an entire class of hooks that get called as you interact with data objects. The complete list is:
   * hook_preDelete and hook_postDelete execute immediately before and after the `delete()` method is called. The postDelete is only called if the method is successful.
   * hook_preLoad and hook_postLoad execute immediately before and after the `load()` method is called. The postLoad is only called if the method is successful.
   * hook_preStore and hook_postStore execute immediately before and after the `store()` method is called. Note that this is called both when an object is created and updated. The postStore is only called if the method is successful.

@@ -2,14 +2,14 @@
 
 Please visit our [Add On Modules page](https://docs.web2project.net/modules/add-on.html) for the most up to date and complete information.
 
-W> Web2Project v5.0 removed functions and class names that had been deprecated for years. An Add On module that still uses any of them stops with an error such as `Call to undefined function db_exec()`. Before you install a module on v5.0, or upgrade a system that has modules installed, check it against [Updating Add On Modules for v5.0](#upgrading-modules) below.
+W> Web2project v5.0 removed functions and class names that had been deprecated for years. An Add On module that still uses any of them stops with an error such as `Call to undefined function db_exec()`. Before you install a module on v5.0, or upgrade a system that has modules installed, check it against [Updating Add On Modules for v5.0](#upgrading-modules) below.
 
 ## Installing New Modules
 
-There are a number of Addon Modules available for Web2Project and more are released every month. At the present time, there are modules for Holidays, a Microsoft Project Importer, Risk Management, Timecard and Todolist Management. Each of these is installed the same way:
+There are a number of Addon Modules available for web2project and more are released every month. At the present time, there are modules for Holidays, a Microsoft Project Importer, Risk Management, Timecard and Todolist Management. Each of these is installed the same way:
 
 1. Download your desired module from Github or your selected provider.
-1. Confirm that your module is supported under your version of Web2Project. For v5.0, see [Updating Add On Modules for v5.0](#upgrading-modules).
+1. Confirm that your module is supported under your version of web2project. For v5.0, see [Updating Add On Modules for v5.0](#upgrading-modules).
 1. Expand the compressed file to the directory and upload it to your `/web2project/modules` directory.
 1. Within your System Admin Module, click on View Modules. Near the bottom of this list you should see your module with a link labeled “install”. If the `modules` folder is writable by the web server, you can upload the module from this page instead.
 1. Click “install” to install it, click “disabled” to enable it, click “configure” if it appears, and finally click “hidden” in the far right column to unhide it.
@@ -18,13 +18,13 @@ Your module should now be fully installed with the tables updated, required valu
 
 ## Project Importer
 
-Most organizations and Project Managers come from a tradition of using Microsoft Project for their planning, estimation, and management. While many prefer to continue using it after installing Web2Project, most people wish to import their Project templates and active projects to benefit from the collaborate aspects of Web2Project.
+Most organizations and Project Managers come from a tradition of using Microsoft Project for their planning, estimation, and management. While many prefer to continue using it after installing web2project, most people wish to import their Project templates and active projects to benefit from the collaborate aspects of web2project.
 
 ### Usage
 
 Within Microsoft Project, open your project as usual. In the File Menu, select “Save As…” and under file-type, choose “xml” and save your file.
 
-Within Web2Project, select “Project Importer” from the *Modules* group in the sidebar.
+Within web2project, select “Project Importer” from the *Modules* group in the sidebar.
 
 Select “Browse”, select the file you created in Step 1, and select “Import Data”.
 
@@ -34,15 +34,15 @@ If a matching company was found, the Importer will automatically assign it. Alte
 
 Input a Project name. If the imported name is already in use, the module will note it here.
 
-Assign the usernames who match your imported resources. Any resources not mapped to current Web2Project Users will automatically be created as Users in an Inactive state.
+Assign the usernames who match your imported resources. Any resources not mapped to current web2project Users will automatically be created as Users in an Inactive state.
 
 ### Known Issues & Limitations
 
-This module was validated with Web2Project v3.0 through v4.x and hasn't been updated for v5.0. Version 4.2 of the module still calls `db_insert_id()`, which v5.0 removed, when the WBS importer creates new users, so that import stops with an error. The Microsoft Project importer doesn't use the removed functions but hasn't been tested on v5.0. Test it on a copy of your system first.
+This module was validated with web2project v3.0 through v4.x and hasn't been updated for v5.0. Version 4.2 of the module still calls `db_insert_id()`, which v5.0 removed, when the WBS importer creates new users, so that import stops with an error. The Microsoft Project importer doesn't use the removed functions but hasn't been tested on v5.0. Test it on a copy of your system first.
  
 ### Disclaimer
 
-Microsoft Project is an application wholly owned by Microsoft Corporation. CaseySoftware, LLC and the Web2Project Team does not imply or claim any involvement or ownership in any way, shape, or form.
+Microsoft Project is an application wholly owned by Microsoft Corporation. CaseySoftware, LLC and the web2project Team does not imply or claim any involvement or ownership in any way, shape, or form.
 
 ## Todos
 
@@ -100,7 +100,7 @@ See the [TodoList page](https://docs.web2project.net/modules/todos.html) for the
 
 **Applies to**: v5.0.0 and later
 
-Web2Project v5.0 removes code that has been deprecated since the v2.x and v3.x releases. Most of it has logged "has been deprecated" notices for years. An Add On module that still uses any of it will stop with an error such as `Call to undefined function db_exec()` or `Class "CAppUI" not found`.
+Web2project v5.0 removes code that has been deprecated since the v2.x and v3.x releases. Most of it has logged "has been deprecated" notices for years. An Add On module that still uses any of it will stop with an error such as `Call to undefined function db_exec()` or `Class "CAppUI" not found`.
 
 This section lists what was removed and what to use instead, plus the other v5.0 changes that affect modules.
 

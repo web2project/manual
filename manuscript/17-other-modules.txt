@@ -4,7 +4,7 @@ This chapter covers the smaller core modules that don't need a chapter of their 
 
 ### History {#module-history}
 
-The History module keeps a record of what changes in Web2Project: each time someone creates, updates or deletes a company, project, task, contact, file, link or other item, it notes when it happened, what kind of item it was, the item's name and who did it. It is useful for answering "who changed this, and when?"
+The History module keeps a record of what changes in web2project: each time someone creates, updates or deletes a company, project, task, contact, file, link or other item, it notes when it happened, what kind of item it was, the item's name and who did it. It is useful for answering "who changed this, and when?"
 
 I> The History module is active but hidden from the sidebar by default. Changes are recorded whenever the module is active. To open it from the sidebar, go to System Admin → View Modules and set History to "visible"; it then appears under *Tools*. To stop recording changes, disable the module there. The *Log Changes* setting in System Configuration is no longer used.
 
@@ -36,14 +36,14 @@ Projects also have a History tab, which lists the changes to that project.
 
 ### Help {#module-help}
 
-Many fields and icons in Web2Project show a short explanation when you hover over them. In System Configuration, every setting has an (i) icon with a description.
+Many fields and icons in web2project show a short explanation when you hover over them. In System Configuration, every setting has an (i) icon with a description.
 
 {float=right}
 ![The Help window](images/help/window.png)
 
 For anything else, select the **Help** icon (a question mark) in the bar at the top of every page. On narrow screens it is in the user menu. It opens a small window with links to where to find help:
 
-* the [Web2Project documentation](https://docs.web2project.net/) site, which explains each module and feature;
+* the [web2project documentation](https://docs.web2project.net/) site, which explains each module and feature;
 * [GitHub Discussions](https://github.com/orgs/web2project/discussions), for questions;
 * the [issue tracker](https://github.com/web2project/web2project/issues), for known problems and suggestions.
 
