@@ -231,7 +231,23 @@ I> The primary goals of this release were security hardening (CSRF tokens on eve
 
 **Release Date:** 7 November 2026
 
-I> The primary goal of this release was closing the v5.0 milestone: permission checks on `dosql`/`do_*` handlers, task moves and task logs, unguessable calendar feed tokens, English fallback for missing language packs, and upgrades that work on MySQL 8's default strict mode (including dotProject conversions). Changes that affect upgrades or Add On modules: migrations 072, 073 and 074 run on upgrade (074 drops `contacts.contact_updatekey` and `contact_updateasked`); upgrades now stop at the first failed statement and report it in full, and the failed migration is not recorded, so a fixed database can simply be re-run; index.php runs a `dosql` or `a=do_*` handler only when its module is active and the user can access it, so Add On handlers that relied on being reachable without module access will be refused (own preferences, own user record and own feed token stay self-service); existing calendar feed tokens keep working until regenerated, but a feed stops as soon as its user can no longer log in; the contact self-update feature (updatecontact.php / do_updatecontact.php) is removed; Carbon moves to 3.x and ircmaxell/password-compat is removed, so run `composer install` after upgrading; `w2p_Exception_FileSystem` is now `w2p_Exceptions_FileSystem`, and `CAppUI::readFiles()`, `checkFileName()` and `loadCalendarJS()` stay until v6.0 with deprecation notices naming their replacements.
+I> The primary goal of this release was closing the v5.0 milestone:
+I>
+I> * permission checks on `dosql`/`do_*` handlers, task moves and task logs
+I> * unguessable calendar feed tokens
+I> * English fallback for missing language packs
+I> * upgrades that work on MySQL 8's default strict mode, including dotProject conversions
+I>
+I> Changes that affect upgrades or Add On modules:
+I>
+I> * Migrations 072, 073 and 074 run on upgrade. Migration 074 drops `contacts.contact_updatekey` and `contact_updateasked`.
+I> * Upgrades now stop at the first failed statement and report it in full. The failed migration is not recorded, so once you have fixed the database you can simply run the upgrade again.
+I> * `index.php` runs a `dosql` or `a=do_*` handler only when its module is active and the user can access it. Add On handlers that relied on being reachable without module access will be refused. Own preferences, own user record and own feed token stay self-service.
+I> * Existing calendar feed tokens keep working until they are regenerated, but a feed stops as soon as its user can no longer log in.
+I> * The contact self-update feature (`updatecontact.php` / `do_updatecontact.php`) is removed.
+I> * Carbon moves to 3.x and `ircmaxell/password-compat` is removed, so run `composer install` after upgrading.
+I> * `w2p_Exception_FileSystem` is now `w2p_Exceptions_FileSystem`.
+I> * `CAppUI::readFiles()`, `checkFileName()` and `loadCalendarJS()` stay until v6.0 with deprecation notices naming their replacements.
 
 ### Fixes/Bugs Closed
 
@@ -303,4 +319,4 @@ I> The primary goal of this release was closing the v5.0 milestone: permission c
 
 ## Previous Release Notes
 
-Release notes for all previous Web2Project releases are available on [our documentation site](https://docs.web2project.net/release-notes/index.html).
+Release notes for all previous web2project releases are available on [our documentation site](https://docs.web2project.net/release-notes/index.html).
