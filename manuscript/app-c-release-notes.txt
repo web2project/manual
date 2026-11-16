@@ -220,7 +220,7 @@ I> The primary goals of this release were security hardening (CSRF tokens on eve
   * [#436](https://github.com/web2project/web2project/issues/436) Calendar feed tokens are guessable and keep working after a user loses access
   * [#457](https://github.com/web2project/web2project/issues/457) `CAppUI::isActiveModule()` interpolates the module name into SQL
   * [#466](https://github.com/web2project/web2project/issues/466) Files Add/Edit page still includes the HelpDesk add-on's config.php
-* [#464](https://github.com/web2project/web2project/issues/464) The add-on upgrade guide doesn't yet mention the `__nonce` form token now required on dosql, AJAX and `do_*` requests
+* [#464](https://github.com/web2project/web2project/issues/464) The `__nonce` form token now required on dosql, AJAX and `do_*` requests is covered in the add-on upgrade guide (Form tokens (CSRF))
 * [#454](https://github.com/web2project/web2project/issues/454) The new "Non-working day" calendar label has no translation outside English
 * [#519](https://github.com/web2project/web2project/issues/519) / [#520](https://github.com/web2project/web2project/issues/520) `w2p_Utilities_Date::format()` ignores `%`, so `getBeginWeek()`/`getEndWeek()` always see Sunday
 * [#392](https://github.com/web2project/web2project/issues/392) The PDF libraries and fonts are still in lib/
@@ -311,7 +311,7 @@ I> * `CAppUI::readFiles()`, `checkFileName()` and `loadCalendarJS()` stay until 
 
 ### Open/Known Issues
 
-* The add-on upgrade guide doesn't yet cover the `__nonce` form token, the [#463](https://github.com/web2project/web2project/issues/463) module check or the [#473](https://github.com/web2project/web2project/issues/473) custom-field rule (see [web2project/manual#4](https://github.com/web2project/manual/issues/4) and [web2project.github.io#9](https://github.com/web2project/web2project.github.io/issues/9))
+* The `__nonce` form token is now covered in the add-on upgrade guide. It doesn't yet cover the [#463](https://github.com/web2project/web2project/issues/463) module check or the [#473](https://github.com/web2project/web2project/issues/473) custom-field rule (see [web2project/manual#4](https://github.com/web2project/manual/issues/4) and [web2project.github.io#9](https://github.com/web2project/web2project.github.io/issues/9))
 * [#533](https://github.com/web2project/web2project/issues/533) Forum message bodies and titles are output without escaping (low: safe today only because `bind()` encodes on save)
 * [#535](https://github.com/web2project/web2project/issues/535) / [#536](https://github.com/web2project/web2project/issues/536) Converted dotProject sites lack some module rows and keep dotProject column types
 * [#392](https://github.com/web2project/web2project/issues/392) The PDF libraries and fonts are still in lib/ (planned for v6.0)
