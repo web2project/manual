@@ -196,49 +196,6 @@ Permissions are important to secure and protect information within web2project. 
 
 Q> For performance, web2project works out each User’s effective permissions ahead of time instead of evaluating every rule on every request. It recalculates them when the User logs in and whenever a Role, a permission or a module changes, so changes normally show up on the User’s next page. If a User still sees old permissions, ask them to log out and back in.
 
-
-## Permissions 201 {#permissions-201}
-
-The most commonly asked questions in the forums revolve around permissions. The initial assumption when the permissions do not react as expected is that the permissions system is broken and therefore should be rebuilt from the ground up. While this may be true, the vast majority of permissions problems are eventually tracked back to improper settings, a misunderstanding of how it works, or conflicting permissions.
-
-The default permissions within web2project are sufficient for a few organizations, but the vast majority will want to modify and customize permissions for their own business practices, workflows, and requirements. The most useful way to explain and demonstrate an advanced set of permissions requires an example. This example is taken from the permissions currently in use by CaseySoftware, LLC for the management of projects for various customer organizations worked on by various employees and contractors.
-
-Goal:
-CaseySoftware, LLC has a number of customers with information which should be protected both from one another and unauthorized users. It also has a number of contractors and employees which should only see projects specific to the companies they are working with or for.
-
-Solution:
-On a new installation, the base “Project Worker” role begins with a single permission, Non-Admin Modules - Allow - Access, Add, Edit, View. We add Delete to it:
-Non-Admin Modules - Allow - Access, Add, Delete, Edit, View
-This by itself would give all Project Workers the ability to create, edit, view, or delete Companies, Projects, etc at their will. While this is a sufficient starting point, it does not serve the purposes we need as the User should not be able to access certain Companies or Projects without authorization.
-
-The next step is to add the following permission to the “Project Worker” Role:
-This will now prevent all Project Workers from viewing any company information or anything associated with a company such as projects, contacts, files, events, etc even though they can see these individual navigation items. This also cascades which means that a File attached to a Task attached to a Project attached to a Company would not show either. At this point, a Project Worker can only see information not attached to a specific company such as a general Contact.
-
-The next step is to add fine-grained permissions to specific User/Company combinations. This gives the User the ability to see everything – Projects, Tasks, Files, Events, and Contacts – associated with this Company. This covers all the internal projects and efforts but not necessarily things for other organizations. To supplement this, we simply add another permission along the same lines:
-
-Now the User can see all of the relevant information for both organizations. This level of granularity and control will be sufficient for many organizations, but adding one more wrinkle may be important. If there are individual Projects from one of the Companies which require additional limitations, we simply add this:
-
-For all intents and purposes, this project does not exist to this User. Its Tasks, Files, and Events will not appear to this User anywhere in the system.
-
-I> In the latest development, there was a subtle issue where a User only had View Project Access to Company A and Create Project Access for Company B was allowed to create Projects for either Company. Once a Project was created for Company A, the permissions were applied correctly, so the User could not edit it. Although this later application of permissions was correct, the original was not and could create oddities. This issue has been resolved.
-
-Goal:
-CaseySoftware, LLC has a number of customers who wish to review their Projects on a regular basis at their own convenience. Although they should be allowed to see information concerning the status of individual tasks, detailed task log information should not be available for review. In addition, all information for other customers should be protected as normal.
-
-Solution:
-Since this is a completely new Role, first, we create it: “Customer”. The core of this Role is identical to the “Project Worker” so we can begin the same way. First, we add the Non-Admin Permission:
-Non-Admin Modules - Allow - Access, Add, Delete, Edit, View
-
-This by itself would give all Customers the ability to create, edit, view, or delete Companies, Projects, etc at their will. While this is a sufficient starting point, it does not serve the purposes we need as the User should not be able to access any Company which we do not explicitly enumerate.
-
-The next step is to add the following permission to the “Customer” Role:
-This will now prevent all Customers from viewing any company information or anything associated with a company such as projects, contacts, files, events, etc even though they can see these individual navigation items. This also cascades which means that a File attached to a Task attached to a Project attached to a Company would not show either. At this point, a Project Worker can only see information not attached to a specific company such as a general Contact.
-
-The next step is to add fine-grained permissions to specific User/Company combinations. This gives the User the ability to see everything – Projects, Tasks, Files, Events, and Contacts – associated with this Company. Unfortunately, this means they could see anything – including Tasklogs – which we wanted to prevent.
-
-Finally, we must add one more limitation to the Role. By having this in place, we can ensure that our Customer Role cannot see any of the information in any of the Tasklogs but should still be able to see the total time spent on the task. 
-
-
 ## Session Management
 
 One of the most common complaints with web2project 1.x involved the classic issue of “I was in the middle of doing X and my session timed out!”. In v2, this issue was resolved by the development of “web2project Extended Sessions”, which is now the default. This allows the System Administrator to let web2project manage sessions and configure a custom “Session Idle Time” and a “Session Maximum Lifetime”.
