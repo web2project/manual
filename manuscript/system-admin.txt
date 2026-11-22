@@ -207,7 +207,7 @@ Goal:
 CaseySoftware, LLC has a number of customers with information which should be protected both from one another and unauthorized users. It also has a number of contractors and employees which should only see projects specific to the companies they are working with or for.
 
 Solution:
-The base “Project Worker” role begins with a single permission:
+On a new installation, the base “Project Worker” role begins with a single permission, Non-Admin Modules - Allow - Access, Add, Edit, View. We add Delete to it:
 Non-Admin Modules - Allow - Access, Add, Delete, Edit, View
 This by itself would give all Project Workers the ability to create, edit, view, or delete Companies, Projects, etc at their will. While this is a sufficient starting point, it does not serve the purposes we need as the User should not be able to access certain Companies or Projects without authorization.
 
