@@ -184,7 +184,7 @@ The four base roles at installation are Administrator, Project worker, Guest, an
 
 Administrator – Administrators have complete access within the system and are able to do anything they choose. This includes creating, editing or deleting all information along with assigning Tasks, changing Users’ passwords, or even creating other Administrators.
 
-Project worker – Project workers can create, edit, or delete any non-administrative information throughout the system. They can create Companies or Projects, assign Tasks, and log time against any task in the system. Most users will be a variation of this role.
+Project worker – Project workers can view, create and edit any non-administrative information throughout the system. They can create Companies or Projects, assign Tasks, and log time against any task in the system. On a new installation the role doesn't include Delete; add it to the role if your Project workers should delete things too. Most users will be a variation of this role.
 
 Guest – Guests can view any non-administrative information. They cannot create, edit, or delete anything and therefore this works well as a basis for a Customer Role.
 
